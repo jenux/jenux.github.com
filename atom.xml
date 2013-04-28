@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[JenUX Pages]]></title>
+  <link href="http://jenux.github.io/atom.xml" rel="self"/>
+  <link href="http://jenux.github.io/"/>
+  <updated>2013-04-28T15:42:34+08:00</updated>
+  <id>http://jenux.github.io/</id>
+  <author>
+    <name><![CDATA[Jenux]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
