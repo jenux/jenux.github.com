@@ -1,0 +1,19 @@
+{
+    "format_version" :  1,
+    "version":          "1.0.5",
+    "key":              "geldlojaiogdfklldhlakihhekbhbbae",
+    "name" :            "文德通讯录",
+    "description":      "文德通讯录chrome extension版",
+    "icons":{
+        "48" :          "images/icon48.png",
+        "128":          "images/icon128.png"
+    },
+    "browser_action":{
+        "default_icon": "images/icon.png",
+        "default_title":"文德通讯",
+        "default_popup":"popup.html"
+    },
+    "options_page":     "options.html",
+    "homepage_url":     "http://jenux.me/demo/chrome_extension/wm_contact/index.html",
+    "update_url":       "http://jenux.me/demo/chrome_extension/wm_contact/updates.xml"
+}

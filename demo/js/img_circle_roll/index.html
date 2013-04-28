@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='date' content='2007-10-27'>
+        <title>Img_Circle_Roll | demo</title>
+        <style>
+            #demo img { 
+                padding:2px; background:#f8f8f8; 
+                -moz-border-radius:3px; -webkit-border-radius:3px;
+                -moz-box-shadow:0 0 3px rgba(0,0,0,.3);
+                -webkit-box-shadow:0 0 3px rgba(0,0,0,.3)
+            }
+        </style>
+        <!--[if lt IE 9]>
+		    <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+		<![endif]-->
+    </head>
+    <body>
+        <div id='debug' style='float:right;width:500px'></div>
+        <div id='demo'></div>
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js'></script>
+		<script>
+		!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.4.js"%3E%3C/script%3E'))
+        </script>
+        <script>
+            var ImgCRoll = function(){
+                var _Radian = function(angel){
+                    return angel * Math.PI/180;
+                };
+                var _Angel = function(radian){
+                    return radian * 180/Math.PI;
+                };
+                var _Sin = function(angel){
+                    return Math.sin(_Radian(angel))    
+                };
+                var _Cos = function(angel){
+                    return Math.cos(_Radian(angel))    
+                };
+                var ImgRoller = function($root, options){
+                    this.$root = $root;
+                    this.options = options;
+                    this.centerAbsPos = {x:0,y:0};
+                    this.timer = null;
+                }
+                ImgRoller.prototype.init = function(){
+                    this.centerAbsPos = {
+                        x:this.options.radio + this.options.width/2,
+                        y:this.options.radio + this.options.height/2
+                    };
+                    this.build();
+                    var me = this;
+                    window.setTimeout(function(){ me.autoPlay() },1000)
+                };
+                ImgRoller.prototype.build = function(){
+                    var options = this.options,
+                        items = options.items,
+                        distance = 360 / items.length,
+                        self = this;    
+                    $(items).each(function(i){
+                        var img = $('<img src="">');
+                        for(key in this){
+                            if(key == 'act'){
+                                img.css('cursor','pointer')
+                                img.click(this[key])    
+                            }else if(key == 'href' && this[key]!=''){
+                                var me = this;
+                                img.css('cursor','pointer')
+                                img.click(function(){
+                                    window.location.href=me[key]
+                                })    
+                            }else{
+                                img.attr(key, this[key])
+                            }
+                        }
+                        img.css({
+                            width:options.width * options.thumb_size, 
+                            height:options.height * options.thumb_size,
+                            position:'absolute',
+                            opacity:0,
+                            zIndex:0
+                        })
+                        img.data('mark',i*distance);
+                        img.hover(function(){
+                            $(this).css({
+                                zIndex:1,
+                                width:options.width,
+                                height:options.height,
+                                marginTop:-options.height*(1-options.thumb_size)/2,
+                                marginLeft:-options.width*(1-options.thumb_size)/2
+                            })
+                            self.stopAutoPlay(); 
+                        },function(){
+                           $(this).css({
+                                zIndex:0,
+                                width:options.width  * options.thumb_size,
+                                height:options.height  * options.thumb_size,
+                                margin:0,
+                            })
+                            self.autoPlay(); 
+                        })
+                        self.setPos(img)
+                        self.$root.append(img)
+                    })
+                };
+                ImgRoller.prototype.setPos = function($obj, diff){
+                    var angel = $obj.data('mark');
+                    if(diff){
+                        angel += diff;
+                        $obj.data('mark', angel)
+                    }
+                    var relaPos = this.getRelaPos(angel);
+                    var absPos = this.getAbsPos(relaPos);
+                    if(!diff){
+                        $obj.animate({left:absPos.x, top:absPos.y,opacity:1})
+                    }else{
+                        $obj.css({left:absPos.x, top:absPos.y})
+                    }
+                };
+                ImgRoller.prototype.getRelaPos = function(angel){
+                    var x = _Sin(angel) * this.options.radio;
+                    var y = _Cos(angel) * this.options.radio;
+                    return {x:x, y:-y}
+                };
+                ImgRoller.prototype.getAbsPos = function(pos){
+                    return {
+                        x:pos.x + this.centerAbsPos.x,
+                        y:pos.y + this.centerAbsPos.y
+                    }  
+                };
+                ImgRoller.prototype.stopAutoPlay = function(){
+                    if(this.timer){
+                        window.clearInterval(this.timer);
+                        this.timer = null;
+                    }
+                };
+                ImgRoller.prototype.autoPlay = function(){
+                    var me = this;
+                    this.timer = window.setInterval(function(){
+                        me.$root.find('img').each(function(i){
+                            me.setPos($(this), me.options.step)
+                        })
+                    },1000/me.options.rate)
+                };
+                var default_opts = {
+                    width:120,      //图片最大时的宽度
+                    height:120,
+                    items:[],       //图片数据
+                    radio:150,      //圆的半径
+                    rate:24,        //滚动帧数，数字越大移动得越快
+                    step:2,         //步长，每次移动的角度
+                    thumb_size:0.7
+                };
+                var start = function(domid, opts){
+                    $root = $('#'+domid).css('position','relative');
+                    if(!domid || !$root[0]){
+                        alert('error, param invalid')
+                        return
+                    }
+                    if(opts){
+                        options = $.extend({},default_opts,opts)
+                    }else{
+                        options = default_opts
+                    }
+                    if(options.items.length<2){
+                        alert('Config items first')
+                        return
+                    }
+                    new ImgRoller($root, options).init();
+                };
+                return {
+                    start:start
+                }
+            }();
+            $(function(){
+                function TestEvent(e){
+                    alert('You clicked me')
+                }
+                var items = [
+                    {
+                        src:'images/img_1.jpg',
+                        alt:'img 1',
+                        act:TestEvent
+                    },
+                    {
+                        src:'images/img_2.jpg',
+                        alt:'img 2',
+                        href:'http://www.google.com'
+                    },
+                    {
+                        src:'images/img_3.jpg',
+                        alt:'img 3',
+                        href:''
+                    },
+                    {
+                        src:'images/img_4.jpg',
+                        alt:'img 4',
+                        href:'http://www.baidu.com/'
+                    },
+                    {
+                        src:'images/img_5.jpg',
+                        alt:'img 5',
+                        href:'http://www.google.com'
+                    },
+                    {
+                        src:'images/img_6.jpg',
+                        alt:'img 6',
+                        href:''
+                    },
+                    {
+                        src:'images/img_7.jpg',
+                        alt:'img 7',
+                        href:''
+                    },
+                    {
+                        src:'images/img_8.jpg',
+                        alt:'img 8'
+                    },
+                    {
+                        src:'images/img_9.jpg',
+                        alt:'img 9'
+                    },
+                    {
+                        src:'images/img_10.jpg',
+                        alt:'img 10'
+                    } 
+                ];
+                var items1 = [
+                    {
+                        src:'images/img_1.jpg',
+                        alt:'img 1',
+                        act:TestEvent
+                    },
+                    {
+                        src:'images/img_2.jpg',
+                        alt:'img 2',
+                        href:'http://www.google.com'
+                    },
+                    {
+                        src:'images/img_3.jpg',
+                        alt:'img 3',
+                        href:''
+                    },
+                    {
+                        src:'images/img_4.jpg',
+                        alt:'img 4',
+                        href:'http://www.baidu.com/'
+                    },
+                    {
+                        src:'images/img_5.jpg',
+                        alt:'img 5',
+                        href:'http://www.google.com'
+                    }
+                ];
+                ImgCRoll.start('demo', {items:items})
+                ImgCRoll.start('debug', {items:items1, radio:100, step:2, width:80, height:80})
+            })
+        </script>
+    </body>
+</html>

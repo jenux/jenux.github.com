@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<h1 class='page-title'><a href='javascript: history.back(-1)' style='border: none'>Back</a></h1>
+<div class='post-outer'>
+    <ul class='tags' style='margin-bottom: 15px'>
+        {% for tag in page.tags %}
+        <li><a href="/tags/{{ tag }}" title="{{ tag }}">{{ tag }}</a></li>
+        {% endfor %}
+    </ul>
+    <div class='post'>
+        <article class='entry'>
+            <header>{{ page.title }}</header>
+            <section class='meta'>
+               <time title='{{ page.date }}'>{{ page.date|date: "%Y-%m-%d" }}</time>
+            </section>
+            <section class='main'>
+                {{ content }}
+            </section>
+        </article>
+        {% include comment.html %}
+    </div>
+</div>
+<script>
+    prettyPrint();
+</script>
+
+

@@ -1,0 +1,43 @@
+::-webkit-scrollbar { width:6px; height:6px; }
+::-webkit-scrollbar-track-piece { background:#eee; -webkit-border-radius:5px; }
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment { display:block; height:10px; }
+::-webkit-scrollbar-button:vertical:increment { background:#fff; }
+::-webkit-scrollbar-thumb:vertical { height:50px; background-color:#ccc; -webkit-border-radius:5px; }
+::-webkit-scrollbar-thumb:horizontal { width:50px; background:#ccc; -webkit-border-radius:5px; }
+
+#container { width: 80%; margin: 0 auto; position: relative; font-size: 12px; }
+.loading { background: url(images/loading.gif) no-repeat; }
+.msn, .qq, .mail { padding-left: 20px !important; background:url(images/msn.png) no-repeat 0 top; }
+.qq { background-image:url(images/qq.png); }
+.mail { background-image:url(images/mail.gif); background-position:0 center; }
+p { margin: 3px 0; line-height:1.5em; }
+a { color: #900; text-decoration:none;}
+a:hover { background:#900; color:#fff;}
+h1 sup { font-size: 12px; font-weight: normal; margin-left: 3px; }
+header { border-bottom: 3px double #eee; line-height: 40px; position: relative; }
+#filter { position: absolute; right: 0; top: 10px; width: 150px; }
+body.pop div#container { width: 300px; max-height: 350px; overflow-y: auto; overflow-x: hidden; padding-right: 8px;}
+body.pop header { font-size: 14px; height: 40px; }
+body.pop header h1 { position: absolute; right: 0; top: -10px; font-size: 14px; }
+body.pop #filter { left: 0; }
+body.pop #body { min-height: 150px; }
+ul { margin: 10px 0; padding: 0; list-style-type: none; }
+li { position: relative; overflow: visible; }
+li img.avatar { position: absolute; left: 0; top: 3px; width:35px; border-radius: 3px; }
+.wall li {
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid #ddd;
+	margin: 10px;
+	padding: 0 5px 0 85px;
+	min-height: 80px;
+	border-radius: 3px;
+	background-color: #ddd;
+	box-shadow: 0 0 8px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.5) inset;
+}
+.wall li:hover { background-color:rgba(0,0,0,0.5); color:#fff; }
+.wall li p{ padding: 0 3px; line-height: 1.5em;}
+.wall li img.avatar { width: 80px; top: 0; }
+body.pop ul { margin-top: 0; }
+body.pop li { margin-bottom: 3px; border-bottom: 1px solid #ddd; min-height:35px; padding-left:40px; }

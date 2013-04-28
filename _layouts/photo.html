@@ -1,0 +1,134 @@
+<!DOCTYPE html>  
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }} | Jenux</title>
+    <meta name="description" content="Jenux's pages at Github.">
+    <meta name="author" content="ijenux@gmail.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="jenux, html5, css, Mac">
+    <!--[if lt IE 9 ]><script>window.location.href='/browsers.html';</script><![endif]-->
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
+    <!--<link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">-->
+    <link rel="stylesheet" href="/static/css/default/style.css">
+    <link rel="stylesheet" href="/static/js/libs/fancybox/jquery.fancybox-1.3.4.css">
+    <script src="/static/js/libs/modernizr-1.6.min.js"></script>
+</head>
+<body class='photo'>
+    <div id='container'>
+        <div id='top'></div>
+        <header id='header'>{% include header.html %}</header>
+        <section id='main'>
+            {{ content }}
+            {% include comment.html %}
+        </section>
+        <footer id='footer'>{% include footer.html %}</footer>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="/static/js/libs/jquery-1.4.4.js"%3E%3C/script%3E'))</script>  
+    <script src='/static/js/libs/jquery.masonry.min.js'></script>
+    <script src="/static/js/libs/fancybox/jquery.fancybox-1.3.4.js"></script>
+    <script src="/static/js/libs/fancybox/jquery.easing-1.3.pack.js"></script>
+    <script>
+        $(function(){
+            /*$('dl#book-list dd').masonry({
+                columnWidth: 110,
+                itemSelector: '.pin'
+            });*/
+            Flickr_IMG_Mode = ''; //_b
+        	var Flickr = function(){
+        		var user_id = '35442181@N04';
+        		var api_key = '&api_key=e381f3edc3a3331e491727a1abfb5538';
+        		var per_page = 15;
+        		var server = 'http://api.flickr.com/services/rest/?';
+        		var img_list_method = '&method=flickr.photos.search'; //'&method=flickr.people.getPublicPhotos'; 
+        		var img_method = 'method=flickr.photos.getSizes';
+        		var $root;
+
+        		var pages=0, total=0, page=1;
+        		var load = function($dom,_page){
+        		    $root = $dom;
+        			if(_page){ page = _page}
+        			var url = server+img_list_method+api_key;
+        			url += '&user_id='+user_id;
+        			url += '&per_page='+per_page+'&page='+page;
+        			url += '&format=json&jsoncallback=Flickr.load_handler';
+        			var $loading = $('<div>加载中</div>'),interval;
+        			$.ajax({
+        				url:url, type:'GET',
+        				beforeSend:function(){
+        				    $loading.appendTo($root);
+        				    $("div.more").hide();
+        				    interval = window.setInterval(function(){
+                    			var text = $loading.text();
+                    			if (text.length < 10 ){ $loading.text(text + '.'); } 
+                    			else { $loading.text('loading'); }
+                    		},200);
+        				},
+        				error:function(data){
+        				    window.clearInterval(interval);
+        				    $loading.html('Error loading data document'+data);
+        				},
+        				success:function(data){
+        				    window.clearInterval(interval);
+        				    $loading.remove();
+                            eval('('+data+')')
+        				}
+        			})
+        		};
+        		var load_handler = function(data){
+        		    if(data.stat == 'fail'){
+        		        alert(data.message)
+        		    }else{
+        		        pages = data.photos.pages;
+        		        total = data.photos.total;
+        		        	        
+        		        if(page >= pages){
+        		            $('.more').remove()
+        		        }else{
+        		            if(!$('.more')[0]){
+        		                $('<div class="more"><a href="javascript:void(0)">更多</a></div>')
+                		            .insertAfter($root)
+                		            .click(function(){
+                		                Flickr.load($root,page+1)
+                		            })
+        		            }else{
+        		                $('div.more').fadeIn();
+        		            }        
+        		        }
+        		        Flickr.load_img(data.photos.photo);
+        		    }
+        		}
+        		var load_img = function(list){
+        		    var html = '';
+        		    $.each(list, function(i,item){
+        		        var photoURL='http://farm'+item.farm+'.static.flickr.com/'+item.server+'/'+ item.id + '_' + item.secret;
+                        var photoID = item.id;
+                        html += '<div class="pin">\
+                        <a href="'+photoURL+Flickr_IMG_Mode+'.jpg" rel="group1">\
+                        <img src="'+photoURL+'_m.jpg"></a>\
+                        <span class="title">title</span></div>';
+        		    })
+        		    $(html).appendTo($root).find('a').fancybox();
+        		    /*$root.masonry({
+        		        resizeable:true,
+                        columnWidth:200,
+                        itemSelector:'.pin'
+                    });*/
+         		};
+        		return {
+        			load:load,
+        			load_handler:load_handler,
+        			load_img:load_img
+        		}
+        	}();
+            if($('#flickr-photos')[0]){	
+                Flickr.load($('#flickr-photos'));
+            }
+        });
+    </script>
+    {% include google.html %}
+</body>
+</html>
+

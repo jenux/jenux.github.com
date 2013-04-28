@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
+  <app appid='geldlojaiogdfklldhlakihhekbhbbae'>
+    <updatecheck codebase='http://jenux.me/demo/chrome_extension/wm_contact/wmcontact_1.0.5.crx' version='1.0.5' />
+  </app>
+</gupdate>

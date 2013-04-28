@@ -1,0 +1,84 @@
+<!DOCTYPE html>  
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }} | Jenux</title>
+    <meta name="description" content="Jenux's pages at Github.">
+    <meta name="author" content="ijenux@gmail.com">
+    <meta name="keywords" content="jenux, html5, css, Mac">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/default/style.css">
+    <link rel="stylesheet" href="/static/css/default/syntax-highlight.css">
+    <link rel="stylesheet" href="/static/highlighter/prettify.css">
+    <script src='/static/highlighter/prettify.js'></script>
+	<script src="/static/js/libs/modernizr-1.6.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id='top'></div>
+        <header id='header'>{% include header.html %}</header>
+        <section id='extra'>
+            <blockquote class='about'>
+                <ul id='socialize'>
+                    <li class='github'><a href='http://github.com/jenux'>on github</a></li>
+                    <li class='twitter'><a href='http://twitter.com/ijenux'>on twitter</a></li>
+                </ul>
+                <p>
+                    Jenux Wang.<br>
+                    北京一枚前端工程师. <br>
+                    热衷互联网技术. <br>
+                    本站使用 <a href='https://github.com/mojombo/jekyll' class='link'>Jekyll</a> 搭建于 <a href='http://github.com' class='link'>GitHub</a>.<br>
+                </p>           
+            </blockquote>
+            <dl id='tags'>
+                <dt>OS</dt>
+                <dd>
+                    <ul class='tags'>
+                        <li><a href='/tags/Linux/'>Linux</a></li>
+                        <li><a href='/tags/Mac/'>Mac</a></li>
+                    </ul>
+                </dd>
+                <dt>Code</dt>
+                <dd>
+                    <ul class='tags'>
+                        <li><a href='/tags/HTML/'>HTML</a></li>
+                        <li><a href='/tags/CSS/'>CSS</a></li>
+                        <li><a href='/tags/jQuery/'>jQuery</a></li>
+                        <li><a href='/tags/python/'>Python</a></li>
+                    </ul>
+                </dd>
+                <dt>Tool</dt>
+                <dd>
+                    <ul class='tags'>
+                        <li><a href='/tags/vim/'>Vim</a></li>
+                        <li><a href='/tags/Git/'>Git</a></li>
+                    </ul>
+                </dd>
+                <dt>装备</dt>
+                <dd>
+                    <ul class='tags'>
+                        <li><a href='/tags/N900/'>N900</a></li>
+                        <li><a href='/tags/iPad/'>iPad</a></li>
+                    </ul>
+                </dd>
+                <dt>All</dt>
+                <dd>
+                    <ul class='tags'>
+                    {% include tags.html %}
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+        <section id='main'>
+            {{ content }}
+        </section>
+        <footer id='footer'>{% include footer.html %}</footer>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="/static/js/libs/jquery-1.4.4.js"%3E%3C/script%3E'))</script>  
+    {% include google.html %}
+</body>
+</html>
+
