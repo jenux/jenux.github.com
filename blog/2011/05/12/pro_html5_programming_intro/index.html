@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>HTML5高级编程之概述 - JenUX Pages</title>
+  <meta name="author" content="Jenux">
+
+  
+  <meta name="description" content="新的认识 HTML5基于各种各样的理念进行设计，这些设计理念体现了对可能性和可行性的新认识。
+- 兼容性
+- 实用性
+- 互通性
+- 通用访问性 兼容性
+HTML5不是颠覆性的革新，其核心理念是保持一切新特性平滑过渡。
+效率和用户优先
+在遇到无法解决的冲突时，规范会把用户放在第一位， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jenux.github.io/blog/2011/05/12/pro_html5_programming_intro">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="JenUX Pages" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">JenUX Pages</a></h1>
+  
+    <h2>Pages of JenUX</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jenux.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">HTML5高级编程之概述</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h1>新的认识</h1>
+
+<p>HTML5基于各种各样的理念进行设计，这些设计理念体现了对可能性和可行性的新认识。<br/>
+- 兼容性
+- 实用性
+- 互通性
+- 通用访问性</p>
+
+<ol>
+<li><p>兼容性
+HTML5不是颠覆性的革新，其核心理念是保持一切新特性平滑过渡。</p></li>
+<li><p>效率和用户优先
+在遇到无法解决的冲突时，规范会把用户放在第一位， 其次是页面作者，再次是实现者(或浏览器),接着是规范制定者，最后才考虑理论的纯粹性。<br/>
+下面几种代码写法在HTML5中都能被识别:<br/>
+ id=&#8217;prohtml5&#8217;<br/>
+ id=prohtml5<br/>
+ id=&#8221;prohtml5&#8221;</p></li>
+<li><p>化繁为简
+HTML5要的就是简单，避免不必要的复杂性，口号是“简单至上，尽可能简化”，有以下改进：</p></li>
+<li>以浏览器原生能力替代复杂的javascript代码</li>
+<li>新的简化的DOCTYPE</li>
+<li>新的简化的字符集声明</li>
+<li><p>简单而强大的HTML5 API</p></li>
+<li><p>通用访问</p></li>
+<li>可访问性<br/>
+出于对残障用户的考虑，HTML5与WAI(Web Accessibility Initiative,Web可访问性倡议)和ARIA(Accessible Rich Internet Applications,可访问的富Internet应用)做到了紧密结合，WAI-ARIA中以屏幕阅读器为基础元素已经被添加到HTML中。</li>
+<li>媒体中立
+如果可能的话，HTML5的功能在所有不同的设备和平台上应该都能正常运行。</li>
+<li>支持所有语种
+如，新的<code>&lt;ruby&gt;</code>元素支持在东亚页面排版中会用到的Ruby注释</li>
+</ol>
+
+
+<h1>无插件范式</h1>
+
+<h1>HTML5新功能</h1>
+
+<ol>
+<li><p>新的DOCTYPE和字符集
+<code>&lt;!DOCTYPE html&gt;</code><br/>
+<code>&lt;meta charset='utf-8'&gt;</code></p></li>
+<li><p>新元素和旧元素</p></li>
+</ol>
+
+
+<hr />
+
+<p>内容类型        描述</p>
+
+<hr />
+
+<p>内嵌          向文档中添加其他类型的内容，如audio, video, canvas和iframe等<br/>
+流           在文档和应用的body中使用的元素，如form, h1和small等<br/>
+标题          段落标题，如h1, h2和hgroup等<br/>
+交互          与用户交互的内容，如音频和视频的控件，button和textarea等<br/>
+元数据         通常出现在页面head中，设置页面其他部分的表现和行为，如script, style和title等<br/>
+短语          文本和文本票房，如mark, kbd, sub和sup等<br/>
+片断          用于定义页面片断的元素，如article, aside和title等</p>
+
+<hr />
+
+<ol>
+<li>语义化标记
+HTML5中新的片断类元素</li>
+</ol>
+
+
+<hr />
+
+<p>元素名         描述</p>
+
+<hr />
+
+<p>header      标记头部区域内容<br/>
+footer      标记脚部区域内容<br/>
+section     web页面中的一块区域<br/>
+article     独立的文章内容<br/>
+aside       相关内容或引文<br/>
+nav         导航类辅助内容</p>
+
+<hr />
+
+<ol>
+<li>使用Selectors API简化选取操作</li>
+</ol>
+
+
+<p>新QuerySelector方法</p>
+
+<hr />
+
+<p>函数                  描述                  示例                                          <br/>
+querySelector()     根据规则，返回找到的第一个匹配元素   <code>querySelector("input.error")</code>
+querySelectorAll()  根据规则，返回所有匹配的元素      <code>querySelectorAll('#results td')</code></p>
+
+<hr />
+
+<p>可为Selector API同时批定多个选择规则，如:<br/>
+<code>var x = document.querySelector('.highlight', '.lowClass');</code><br/>
+对querySelector来说，选择的是满足规则中任意条件的第一个元素，<br/>
+对于querySelectorAll来说，选择的是只要满足规则中任何一个条件的元素</p>
+
+<h1>资源</h1>
+
+<ul>
+<li><p><a href="http://www.caniuse.com">www.caniuse.com</a>
+按浏览器的版本提供了详尽的html5的功能支持情况</p></li>
+<li><p><a href="http://www.html5tst.com">html5test.com</a>
+用浏览器访问该网站，会直接显示用户浏览器对HTML5规范支持情况</p></li>
+<li><p><strong><a href="http://www.modernizr.com">Modernizr</a></strong>
+提供非常先进的HTML5和CSS3检测功能</p></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jenux</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jenux.github.io/blog/2011/05/12/pro_html5_programming_intro/" data-via="" data-counturl="http://jenux.github.io/blog/2011/05/12/pro_html5_programming_intro/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/05/01/demo_of_image_circle_scroll/" title="Previous Post: 一个Js demo">&laquo; 一个Js demo</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/05/13/pro_html5_programming_cavans_api/" title="Next Post: HTML5高级编程之Canvas API">HTML5高级编程之Canvas API &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/05/Manage_with_vim_addon_manager/">使用vim-addon-manager管理vim插件</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/Apps_using_on_Mac_for_system/">Mac下我使用的一些软件列表(系统增强篇)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/30/Install_NodeJS_on_Mac_Lion/">在Mac Lion下安装Node.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/09/TextMate_knowlage_2/">TextMate随记(二)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/29/TextMate_knowlage_1/">TextMate随记一</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jenux -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

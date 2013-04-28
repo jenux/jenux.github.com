@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Contenteditable开发的一些问题 - JenUX Pages</title>
+  <meta name="author" content="Jenux">
+
+  
+  <meta name="description" content="最近用contenteditable实现页面实时编辑的一个交互组件，发现一些问题不是很好处理。 在不同浏览器下回车生成的标签是不同的，如: - 在Chrome下生成div, - 在IE下生成p, - 在Firefox下生成br IE下网上有很多方法可以截获回车事件，修改为br， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jenux.github.io/blog/2011/04/18/contenteditable_buglist">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="JenUX Pages" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">JenUX Pages</a></h1>
+  
+    <h2>Pages of JenUX</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jenux.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Contenteditable开发的一些问题</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-18T00:00:00+08:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>最近用contenteditable实现页面实时编辑的一个交互组件，发现一些问题不是很好处理。</p>
+
+<h2>在不同浏览器下回车生成的标签是不同的，如:</h2>
+
+<pre><code>- 在Chrome下生成div,  
+- 在IE下生成p,  
+- 在Firefox下生成br  
+    IE下网上有很多方法可以截获回车事件，修改为br，  
+    Chrome下暂时我是在提交时手动替换生成的div标签来不完美处理的;  
+</code></pre>
+
+<br>  
+
+
+<h2>在Firefox和Opera下如果contenteditable元素是嵌套在li元素下的，会引发bug,表现如下:</h2>
+
+<pre><code>- 在Firefox下无法换行  
+- 在Opera下会生成li元素  
+    暂时还没有好的解决办法, 我只能修改原来ul&gt;li的结构，改成section&gt;.li  
+</code></pre>
+
+<br>
+
+
+<h2>在Firefox和Opera下contenteditable的元素无法绑定键盘事件，如</h2>
+
+<pre><code>- 我想绑定按下Esc键时触发取消编辑的方法  
+- 我想绑定按下ctrl+Enter时触发提交编辑的方法  
+- 等等  
+</code></pre>
+
+<br>  
+
+
+<h2>其他应该注意的一些问题是：</h2>
+
+<ul>
+<li>设置contenteditable=&#8217;true&#8217;的元素，在粘贴从外部拷贝的内容时，会连带原有的格式（如样式）等。</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jenux</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-18T00:00:00+08:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jenux.github.io/blog/2011/04/18/contenteditable_buglist/" data-via="" data-counturl="http://jenux.github.io/blog/2011/04/18/contenteditable_buglist/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/04/16/Git_basic_knowledge/" title="Previous Post: Git初学者基础知识">&laquo; Git初学者基础知识</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/04/25/Hacker_means/" title="Next Post: 理解什么是'黑客'">理解什么是'黑客' &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/05/Manage_with_vim_addon_manager/">使用vim-addon-manager管理vim插件</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/Apps_using_on_Mac_for_system/">Mac下我使用的一些软件列表(系统增强篇)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/30/Install_NodeJS_on_Mac_Lion/">在Mac Lion下安装Node.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/09/TextMate_knowlage_2/">TextMate随记(二)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/29/TextMate_knowlage_1/">TextMate随记一</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jenux -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

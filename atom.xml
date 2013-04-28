@@ -4,7 +4,7 @@
   <title><![CDATA[JenUX Pages]]></title>
   <link href="http://jenux.github.io/atom.xml" rel="self"/>
   <link href="http://jenux.github.io/"/>
-  <updated>2013-04-28T15:42:34+08:00</updated>
+  <updated>2013-04-28T15:45:59+08:00</updated>
   <id>http://jenux.github.io/</id>
   <author>
     <name><![CDATA[Jenux]]></name>
@@ -12,5 +12,1145 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[使用vim-addon-manager管理vim插件]]></title>
+    <link href="http://jenux.github.io/blog/2013/03/05/Manage_with_vim_addon_manager/"/>
+    <updated>2013-03-05T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2013/03/05/Manage_with_vim_addon_manager</id>
+    <content type="html"><![CDATA[<h1>使用vim-addon-manager管理vim插件</h1>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mac下我使用的一些软件列表(系统增强篇)]]></title>
+    <link href="http://jenux.github.io/blog/2013/02/25/Apps_using_on_Mac_for_system/"/>
+    <updated>2013-02-25T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2013/02/25/Apps_using_on_Mac_for_system</id>
+    <content type="html"><![CDATA[<h1>Mac下我使用的一些软件列表(系统增强篇)</h1>
+
+<ul>
+<li>ForkLift</li>
+<li>PathFinder</li>
+<li>Unclutter</li>
+<li>Bartender</li>
+<li>TextExpander</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[在Mac Lion下安装Node.js]]></title>
+    <link href="http://jenux.github.io/blog/2012/01/30/Install_NodeJS_on_Mac_Lion/"/>
+    <updated>2012-01-30T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2012/01/30/Install_NodeJS_on_Mac_Lion</id>
+    <content type="html"><![CDATA[<h1>用homebrew 进行安装</h1>
+
+<p><code>brew update</code>
+<code>brew install node</code></p>
+
+<p><small>
+当前环境:
+Mac Lion 10.7.2
+node.js: 0.6.9
+</small></p>
+
+<h1>手动安装</h1>
+
+<ul>
+<li>install Xcode</li>
+<li>install git</li>
+<li>执行以下命令:</li>
+</ul>
+
+
+<pre>
+    git clone git://github.com/joyent/node.git
+    cd node
+    ./configure
+    make
+    sudo make install
+</pre>
+
+
+<hr />
+
+<h1>Update 1:</h1>
+
+<p>用homebrew在Lion下安装，运行hello world应用，控制台报错:Segmentation fault: 11,
+同时发现用homebrew安装时编译参数带有 &#8211;without npm</p>
+
+<p>在node.js主页下载Mac下的<a href="http://nodejs.org/dist/v0.6.9/node-v0.6.9.pkg">安装包</a>重新安装:</p>
+
+<pre>
+Node was installed at: */usr/local/bin/node*
+npm was installed at: */usr/local/bin/npm*
+</pre>
+
+
+<h1>用nvm(node version managerment)安装</h1>
+
+<p>nvm是一个像ruby rvm的东西，可以让你切换node的版本以便在开发中切换.
+目前初学还无此需求，记录备查</p>
+
+<pre>
+    $ git clone git://github.com/creationix/nvm.git ~/.nvm
+    $ echo ". ~/.nvm/nvm.sh" >> ~/.bashrc
+    $ nvm install v0.6.9
+    $ nvm alias default v0.6.9
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TextMate随记(二)]]></title>
+    <link href="http://jenux.github.io/blog/2011/08/09/TextMate_knowlage_2/"/>
+    <updated>2011-08-09T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/08/09/TextMate_knowlage_2</id>
+    <content type="html"><![CDATA[<p><a href="http://goo.gl/q8GMJ">Textmate.Power.Editing.for.the.Mac</a>随手记</p>
+
+<p>Chapter3</p>
+
+<h1>Moving around</h1>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"> Keystroke </th>
+<th align="left"> Caret Movement        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left"> ↑         </td>
+<td align="left"> Up one line           |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ↓         </td>
+<td align="left"> Down one line         |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ←         </td>
+<td align="left"> Left one character    |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> →         </td>
+<td align="left"> Right one character   |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌘↑        </td>
+<td align="left"> Beginning of document |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌘↓        </td>
+<td align="left"> End of document       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌘←        </td>
+<td align="left"> Beginning of line     |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌘→        </td>
+<td align="left"> End of line           |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌥↑        </td>
+<td align="left"> Beginning of column   |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌥↓        </td>
+<td align="left"> End of column         |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌥←        </td>
+<td align="left"> Beginning of word     |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌥→        </td>
+<td align="left"> End of word           |</td>
+</tr>
+</tbody>
+</table>
+
+
+<h1>Moving to a Line, Symbol or Bookmark</h1>
+
+<ul>
+<li>⌘L, go to line</li>
+<li>⌂ ⌘T, go to Symbol</li>
+<li>⌘F2, add bookmark</li>
+<li>F2, next bookmark</li>
+<li>⌂F2, previous bookmark</li>
+</ul>
+
+
+<p>Menu -> navigation to find these command</p>
+
+<h1>Folding Sections of Code</h1>
+
+<ul>
+<li>View->Gutter->Foldings</li>
+<li>F1 to trigger</li>
+<li>Toggle Foldings at level(⌥ ⌘0-9)</li>
+</ul>
+
+
+<p>Menu -> View to find these command</p>
+
+<h1>Making Selections</h1>
+
+<ul>
+<li>Move key and ⌂ to select</li>
+<li>⌂ ⌘L, current line selector</li>
+<li>⌃W, current word selector</li>
+<li>⌃⌥B, current scope selector</li>
+</ul>
+
+
+<p>Menu -> Edit -> Select to find these command</p>
+
+<h1>Column Selections</h1>
+
+<p>⌥</p>
+
+<h1>Editing</h1>
+
+<ul>
+<li>ESC, 自动完成
+
+<h2>- 自动配对</h2></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TextMate随记一]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/29/TextMate_knowlage_1/"/>
+    <updated>2011-07-29T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/29/TextMate_knowlage_1</id>
+    <content type="html"><![CDATA[<p><a href="http://goo.gl/q8GMJ">Textmate.Power.Editing.for.the.Mac</a>随手记</p>
+
+<ul>
+<li>Ctrl + esc 打开底部当前文件菜单</li>
+<li>Ctrl + Option + Command + D 显示/隐藏工程列表 [ View->Hide Project Drawer ]</li>
+<li>Ctrl + Tab 在工程列表和编辑窗口间切换光标焦点</li>
+<li>在工程列表中, 上下箭头选择不同的文件， 左右箭头可以打开或折叠选中的文件夹</li>
+<li>在工程列表中, 在选中的文件上单击回车，以编辑文件</li>
+<li>在工程列表中, 在选中的文件上单击空格，以编辑文件名称</li>
+<li>Command + T 打开已知文件名的文件 [ Navigation->Go to file ]</li>
+<li>Commant + 数字 选中编辑框中的tab</li>
+<li>Option + Command + 左右箭头, 左右切换tab</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>⌂ ⌘F, 全文查找/替换</li>
+<li>⌘F, 打开文件</li>
+<li>⌘G, 继续上次查找</li>
+<li>ESC, 代码补全</li>
+<li>⌘⏎, 到行尾然后回车</li>
+<li>⌃⌂K, 删除当前行</li>
+<li>⌃⌂D, 复制并粘贴当前行
+⌘C, 复制多次会将历史全部保存到Clipboard, ⌃ ⌥ ⌘V列出所有历史选择粘贴</li>
+</ul>
+
+
+<hr />
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[为任意项目甚至html静态页面增加代码高亮的插件]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/28/Google_code_prettify/"/>
+    <updated>2011-07-28T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/28/Google_code_prettify</id>
+    <content type="html"><![CDATA[<p>这个教程运用 <a href="http://code.google.com/p/google-code-prettify/">Google code prettify</a> 简单快捷地为任意项目，甚至是单纯的HTML静态页面添加代码高亮。</p>
+
+<p><embed src="http://www.youtube.com/v/_ggWarwhv9M?version=3&amp;hl=en_US&amp;hd=1" width="550" height="338" allowscriptaccess="never" allowfullscreen="true" wmode="transparent" type="application/x-shockwave-flash"></p>
+
+<h1>第1步: 下载源码</h1>
+
+<p>下载源码: <a href="http://code.google.com/p/google-code-prettify/">Google code</a></p>
+
+<h1>第2步: 把src目录拷进你的项目</h1>
+
+<p>我习惯把src目录重命名为: highlighter</p>
+
+<h1>第3步: 在项目页面中引用文件</h1>
+
+<p>在你的页面中引用prettify.css和prettify.js</p>
+
+<pre><code>&lt;!Doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset='utf-8'&gt;
+        &lt;title&gt;Google code prettify demo&lt;/title&gt;
+        &lt;link rel="stylesheet" href="highlighter/prettify.css"&gt;
+        &lt;script src='highlighter/prettify.js'&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>代码高亮插件将对带有&#8217;prettyprint&#8217;样式的 pre|code标签起作用。</p>
+
+<pre><code>&lt;body&gt;
+    &lt;pre class='prettyprint'&gt;
+        (function(){
+           var jenux = 'Jenux'; 
+        });
+    &lt;/pre&gt;
+&lt;/body&gt;
+</code></pre>
+
+<h1>第4步: 调用 prettyPrint()方法</h1>
+
+<pre><code>&lt;body&gt;
+    &lt;pre class='prettyprint'&gt;
+        (function(){
+           var jenux = 'Jenux'; 
+        });
+    &lt;/pre&gt;    
+    &lt;script&gt;
+        prettyPrint();
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+<h1>第5步: 其他</h1>
+
+<p><em>可以增加或修改pre样式lang-js等以指定高亮语言。
+</em>在<a href="http://google-code-prettify.googlecode.com/svn/trunk/styles/index.html">这里</a>可以选择其他配色方案</p>
+
+<hr />
+
+<p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-how-to-add-syntax-highlighting-to-any-project/">原文链接</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[免费的Mac工具推荐——Structruer]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/28/Free_Mac_Utility_App_Structrurer/"/>
+    <updated>2011-07-28T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/28/Free_Mac_Utility_App_Structrurer</id>
+    <content type="html"><![CDATA[<p>2010年底，<a href="http://net.tutsplus.com/">Nettuts+</a>推出了一个免费的用于创建项目目录结构及文件的工具。</p>
+
+<p>可以为最常用的项目结构以及文档创立模板以方便调用，一个很有用的功能是从网上抓取项目，比如要抓取 WordPress 的安装包，只需添加一个来源为 URL 的模板，然后把 WordPress 的下载链接粘贴过来就行了，Strucurer 会自动下载最新版本并解压好。</p>
+
+<p><img src="http://jenux.github.io/static/images/posts/structurerLarge.jpg" alt="software" /></p>
+
+<p><a href="http://net.tutsplus.com/freebies/others/free-mac-utility-app-structurer/">官方介绍</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Css3之Media Queries相关样式]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/24/css3_media_queries/"/>
+    <updated>2011-07-24T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/24/css3_media_queries</id>
+    <content type="html"><![CDATA[<p>本篇是《HTML5与CSS3权威指南》(HTML5 and CSS3: The Definitive Guide)一书第21章的笔记。</p>
+
+<hr />
+
+<h1>1. 根据浏览器的窗口大小来选择使用不同的样式</h1>
+
+<ul>
+<li>CSS中，与媒体相关的样式定义从CSS2.1开始。 CSS2.1中定义了各种媒体类型，如显示器，便携设备，电视机等。</li>
+<li>CSS3中，加入Media Queries模块，允许添加媒体查询(media query)表达式,用以指定媒体类型，然后根据媒体类型来选择应该使用的样式。<br/>
+即，不改变内容的情况下，在样式中选择一种页面的布局以精确适应不同设备。</li>
+</ul>
+
+
+<h1>2. 在iPhone中的显示</h1>
+
+<p>iPhone 3GS分辨率是320 x 480, 在文中示例中打开demo页，却不是以设置的小布局渲染页面。因为iPhone中使用的safari显示页面时将窗口宽度作为980px来显示。 这种情况下，可以利用<code>&lt;meta&gt;</code>标签在页面中指定safari在处理本页面时按照多少像素的窗口宽度来进行:</p>
+
+<pre><code>&lt;meta name="viewport" content="width=600px"&gt;
+待测试: &lt;meta name="viewport" content="width=device-width"&gt;
+</code></pre>
+
+<h1>3. Media Queries的使用方法</h1>
+
+<pre><code>@media 设备类型 and (设备特性) { 样式代码 }
+</code></pre>
+
+<ul>
+<li>在Media Queries中可以指定的值与该值所代表的设备类型</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"> 可以指定的值        </th>
+<th align="left"> 设备类型                    </th>
+<th>  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left"> all           </td>
+<td align="left"> 所有设备                    </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> screen        </td>
+<td align="left"> 电脑显示器                   </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> print         </td>
+<td align="left"> 打印用纸或打印预览视图             </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> handheld      </td>
+<td align="left"> 便携设备                    </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> tv            </td>
+<td align="left"> 电视机类型的设备                </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> speech        </td>
+<td align="left"> 语音和音频合成器                </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> braille       </td>
+<td align="left"> 盲人用点字法触觉回馈设备            </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> embossed      </td>
+<td align="left"> 盲文打印机                   </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> projection    </td>
+<td align="left"> 各种投影设备                  </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> tty           </td>
+<td align="left"> 使用固定密度字母栅格的媒介， 如电传打字机和终端</td>
+<td>  </td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>Css中的设备特性共13种</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"> 特性                  </th>
+<th align="left"> 可指定的值                 </th>
+<th align="center"> 是否允许min/max前缀  </th>
+<th align="left"> 特性说明                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">width                </td>
+<td align="left"> 带单位长度值:如400px         </td>
+<td align="center"> 是              </td>
+<td align="left"> 浏览器窗口的宽度                             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">height               </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 浏览器窗口的高度                             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">device-width         </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 设备屏幕分辨率的宽度值                          |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">device-height        </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 设备屏幕分辨率的高度值                          |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">orientation          </td>
+<td align="left"> portrait或landscape    </td>
+<td align="center"> 否              </td>
+<td align="left"> 浏览器窗口方向，高度大于宽度时为portrait             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">aspect-radio         </td>
+<td align="left"> 比例值:如16/9             </td>
+<td align="center">                </td>
+<td align="left"> 浏览器窗口纵横比，宽度/高度                       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">device-aspect-radio  </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 屏幕分辨率纵横比，宽度/高度                       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">color                </td>
+<td align="left"> 整数值                   </td>
+<td align="center">                </td>
+<td align="left"> 设备使用多少位的颜色值，如果不是彩色设备，该值为0            |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">color-index          </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 色彩表中的色彩数                             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">monochrome           </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 单色帧缓冲器中每像素的字节数                       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">resolution           </td>
+<td align="left"> 分辨率值，如300dpi          </td>
+<td align="center">                </td>
+<td align="left"> 设备分辨率                                |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">scan                 </td>
+<td align="left"> progressive或interlace </td>
+<td align="center"> 否              </td>
+<td align="left"> 电视类型扫描方式，progressive逐行扫描             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">grid                 </td>
+<td align="left"> 0或1                   </td>
+<td align="center"> 否              </td>
+<td align="left"> 设备是基于樱格还是基于位图，基于栅格时为1                |</td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Supersized,漂亮的全背景jQuery相册展示插件]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/05/jquery_plugin_supersized/"/>
+    <updated>2011-07-05T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/05/jquery_plugin_supersized</id>
+    <content type="html"><![CDATA[<p><a href="http://www.buildinternet.com/project/supersized/index.html">Supersized</a>非常漂亮的全背景相册展示插件，推荐使用。</p>
+
+<p><img src="http://jenux.github.io/static/images/posts/supersized-screen.jpg" alt="效果截图" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[使用Yepnope.js轻松加载脚本]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/05/easy_script_loading_with_yepnope_js/"/>
+    <updated>2011-07-05T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/05/easy_script_loading_with_yepnope_js</id>
+    <content type="html"><![CDATA[<p>使用Yepnope.js轻松加载脚本</p>
+
+<hr />
+
+<p><code>2011.2月底由[Alex Sexton](http://alexsexton.com/)和[Ralph Holzmann](http://twitter.com/ralphholzmann)官方发布。
+Yepnope.js资源加载器具有异步加载，按条件加载和同时支持javascript脚本及Css样式表等特性， 以此更好的解决依赖， 及根据条件判断加载不同资源。</code></p>
+
+<p>这个小巧的资源加载管理器，压缩后仅有1.6k, 现在已经内置了Modernizer，。。。</p>
+
+<p>未完，待续</p>
+
+<p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/easy-script-loading-with-yepnope-js/">原文链接</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GitHub for Mac推出了]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/04/share_your_code_width_github_for_mac/"/>
+    <updated>2011-07-04T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/04/share_your_code_width_github_for_mac</id>
+    <content type="html"><![CDATA[<p><a href="http://mac.github.com">GitHub for Mac</a>最近刚刚推出。现在你可以更加方便地在github.com上克隆版本库，查看历史日志， 提交修改， 建立分支及分享代码。 同步按钮(sync button)把你的修改推送到GitHub，并且同时把其他人的修改更新到本地。</p>
+
+<p>你可以拖动目录到软件来建立一个版本库。 当你在GitHub for Mac里创建了一个版本库，它将自动match them up with any organizations you belong to.</p>
+
+<p><img src="http://jenux.github.io/static/images/posts/github-mac.jpg" alt="软件截图" /></p>
+
+<hr />
+
+<p><a href="http://mac.github.com">官方主页</a> -
+<a href="http://www.webappers.com/2011/06/29/share-your-code-with-github-for-mac/">原文链接</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HTML5高级编程之Canvas API]]></title>
+    <link href="http://jenux.github.io/blog/2011/05/13/pro_html5_programming_cavans_api/"/>
+    <updated>2011-05-13T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/05/13/pro_html5_programming_cavans_api</id>
+    <content type="html"><![CDATA[<h1>Canvas是什么</h1>
+
+<ol>
+<li><p>基本元素
+<code>&lt;canvas&gt;&lt;/canvas&gt;</code></p></li>
+<li><p>canvas坐标
+从左上角开始，x轴沿水平方向向右延伸， y轴沿垂直方向向下延伸， 左上角坐标为x=0,y=0，称为原点</p></li>
+<li><p>替代内容
+<code>&lt;canvas&gt;Update your browser to enjoy canvas!&lt;/canvas&gt;</code></p></li>
+</ol>
+
+
+<h1>HTML5 Canvas API</h1>
+
+<ol>
+<li><p>检测浏览器支持情况
+ try{</p>
+
+<pre><code> document.createElement('canvas').getContext('2d');
+</code></pre>
+
+ }catch(e){
+
+<pre><code> //
+</code></pre>
+
+<p> }</p></li>
+<li><p>页历中加入canvas
+ <code>&lt;canvas width='200' height='200' style=''&gt;&lt;/canvas&gt;</code></p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HTML5高级编程之概述]]></title>
+    <link href="http://jenux.github.io/blog/2011/05/12/pro_html5_programming_intro/"/>
+    <updated>2011-05-12T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/05/12/pro_html5_programming_intro</id>
+    <content type="html"><![CDATA[<h1>新的认识</h1>
+
+<p>HTML5基于各种各样的理念进行设计，这些设计理念体现了对可能性和可行性的新认识。<br/>
+- 兼容性
+- 实用性
+- 互通性
+- 通用访问性</p>
+
+<ol>
+<li><p>兼容性
+HTML5不是颠覆性的革新，其核心理念是保持一切新特性平滑过渡。</p></li>
+<li><p>效率和用户优先
+在遇到无法解决的冲突时，规范会把用户放在第一位， 其次是页面作者，再次是实现者(或浏览器),接着是规范制定者，最后才考虑理论的纯粹性。<br/>
+下面几种代码写法在HTML5中都能被识别:<br/>
+ id=&#8217;prohtml5&#8217;<br/>
+ id=prohtml5<br/>
+ id=&#8221;prohtml5&#8221;</p></li>
+<li><p>化繁为简
+HTML5要的就是简单，避免不必要的复杂性，口号是“简单至上，尽可能简化”，有以下改进：</p></li>
+<li>以浏览器原生能力替代复杂的javascript代码</li>
+<li>新的简化的DOCTYPE</li>
+<li>新的简化的字符集声明</li>
+<li><p>简单而强大的HTML5 API</p></li>
+<li><p>通用访问</p></li>
+<li>可访问性<br/>
+出于对残障用户的考虑，HTML5与WAI(Web Accessibility Initiative,Web可访问性倡议)和ARIA(Accessible Rich Internet Applications,可访问的富Internet应用)做到了紧密结合，WAI-ARIA中以屏幕阅读器为基础元素已经被添加到HTML中。</li>
+<li>媒体中立
+如果可能的话，HTML5的功能在所有不同的设备和平台上应该都能正常运行。</li>
+<li>支持所有语种
+如，新的<code>&lt;ruby&gt;</code>元素支持在东亚页面排版中会用到的Ruby注释</li>
+</ol>
+
+
+<h1>无插件范式</h1>
+
+<h1>HTML5新功能</h1>
+
+<ol>
+<li><p>新的DOCTYPE和字符集
+<code>&lt;!DOCTYPE html&gt;</code><br/>
+<code>&lt;meta charset='utf-8'&gt;</code></p></li>
+<li><p>新元素和旧元素</p></li>
+</ol>
+
+
+<hr />
+
+<p>内容类型        描述</p>
+
+<hr />
+
+<p>内嵌          向文档中添加其他类型的内容，如audio, video, canvas和iframe等<br/>
+流           在文档和应用的body中使用的元素，如form, h1和small等<br/>
+标题          段落标题，如h1, h2和hgroup等<br/>
+交互          与用户交互的内容，如音频和视频的控件，button和textarea等<br/>
+元数据         通常出现在页面head中，设置页面其他部分的表现和行为，如script, style和title等<br/>
+短语          文本和文本票房，如mark, kbd, sub和sup等<br/>
+片断          用于定义页面片断的元素，如article, aside和title等</p>
+
+<hr />
+
+<ol>
+<li>语义化标记
+HTML5中新的片断类元素</li>
+</ol>
+
+
+<hr />
+
+<p>元素名         描述</p>
+
+<hr />
+
+<p>header      标记头部区域内容<br/>
+footer      标记脚部区域内容<br/>
+section     web页面中的一块区域<br/>
+article     独立的文章内容<br/>
+aside       相关内容或引文<br/>
+nav         导航类辅助内容</p>
+
+<hr />
+
+<ol>
+<li>使用Selectors API简化选取操作</li>
+</ol>
+
+
+<p>新QuerySelector方法</p>
+
+<hr />
+
+<p>函数                  描述                  示例                                          <br/>
+querySelector()     根据规则，返回找到的第一个匹配元素   <code>querySelector("input.error")</code>
+querySelectorAll()  根据规则，返回所有匹配的元素      <code>querySelectorAll('#results td')</code></p>
+
+<hr />
+
+<p>可为Selector API同时批定多个选择规则，如:<br/>
+<code>var x = document.querySelector('.highlight', '.lowClass');</code><br/>
+对querySelector来说，选择的是满足规则中任意条件的第一个元素，<br/>
+对于querySelectorAll来说，选择的是只要满足规则中任何一个条件的元素</p>
+
+<h1>资源</h1>
+
+<ul>
+<li><p><a href="http://www.caniuse.com">www.caniuse.com</a>
+按浏览器的版本提供了详尽的html5的功能支持情况</p></li>
+<li><p><a href="http://www.html5tst.com">html5test.com</a>
+用浏览器访问该网站，会直接显示用户浏览器对HTML5规范支持情况</p></li>
+<li><p><strong><a href="http://www.modernizr.com">Modernizr</a></strong>
+提供非常先进的HTML5和CSS3检测功能</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[一个Js demo]]></title>
+    <link href="http://jenux.github.io/blog/2011/05/01/demo_of_image_circle_scroll/"/>
+    <updated>2011-05-01T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/05/01/demo_of_image_circle_scroll</id>
+    <content type="html"><![CDATA[<p>Image circle scroll demo</p>
+
+<p><a href="http://jenux.github.io/demo/js/img_circle_roll/">Demo</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[理解什么是'黑客']]></title>
+    <link href="http://jenux.github.io/blog/2011/04/25/Hacker_means/"/>
+    <updated>2011-04-25T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/04/25/Hacker_means</id>
+    <content type="html"><![CDATA[<p>以下内容摘自《<a href="http://book.douban.com/subject/6021440/">黑客与画家</a>》之译者序</p>
+
+<hr />
+
+<p>1946年，第一台电子计算机ENIAC在美国诞生，从此世界上一些最聪明、最有创造力的人开始进入这个行业，在他们身上逐渐地形成了一种独特的技术文化。在这种文化的发展过程中，涌现了很多“行话”。20世纪60年代初，麻省理工学院有一个学生团体叫做“铁路模型技术俱乐部”(简称TMRC)，他们把难题的解决方法称为hack。</p>
+
+<p>在这里，hack做为名词有两个意思，既可以指很巧妙或很便捷的解决方法，也可以指比较笨拙、不那么优雅的解决方法。两者都能称为hack，不同的是，前者是漂亮的解决方法(cool hack或neat hack)，后者是丑陋的解决方法(ugly hack或quick hack)。hack的字典解释是砍(木头)，在这些学生看来，解决一个计算机难题就好像砍倒一棵大树。那么，相应地，完成这种hack的过程就被称为hacking,而从事hacking的人就是hacker，也就是黑客。</p>
+
+<p>从这个意思出发，hack还有一个引申义，指对某个程序或设备进行修改，使其完成原来不可用的功能(或禁止外部使用者接触到的功能)。</p>
+
+<p>在20世纪60年代这个词被发明的时候，“黑客”完全是正面意义上的称呼。TMRC使用这个词是带有敬意的，因为在他们看来，如果要完成一个hack，就必须包含着高度的革新、独树一帜的风格、精湛的技艺。最能干的人会自豪地称自己是黑客。</p>
+
+<p>这时，“黑客”这个词不仅是第一流能力的象征，还包含着求解问题过程中产生的精神愉悦或享受。也就是说，从一开始，黑客就是有精神追求的。自由软件基金会创始人理查德－斯托尔曼说：“出于兴趣而解决某个难题，不管它有没有用，这就是黑客。”</p>
+
+<p>根据理查德－斯托尔曼的说法，黑客行为必须包含三个特点：好玩、高智商、探索精神。只有其行为同时满足这三个标准，才能被称为“黑客”。另一方面，它们也构成了黑客的价值观，黑客追求的就是这三种价值，而不是实用性或金钱。</p>
+
+<p>1984年，《新闻周刊》的记者史蒂文－利维出版了历史上第一本介绍黑客的著作——《黑客：计算机革命的英雄》(Hackers: Heroes of the Computer Revolution)。在该书中，他进一步将黑客的价值观总结为六条“黑客伦理”，直到今天这几条伦理都被视为这方面的最佳论述。</p>
+
+<ul>
+<li>使用计算机以及所有有助于了解这个世界本质的事物都不应受到任何限制。任何事情都应该亲手尝试。<br/>
+(Access to computers&#8211;and anything that might teach you something about the way the world works&#8211;should be unlimited and total. Always yield to the Hands-On Imperative!)</li>
+<li>信息应该全部免费(Information should be free.)</li>
+<li>不信任权威，提倡去中心化。(Mistrust Authority&#8211;Promote Decentralization.)</li>
+<li>判断一名黑客的水平应该看他的技术能力，而不是看他的学历、年龄或地位等其他标准。(Hackers should be judged by their hacking, not bogus criteria such as degrees, age, race, or position.)</li>
+<li>你可以用计算机创造美和艺术。(You can create art and beauty on a computer.)</li>
+<li>计算机使生活更美好。（Computers can change your life for the better.）</li>
+</ul>
+
+
+<p>根据这六条“黑客伦理”，黑客价值观的核心原则可以概括成这样几点：分享、开放、民主、计算机的自由使用、进步。</p>
+
+<p>“黑客伦理”的一个必然推论就是，黑客不服从管教，具有叛逆精神。<br/>
+黑客通常对管理者强加的、限制他们行为的愚蠢规定不屑一顾。</p>
+
+<blockquote><p>对于黑客来说，关着的门就是一种挑衅，而锁着的门则是一种侮辱。</p></blockquote>
+
+<hr />
+
+<h2>完  </h2>
+
+<p>附：以前收藏的一首诗</p>
+
+<blockquote><p>“A hacker of the Old Code.”</p>
+
+<p>Hackers come and go, but a great hack is forever.<br/>
+黑客们来来往往，但是只有黑客的壮举是永存的</p>
+
+<p>Public goods belong to the public.*<br/>
+公众的东西是属于大众的</p>
+
+<p>Software hoarding is evil.<br/>
+Software does the greatest good given to the greatest number.<br/>
+圈养软件是邪恶的，最好的软件是有最多人使用的</p>
+
+<p>Don’t be evil.<br/>
+不作恶</p>
+
+<p>Sourceless software sucks.<br/>
+不公开源码的软件是令人厌恶的</p>
+
+<p>People have rights.<br/>
+Organizations live on sufferance.<br/>
+每个人都是有权利的，而组织是建立在互相的容忍上的</p>
+
+<p>Governments are organizations.<br/>
+政府也是组织</p>
+
+<p>If it is wrong when citizens do it,<br/>
+it is wrong when governments do it.<br/>
+对与错的标准，对于公民和政府是同样适用的。(不能“只许州官放火不许百姓点灯”)</p>
+
+<p>Information wants to be free.<br/>
+Information deserves to be free.<br/>
+信息需要自由（免费），信息也应该是是自由（免费）的</p>
+
+<p>Being legal doesn’t make it right.Being illegal doesn’t make it wrong.<br/>
+合法的不一定是正确的，不合法不一定就是错误的</p>
+
+<p>Subverting tyranny is the highest duty.<br/>
+推翻专制是黑客的最高天职</p>
+
+<p>Trust your technolust!<br/>
+相信你的“技术贪欲”</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Contenteditable开发的一些问题]]></title>
+    <link href="http://jenux.github.io/blog/2011/04/18/contenteditable_buglist/"/>
+    <updated>2011-04-18T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/04/18/contenteditable_buglist</id>
+    <content type="html"><![CDATA[<p>最近用contenteditable实现页面实时编辑的一个交互组件，发现一些问题不是很好处理。</p>
+
+<h2>在不同浏览器下回车生成的标签是不同的，如:</h2>
+
+<pre><code>- 在Chrome下生成div,  
+- 在IE下生成p,  
+- 在Firefox下生成br  
+    IE下网上有很多方法可以截获回车事件，修改为br，  
+    Chrome下暂时我是在提交时手动替换生成的div标签来不完美处理的;  
+</code></pre>
+
+<br>  
+
+
+<h2>在Firefox和Opera下如果contenteditable元素是嵌套在li元素下的，会引发bug,表现如下:</h2>
+
+<pre><code>- 在Firefox下无法换行  
+- 在Opera下会生成li元素  
+    暂时还没有好的解决办法, 我只能修改原来ul&gt;li的结构，改成section&gt;.li  
+</code></pre>
+
+<br>
+
+
+<h2>在Firefox和Opera下contenteditable的元素无法绑定键盘事件，如</h2>
+
+<pre><code>- 我想绑定按下Esc键时触发取消编辑的方法  
+- 我想绑定按下ctrl+Enter时触发提交编辑的方法  
+- 等等  
+</code></pre>
+
+<br>  
+
+
+<h2>其他应该注意的一些问题是：</h2>
+
+<ul>
+<li>设置contenteditable=&#8217;true&#8217;的元素，在粘贴从外部拷贝的内容时，会连带原有的格式（如样式）等。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git初学者基础知识]]></title>
+    <link href="http://jenux.github.io/blog/2011/04/16/Git_basic_knowledge/"/>
+    <updated>2011-04-16T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/04/16/Git_basic_knowledge</id>
+    <content type="html"><![CDATA[<p>《<a href="http://roclinux.cn/?p=343">看日记学GIT</a>》是Git入门不错的系列文章，最近开始在<a href="http://github.com">GitHub</a>上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获。<br/>
+其第9章是对前8章的复习总结，基本上涵盖了入门者使用Git的流程和基本命令，在这里摘录一下部分内容，如果你对Git感兴趣，推荐阅读本系列文章。<br/>
+点击<a href="http://dl.dbank.com/c0n8xljq3a">这里</a>是我收藏的一份pdf版本</p>
+
+<hr />
+
+<h1>1 获得帮助可以使用类似 <code>man git-****</code>的命令格式, 如:</h1>
+
+<pre><code>man git-commit 
+man git-pull
+man git-merge
+</code></pre>
+
+<h1>2 使用Git之前，应该提交简单的个人信息，以便区分不同的提交者的身份</h1>
+
+<pre><code>git config -global user.name "your name"
+git config -global user.email "your email address"
+</code></pre>
+
+<h1>3 新开启一个项目，先建立一个目录(eg:myproject)，然后:</h1>
+
+<pre><code>cd myproject
+git init
+git add .
+git commit -m 'Start my git project.'
+</code></pre>
+
+<p>这样一个新项目就诞生了。</p>
+
+<h1>4 修改了项目源代码，需要提交时:</h1>
+
+<pre><code>git add '新建或修改的文件'  #git add .
+git commit
+或git commit -a //直接提交修改过的文件
+</code></pre>
+
+<h1>5 源码修改对比:</h1>
+
+<pre><code>git diff    //git add使用之前有效，如果已经add,此命令输出为空 
+git diff -cached //这个命令在git add之后，git commit之前有效
+git status //这个命令在git commit之前有效，会输出文件修改状态
+</code></pre>
+
+<h1>6 查看日志</h1>
+
+<pre><code>git log
+git log -p  // 输入更详细的日志内容，包括修改了哪些源码
+</code></pre>
+
+<h1>7 创建分支，分支开发成功则合并到主分支，否则放弃该分支</h1>
+
+<pre><code>git branch experimental //创建一个名为experimental的分支
+git branch //显示当前分支，标注*号的为当前所在分支
+git checkout experimental  //切换到experimental分支
+...开发过程
+git commit -a //在experimental分支上修改源代码并提交
+git checkout master //切回主分支
+git merge experimental  //合并到主分支
+git commit -a //彻底完成分支合并，提交主分支
+git branch -d experimental // 删除已合并的experimental分支
+
+如果分支开发失败:
+git checkout master
+git branch -D experimental 
+</code></pre>
+
+<h1>8 查看图形化分支信息</h1>
+
+<pre><code>gitk
+</code></pre>
+
+<h1>9 Git协作</h1>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Markdown的一些基础知识]]></title>
+    <link href="http://jenux.github.io/blog/2011/04/12/welcome_to_markdown/"/>
+    <updated>2011-04-12T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/04/12/welcome_to_markdown</id>
+    <content type="html"><![CDATA[<hr />
+
+<p>Github真是个很好的开源产品，正在不断学习中。<br/>
+上周末尝试Github的pages服务，很不错，下载了一些jekyll驱动的blog源码学习，结识了markdown这种轻量级的标记语言.</p>
+
+<p>其实从接触vimviki以来，我对这种轻量级的标记语言就很有好感，可能是因为这种方式酷似编写代码吧。<br/>
+粗看了一下Markdown的一些语法，记录如下:</p>
+
+<hr />
+
+<h1>常用格式</h1>
+
+<ul>
+<li>空一行（两个回车）分段</li>
+<li>行末加两个或多个空格才是真正的换行</li>
+<li>插入链接 <code>[链接文字](url)</code></li>
+<li>插入图片：同链接，在前面加叹号<code>![alt文字](url)</code></li>
+</ul>
+
+
+<h1>内嵌HTML</h1>
+
+<ul>
+<li>块状标签，像p,div之类，需要在前后各空一行(两个回车)，且开始和结束标签的一行前面不能用空格或Tab缩进</li>
+<li>行内元素， 如a,span,img可以在任何地方使用</li>
+</ul>
+
+
+<h1>标题</h1>
+
+<p>用1－6个#号开始一行表示这一行是标题，如:</p>
+
+<pre>
+    # 一级标题
+    ## 二级标题
+    ### 三级标题
+</pre>
+
+
+<h1>引用</h1>
+
+<p>用右尖括号(>)表示，可以嵌套。可以包含其他Markdown元素， 如：</p>
+
+<pre>
+    >##这是标题  
+    >  
+    > 1. 这是Markdown标记语言  
+    > 2. 现在正在学习**blockquote**  
+</pre>
+
+
+<h1>列表</h1>
+
+<p>HTML里分为有序列表和无序列表 <br/>
+在Markdown中用星号、加号、减号开始一行表示无序列表<br/>
+用数字开始一行表示有序列表，如:</p>
+
+<pre>
+    * Google
+    * Baidu
+    * Yahoo
+    1. HTML
+    2. Javascript
+    3. Css
+</pre>
+
+
+<h1>代码及代码块</h1>
+
+<ul>
+<li>插入一行代码，用`包含</li>
+<li>插入大段代码， 在代码前每一行前加四个空格</li>
+</ul>
+
+
+<h1>横线</h1>
+
+<p>三个或以上星号，减号或下划线单独放在一行即可生成一条横线，如:</p>
+
+<pre>
+    ******
+    * * *
+    ---
+    -------------
+</pre>
+
+
+<h1>强调</h1>
+
+<p>用星号或下划线来实现，两边各放一个会生成em标签，放两个会生成strong标签，如:</p>
+
+<pre>
+    *单星号*
+    _单下划线_  
+    **双星号*  
+    __双下划线__
+</pre>
+
+
+<p>会生成：</p>
+
+<pre> 
+    <em>单星号</em>  
+    <em>单下划线</em>  
+    <strong>双星号</strong>  
+    <strong>双下划线</strong>  
+</pre>
+
+
+<hr />
+
+<p>先到这里，上边写的还没测试过，这是我用Markdown记下的第一篇笔记。<br/>
+有错误的地方我会回来修正。</p>
+
+<h1>Tips:</h1>
+
+<ul>
+<li>每行末需要打空格两个以上才是真正换行，有点累</li>
+</ul>
+
+]]></content>
+  </entry>
   
 </feed>

@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Git初学者基础知识 - JenUX Pages</title>
+  <meta name="author" content="Jenux">
+
+  
+  <meta name="description" content="《看日记学GIT》是Git入门不错的系列文章，最近开始在GitHub上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获。
+其第9章是对前8章的复习总结，基本上涵盖了入门者使用Git的流程和基本命令，在这里摘录一下部分内容， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jenux.github.io/blog/2011/04/16/Git_basic_knowledge">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="JenUX Pages" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">JenUX Pages</a></h1>
+  
+    <h2>Pages of JenUX</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jenux.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Git初学者基础知识</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-16T00:00:00+08:00" pubdate data-updated="true">Apr 16<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>《<a href="http://roclinux.cn/?p=343">看日记学GIT</a>》是Git入门不错的系列文章，最近开始在<a href="http://github.com">GitHub</a>上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获。<br/>
+其第9章是对前8章的复习总结，基本上涵盖了入门者使用Git的流程和基本命令，在这里摘录一下部分内容，如果你对Git感兴趣，推荐阅读本系列文章。<br/>
+点击<a href="http://dl.dbank.com/c0n8xljq3a">这里</a>是我收藏的一份pdf版本</p>
+
+<hr />
+
+<h1>1 获得帮助可以使用类似 <code>man git-****</code>的命令格式, 如:</h1>
+
+<pre><code>man git-commit 
+man git-pull
+man git-merge
+</code></pre>
+
+<h1>2 使用Git之前，应该提交简单的个人信息，以便区分不同的提交者的身份</h1>
+
+<pre><code>git config -global user.name "your name"
+git config -global user.email "your email address"
+</code></pre>
+
+<h1>3 新开启一个项目，先建立一个目录(eg:myproject)，然后:</h1>
+
+<pre><code>cd myproject
+git init
+git add .
+git commit -m 'Start my git project.'
+</code></pre>
+
+<p>这样一个新项目就诞生了。</p>
+
+<h1>4 修改了项目源代码，需要提交时:</h1>
+
+<pre><code>git add '新建或修改的文件'  #git add .
+git commit
+或git commit -a //直接提交修改过的文件
+</code></pre>
+
+<h1>5 源码修改对比:</h1>
+
+<pre><code>git diff    //git add使用之前有效，如果已经add,此命令输出为空 
+git diff -cached //这个命令在git add之后，git commit之前有效
+git status //这个命令在git commit之前有效，会输出文件修改状态
+</code></pre>
+
+<h1>6 查看日志</h1>
+
+<pre><code>git log
+git log -p  // 输入更详细的日志内容，包括修改了哪些源码
+</code></pre>
+
+<h1>7 创建分支，分支开发成功则合并到主分支，否则放弃该分支</h1>
+
+<pre><code>git branch experimental //创建一个名为experimental的分支
+git branch //显示当前分支，标注*号的为当前所在分支
+git checkout experimental  //切换到experimental分支
+...开发过程
+git commit -a //在experimental分支上修改源代码并提交
+git checkout master //切回主分支
+git merge experimental  //合并到主分支
+git commit -a //彻底完成分支合并，提交主分支
+git branch -d experimental // 删除已合并的experimental分支
+
+如果分支开发失败:
+git checkout master
+git branch -D experimental 
+</code></pre>
+
+<h1>8 查看图形化分支信息</h1>
+
+<pre><code>gitk
+</code></pre>
+
+<h1>9 Git协作</h1>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jenux</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-16T00:00:00+08:00" pubdate data-updated="true">Apr 16<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jenux.github.io/blog/2011/04/16/Git_basic_knowledge/" data-via="" data-counturl="http://jenux.github.io/blog/2011/04/16/Git_basic_knowledge/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/04/12/welcome_to_markdown/" title="Previous Post: Markdown的一些基础知识">&laquo; Markdown的一些基础知识</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/04/18/contenteditable_buglist/" title="Next Post: Contenteditable开发的一些问题">Contenteditable开发的一些问题 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/05/Manage_with_vim_addon_manager/">使用vim-addon-manager管理vim插件</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/Apps_using_on_Mac_for_system/">Mac下我使用的一些软件列表(系统增强篇)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/30/Install_NodeJS_on_Mac_Lion/">在Mac Lion下安装Node.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/09/TextMate_knowlage_2/">TextMate随记(二)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/29/TextMate_knowlage_1/">TextMate随记一</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jenux -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

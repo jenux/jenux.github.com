@@ -9,7 +9,8 @@
   <meta name="author" content="Jenux">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="使用vim-addon-manager管理vim插件
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,7 +67,883 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/05/Manage_with_vim_addon_manager/">使用vim-addon-manager管理vim插件</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-05T00:00:00+08:00" pubdate data-updated="true">Mar 5<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>使用vim-addon-manager管理vim插件</h1>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/25/Apps_using_on_Mac_for_system/">Mac下我使用的一些软件列表(系统增强篇)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-25T00:00:00+08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Mac下我使用的一些软件列表(系统增强篇)</h1>
+
+<ul>
+<li>ForkLift</li>
+<li>PathFinder</li>
+<li>Unclutter</li>
+<li>Bartender</li>
+<li>TextExpander</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/30/Install_NodeJS_on_Mac_Lion/">在Mac Lion下安装Node.js</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-30T00:00:00+08:00" pubdate data-updated="true">Jan 30<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>用homebrew 进行安装</h1>
+
+<p><code>brew update</code>
+<code>brew install node</code></p>
+
+<p><small>
+当前环境:
+Mac Lion 10.7.2
+node.js: 0.6.9
+</small></p>
+
+<h1>手动安装</h1>
+
+<ul>
+<li>install Xcode</li>
+<li>install git</li>
+<li>执行以下命令:</li>
+</ul>
+
+
+<pre>
+    git clone git://github.com/joyent/node.git
+    cd node
+    ./configure
+    make
+    sudo make install
+</pre>
+
+
+<hr />
+
+<h1>Update 1:</h1>
+
+<p>用homebrew在Lion下安装，运行hello world应用，控制台报错:Segmentation fault: 11,
+同时发现用homebrew安装时编译参数带有 &#8211;without npm</p>
+
+<p>在node.js主页下载Mac下的<a href="http://nodejs.org/dist/v0.6.9/node-v0.6.9.pkg">安装包</a>重新安装:</p>
+
+<pre>
+Node was installed at: */usr/local/bin/node*
+npm was installed at: */usr/local/bin/npm*
+</pre>
+
+
+<h1>用nvm(node version managerment)安装</h1>
+
+<p>nvm是一个像ruby rvm的东西，可以让你切换node的版本以便在开发中切换.
+目前初学还无此需求，记录备查</p>
+
+<pre>
+    $ git clone git://github.com/creationix/nvm.git ~/.nvm
+    $ echo ". ~/.nvm/nvm.sh" >> ~/.bashrc
+    $ nvm install v0.6.9
+    $ nvm alias default v0.6.9
+</pre>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/08/09/TextMate_knowlage_2/">TextMate随记(二)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-09T00:00:00+08:00" pubdate data-updated="true">Aug 9<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://goo.gl/q8GMJ">Textmate.Power.Editing.for.the.Mac</a>随手记</p>
+
+<p>Chapter3</p>
+
+<h1>Moving around</h1>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"> Keystroke </th>
+<th align="left"> Caret Movement        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left"> ↑         </td>
+<td align="left"> Up one line           |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ↓         </td>
+<td align="left"> Down one line         |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ←         </td>
+<td align="left"> Left one character    |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> →         </td>
+<td align="left"> Right one character   |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌘↑        </td>
+<td align="left"> Beginning of document |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌘↓        </td>
+<td align="left"> End of document       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌘←        </td>
+<td align="left"> Beginning of line     |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌘→        </td>
+<td align="left"> End of line           |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌥↑        </td>
+<td align="left"> Beginning of column   |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌥↓        </td>
+<td align="left"> End of column         |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌥←        </td>
+<td align="left"> Beginning of word     |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> ⌥→        </td>
+<td align="left"> End of word           |</td>
+</tr>
+</tbody>
+</table>
+
+
+<h1>Moving to a Line, Symbol or Bookmark</h1>
+
+<ul>
+<li>⌘L, go to line</li>
+<li>⌂ ⌘T, go to Symbol</li>
+<li>⌘F2, add bookmark</li>
+<li>F2, next bookmark</li>
+<li>⌂F2, previous bookmark</li>
+</ul>
+
+
+<p>Menu -> navigation to find these command</p>
+
+<h1>Folding Sections of Code</h1>
+
+<ul>
+<li>View->Gutter->Foldings</li>
+<li>F1 to trigger</li>
+<li>Toggle Foldings at level(⌥ ⌘0-9)</li>
+</ul>
+
+
+<p>Menu -> View to find these command</p>
+
+<h1>Making Selections</h1>
+
+<ul>
+<li>Move key and ⌂ to select</li>
+<li>⌂ ⌘L, current line selector</li>
+<li>⌃W, current word selector</li>
+<li>⌃⌥B, current scope selector</li>
+</ul>
+
+
+<p>Menu -> Edit -> Select to find these command</p>
+
+<h1>Column Selections</h1>
+
+<p>⌥</p>
+
+<h1>Editing</h1>
+
+<ul>
+<li>ESC, 自动完成
+
+<h2>- 自动配对</h2></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/29/TextMate_knowlage_1/">TextMate随记一</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-29T00:00:00+08:00" pubdate data-updated="true">Jul 29<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://goo.gl/q8GMJ">Textmate.Power.Editing.for.the.Mac</a>随手记</p>
+
+<ul>
+<li>Ctrl + esc 打开底部当前文件菜单</li>
+<li>Ctrl + Option + Command + D 显示/隐藏工程列表 [ View->Hide Project Drawer ]</li>
+<li>Ctrl + Tab 在工程列表和编辑窗口间切换光标焦点</li>
+<li>在工程列表中, 上下箭头选择不同的文件， 左右箭头可以打开或折叠选中的文件夹</li>
+<li>在工程列表中, 在选中的文件上单击回车，以编辑文件</li>
+<li>在工程列表中, 在选中的文件上单击空格，以编辑文件名称</li>
+<li>Command + T 打开已知文件名的文件 [ Navigation->Go to file ]</li>
+<li>Commant + 数字 选中编辑框中的tab</li>
+<li>Option + Command + 左右箭头, 左右切换tab</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>⌂ ⌘F, 全文查找/替换</li>
+<li>⌘F, 打开文件</li>
+<li>⌘G, 继续上次查找</li>
+<li>ESC, 代码补全</li>
+<li>⌘⏎, 到行尾然后回车</li>
+<li>⌃⌂K, 删除当前行</li>
+<li>⌃⌂D, 复制并粘贴当前行
+⌘C, 复制多次会将历史全部保存到Clipboard, ⌃ ⌥ ⌘V列出所有历史选择粘贴</li>
+</ul>
+
+
+<hr />
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/28/Google_code_prettify/">为任意项目甚至html静态页面增加代码高亮的插件</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-28T00:00:00+08:00" pubdate data-updated="true">Jul 28<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这个教程运用 <a href="http://code.google.com/p/google-code-prettify/">Google code prettify</a> 简单快捷地为任意项目，甚至是单纯的HTML静态页面添加代码高亮。</p>
+
+<p><embed src="http://www.youtube.com/v/_ggWarwhv9M?version=3&amp;hl=en_US&amp;hd=1" width="550" height="338" allowscriptaccess="never" allowfullscreen="true" wmode="transparent" type="application/x-shockwave-flash"></p>
+
+<h1>第1步: 下载源码</h1>
+
+<p>下载源码: <a href="http://code.google.com/p/google-code-prettify/">Google code</a></p>
+
+<h1>第2步: 把src目录拷进你的项目</h1>
+
+<p>我习惯把src目录重命名为: highlighter</p>
+
+<h1>第3步: 在项目页面中引用文件</h1>
+
+<p>在你的页面中引用prettify.css和prettify.js</p>
+
+<pre><code>&lt;!Doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset='utf-8'&gt;
+        &lt;title&gt;Google code prettify demo&lt;/title&gt;
+        &lt;link rel="stylesheet" href="highlighter/prettify.css"&gt;
+        &lt;script src='highlighter/prettify.js'&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>代码高亮插件将对带有&#8217;prettyprint&#8217;样式的 pre|code标签起作用。</p>
+
+<pre><code>&lt;body&gt;
+    &lt;pre class='prettyprint'&gt;
+        (function(){
+           var jenux = 'Jenux'; 
+        });
+    &lt;/pre&gt;
+&lt;/body&gt;
+</code></pre>
+
+<h1>第4步: 调用 prettyPrint()方法</h1>
+
+<pre><code>&lt;body&gt;
+    &lt;pre class='prettyprint'&gt;
+        (function(){
+           var jenux = 'Jenux'; 
+        });
+    &lt;/pre&gt;    
+    &lt;script&gt;
+        prettyPrint();
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+<h1>第5步: 其他</h1>
+
+<p><em>可以增加或修改pre样式lang-js等以指定高亮语言。
+</em>在<a href="http://google-code-prettify.googlecode.com/svn/trunk/styles/index.html">这里</a>可以选择其他配色方案</p>
+
+<hr />
+
+<p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-how-to-add-syntax-highlighting-to-any-project/">原文链接</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/28/Free_Mac_Utility_App_Structrurer/">免费的Mac工具推荐——Structruer</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-28T00:00:00+08:00" pubdate data-updated="true">Jul 28<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>2010年底，<a href="http://net.tutsplus.com/">Nettuts+</a>推出了一个免费的用于创建项目目录结构及文件的工具。</p>
+
+<p>可以为最常用的项目结构以及文档创立模板以方便调用，一个很有用的功能是从网上抓取项目，比如要抓取 WordPress 的安装包，只需添加一个来源为 URL 的模板，然后把 WordPress 的下载链接粘贴过来就行了，Strucurer 会自动下载最新版本并解压好。</p>
+
+<p><img src="/static/images/posts/structurerLarge.jpg" alt="software" /></p>
+
+<p><a href="http://net.tutsplus.com/freebies/others/free-mac-utility-app-structurer/">官方介绍</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/24/css3_media_queries/">Css3之Media Queries相关样式</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-24T00:00:00+08:00" pubdate data-updated="true">Jul 24<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>本篇是《HTML5与CSS3权威指南》(HTML5 and CSS3: The Definitive Guide)一书第21章的笔记。</p>
+
+<hr />
+
+<h1>1. 根据浏览器的窗口大小来选择使用不同的样式</h1>
+
+<ul>
+<li>CSS中，与媒体相关的样式定义从CSS2.1开始。 CSS2.1中定义了各种媒体类型，如显示器，便携设备，电视机等。</li>
+<li>CSS3中，加入Media Queries模块，允许添加媒体查询(media query)表达式,用以指定媒体类型，然后根据媒体类型来选择应该使用的样式。<br/>
+即，不改变内容的情况下，在样式中选择一种页面的布局以精确适应不同设备。</li>
+</ul>
+
+
+<h1>2. 在iPhone中的显示</h1>
+
+<p>iPhone 3GS分辨率是320 x 480, 在文中示例中打开demo页，却不是以设置的小布局渲染页面。因为iPhone中使用的safari显示页面时将窗口宽度作为980px来显示。 这种情况下，可以利用<code>&lt;meta&gt;</code>标签在页面中指定safari在处理本页面时按照多少像素的窗口宽度来进行:</p>
+
+<pre><code>&lt;meta name="viewport" content="width=600px"&gt;
+待测试: &lt;meta name="viewport" content="width=device-width"&gt;
+</code></pre>
+
+<h1>3. Media Queries的使用方法</h1>
+
+<pre><code>@media 设备类型 and (设备特性) { 样式代码 }
+</code></pre>
+
+<ul>
+<li>在Media Queries中可以指定的值与该值所代表的设备类型</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"> 可以指定的值        </th>
+<th align="left"> 设备类型                    </th>
+<th>  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left"> all           </td>
+<td align="left"> 所有设备                    </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> screen        </td>
+<td align="left"> 电脑显示器                   </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> print         </td>
+<td align="left"> 打印用纸或打印预览视图             </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> handheld      </td>
+<td align="left"> 便携设备                    </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> tv            </td>
+<td align="left"> 电视机类型的设备                </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> speech        </td>
+<td align="left"> 语音和音频合成器                </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> braille       </td>
+<td align="left"> 盲人用点字法触觉回馈设备            </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> embossed      </td>
+<td align="left"> 盲文打印机                   </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> projection    </td>
+<td align="left"> 各种投影设备                  </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> tty           </td>
+<td align="left"> 使用固定密度字母栅格的媒介， 如电传打字机和终端</td>
+<td>  </td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>Css中的设备特性共13种</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"> 特性                  </th>
+<th align="left"> 可指定的值                 </th>
+<th align="center"> 是否允许min/max前缀  </th>
+<th align="left"> 特性说明                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">width                </td>
+<td align="left"> 带单位长度值:如400px         </td>
+<td align="center"> 是              </td>
+<td align="left"> 浏览器窗口的宽度                             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">height               </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 浏览器窗口的高度                             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">device-width         </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 设备屏幕分辨率的宽度值                          |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">device-height        </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 设备屏幕分辨率的高度值                          |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">orientation          </td>
+<td align="left"> portrait或landscape    </td>
+<td align="center"> 否              </td>
+<td align="left"> 浏览器窗口方向，高度大于宽度时为portrait             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">aspect-radio         </td>
+<td align="left"> 比例值:如16/9             </td>
+<td align="center">                </td>
+<td align="left"> 浏览器窗口纵横比，宽度/高度                       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">device-aspect-radio  </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 屏幕分辨率纵横比，宽度/高度                       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">color                </td>
+<td align="left"> 整数值                   </td>
+<td align="center">                </td>
+<td align="left"> 设备使用多少位的颜色值，如果不是彩色设备，该值为0            |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">color-index          </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 色彩表中的色彩数                             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">monochrome           </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 单色帧缓冲器中每像素的字节数                       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">resolution           </td>
+<td align="left"> 分辨率值，如300dpi          </td>
+<td align="center">                </td>
+<td align="left"> 设备分辨率                                |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">scan                 </td>
+<td align="left"> progressive或interlace </td>
+<td align="center"> 否              </td>
+<td align="left"> 电视类型扫描方式，progressive逐行扫描             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">grid                 </td>
+<td align="left"> 0或1                   </td>
+<td align="center"> 否              </td>
+<td align="left"> 设备是基于樱格还是基于位图，基于栅格时为1                |</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/05/jquery_plugin_supersized/">Supersized,漂亮的全背景jQuery相册展示插件</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-05T00:00:00+08:00" pubdate data-updated="true">Jul 5<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.buildinternet.com/project/supersized/index.html">Supersized</a>非常漂亮的全背景相册展示插件，推荐使用。</p>
+
+<p><img src="/static/images/posts/supersized-screen.jpg" alt="效果截图" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/05/easy_script_loading_with_yepnope_js/">使用Yepnope.js轻松加载脚本</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-05T00:00:00+08:00" pubdate data-updated="true">Jul 5<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>使用Yepnope.js轻松加载脚本</p>
+
+<hr />
+
+<p><code>2011.2月底由[Alex Sexton](http://alexsexton.com/)和[Ralph Holzmann](http://twitter.com/ralphholzmann)官方发布。
+Yepnope.js资源加载器具有异步加载，按条件加载和同时支持javascript脚本及Css样式表等特性， 以此更好的解决依赖， 及根据条件判断加载不同资源。</code></p>
+
+<p>这个小巧的资源加载管理器，压缩后仅有1.6k, 现在已经内置了Modernizer，。。。</p>
+
+<p>未完，待续</p>
+
+<p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/easy-script-loading-with-yepnope-js/">原文链接</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -77,6 +954,26 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/05/Manage_with_vim_addon_manager/">使用vim-addon-manager管理vim插件</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/25/Apps_using_on_Mac_for_system/">Mac下我使用的一些软件列表(系统增强篇)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/30/Install_NodeJS_on_Mac_Lion/">在Mac Lion下安装Node.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/09/TextMate_knowlage_2/">TextMate随记(二)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/29/TextMate_knowlage_1/">TextMate随记一</a>
+      </li>
     
   </ul>
 </section>
