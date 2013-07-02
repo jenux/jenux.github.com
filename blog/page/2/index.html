@@ -1,81 +1,318 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>JenUX Pages</title>
-  <meta name="author" content="Jenux">
+	<meta charset="utf-8">
+	<title>JenUX</title>
+	<meta name="author" content="Jenux">
 
-  
-  <meta name="description" content="GitHub for Mac最近刚刚推出。现在你可以更加方便地在github.com上克隆版本库，查看历史日志， 提交修改， 建立分支及分享代码。 同步按钮(sync button)把你的修改推送到GitHub，并且同时把其他人的修改更新到本地。 你可以拖动目录到软件来建立一个版本库。 &hellip;">
-  
+	
+	<meta name="description" content="本篇是《HTML5与CSS3权威指南》(HTML5 and CSS3: The Definitive Guide)一书第21章的笔记。 1. 根据浏览器的窗口大小来选择使用不同的样式 CSS中，与媒体相关的样式定义从CSS2.1开始。 CSS2.1中定义了各种媒体类型，如显示器，便携设备， &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://jenux.github.io/blog/page/2">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="JenUX Pages" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
+	<link href="/atom.xml" rel="alternate" title="JenUX" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">JenUX Pages</a></h1>
-  
-    <h2>Pages of JenUX</h2>
-  
-</hgroup>
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">JenUX</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:jenux.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		<a class="google" href="https://plus.google.com/iJenux@gmail.com?rel=author" title="Google+">Google+</a>
+		
+		
+		<a class="twitter" href="http://twitter.com/iJenux" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/jenux" title="GitHub">GitHub</a>
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:jenux.github.io">
+	</form>
+</nav>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
+	
+		
+	
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/07/24/css3_media_queries/">
+		
+			Css3之Media Queries相关样式</a>
+	</h2>
+	<div class="entry-content">
+		<p>本篇是《HTML5与CSS3权威指南》(HTML5 and CSS3: The Definitive Guide)一书第21章的笔记。</p>
+
+<hr />
+
+<h1>1. 根据浏览器的窗口大小来选择使用不同的样式</h1>
+
+<ul>
+<li>CSS中，与媒体相关的样式定义从CSS2.1开始。 CSS2.1中定义了各种媒体类型，如显示器，便携设备，电视机等。</li>
+<li>CSS3中，加入Media Queries模块，允许添加媒体查询(media query)表达式,用以指定媒体类型，然后根据媒体类型来选择应该使用的样式。<br/>
+即，不改变内容的情况下，在样式中选择一种页面的布局以精确适应不同设备。</li>
 </ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:jenux.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
+
+
+<h1>2. 在iPhone中的显示</h1>
+
+<p>iPhone 3GS分辨率是320 x 480, 在文中示例中打开demo页，却不是以设置的小布局渲染页面。因为iPhone中使用的safari显示页面时将窗口宽度作为980px来显示。 这种情况下，可以利用<code>&lt;meta&gt;</code>标签在页面中指定safari在处理本页面时按照多少像素的窗口宽度来进行:</p>
+
+<pre><code>&lt;meta name="viewport" content="width=600px"&gt;
+待测试: &lt;meta name="viewport" content="width=device-width"&gt;
+</code></pre>
+
+<h1>3. Media Queries的使用方法</h1>
+
+<pre><code>@media 设备类型 and (设备特性) { 样式代码 }
+</code></pre>
+
+<ul>
+<li>在Media Queries中可以指定的值与该值所代表的设备类型</li>
 </ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/04/share_your_code_width_github_for_mac/">GitHub for Mac推出了</a></h1>
-    
-    
-      <p class="meta">
-        
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"> 可以指定的值        </th>
+<th align="left"> 设备类型                    </th>
+<th>  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left"> all           </td>
+<td align="left"> 所有设备                    </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> screen        </td>
+<td align="left"> 电脑显示器                   </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> print         </td>
+<td align="left"> 打印用纸或打印预览视图             </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> handheld      </td>
+<td align="left"> 便携设备                    </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> tv            </td>
+<td align="left"> 电视机类型的设备                </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> speech        </td>
+<td align="left"> 语音和音频合成器                </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> braille       </td>
+<td align="left"> 盲人用点字法触觉回馈设备            </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> embossed      </td>
+<td align="left"> 盲文打印机                   </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> projection    </td>
+<td align="left"> 各种投影设备                  </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> tty           </td>
+<td align="left"> 使用固定密度字母栅格的媒介， 如电传打字机和终端</td>
+<td>  </td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>Css中的设备特性共13种</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"> 特性                  </th>
+<th align="left"> 可指定的值                 </th>
+<th align="center"> 是否允许min/max前缀  </th>
+<th align="left"> 特性说明                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">width                </td>
+<td align="left"> 带单位长度值:如400px         </td>
+<td align="center"> 是              </td>
+<td align="left"> 浏览器窗口的宽度                             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">height               </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 浏览器窗口的高度                             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">device-width         </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 设备屏幕分辨率的宽度值                          |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">device-height        </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 设备屏幕分辨率的高度值                          |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">orientation          </td>
+<td align="left"> portrait或landscape    </td>
+<td align="center"> 否              </td>
+<td align="left"> 浏览器窗口方向，高度大于宽度时为portrait             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">aspect-radio         </td>
+<td align="left"> 比例值:如16/9             </td>
+<td align="center">                </td>
+<td align="left"> 浏览器窗口纵横比，宽度/高度                       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">device-aspect-radio  </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 屏幕分辨率纵横比，宽度/高度                       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">color                </td>
+<td align="left"> 整数值                   </td>
+<td align="center">                </td>
+<td align="left"> 设备使用多少位的颜色值，如果不是彩色设备，该值为0            |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">color-index          </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 色彩表中的色彩数                             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">monochrome           </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 单色帧缓冲器中每像素的字节数                       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">resolution           </td>
+<td align="left"> 分辨率值，如300dpi          </td>
+<td align="center">                </td>
+<td align="left"> 设备分辨率                                |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">scan                 </td>
+<td align="left"> progressive或interlace </td>
+<td align="center"> 否              </td>
+<td align="left"> 电视类型扫描方式，progressive逐行扫描             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">grid                 </td>
+<td align="left"> 0或1                   </td>
+<td align="center"> 否              </td>
+<td align="left"> 设备是基于樱格还是基于位图，基于栅格时为1                |</td>
+</tr>
+</tbody>
+</table>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -87,14 +324,111 @@
   
 
 
-<time datetime="2011-07-04T00:00:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
+<time datetime="2011-07-24T00:00:00+08:00" pubdate data-updated="true">Jul 24<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+</div>
+	
+</div>
+</article>
 
 
-  <div class="entry-content"><p><a href="http://mac.github.com">GitHub for Mac</a>最近刚刚推出。现在你可以更加方便地在github.com上克隆版本库，查看历史日志， 提交修改， 建立分支及分享代码。 同步按钮(sync button)把你的修改推送到GitHub，并且同时把其他人的修改更新到本地。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/07/05/jquery_plugin_supersized/">
+		
+			Supersized,漂亮的全背景jQuery相册展示插件</a>
+	</h2>
+	<div class="entry-content">
+		<p><a href="http://www.buildinternet.com/project/supersized/index.html">Supersized</a>非常漂亮的全背景相册展示插件，推荐使用。</p>
+
+<p><img src="/static/images/posts/supersized-screen.jpg" alt="效果截图" /></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-05T00:00:00+08:00" pubdate data-updated="true">Jul 5<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/07/05/easy_script_loading_with_yepnope_js/">
+		
+			使用Yepnope.js轻松加载脚本</a>
+	</h2>
+	<div class="entry-content">
+		<p>使用Yepnope.js轻松加载脚本</p>
+
+<hr />
+
+<p><code>2011.2月底由[Alex Sexton](http://alexsexton.com/)和[Ralph Holzmann](http://twitter.com/ralphholzmann)官方发布。
+Yepnope.js资源加载器具有异步加载，按条件加载和同时支持javascript脚本及Css样式表等特性， 以此更好的解决依赖， 及根据条件判断加载不同资源。</code></p>
+
+<p>这个小巧的资源加载管理器，压缩后仅有1.6k, 现在已经内置了Modernizer，。。。</p>
+
+<p>未完，待续</p>
+
+<p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/easy-script-loading-with-yepnope-js/">原文链接</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-05T00:00:00+08:00" pubdate data-updated="true">Jul 5<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/07/04/share_your_code_width_github_for_mac/">
+		
+			GitHub for Mac推出了</a>
+	</h2>
+	<div class="entry-content">
+		<p><a href="http://mac.github.com">GitHub for Mac</a>最近刚刚推出。现在你可以更加方便地在github.com上克隆版本库，查看历史日志， 提交修改， 建立分支及分享代码。 同步按钮(sync button)把你的修改推送到GitHub，并且同时把其他人的修改更新到本地。</p>
 
 <p>你可以拖动目录到软件来建立一个版本库。 当你在GitHub for Mac里创建了一个版本库，它将自动match them up with any organizations you belong to.</p>
 
@@ -104,42 +438,43 @@
 
 <p><a href="http://mac.github.com">官方主页</a> -
 <a href="http://www.webappers.com/2011/06/29/share-your-code-with-github-for-mac/">原文链接</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-04T00:00:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2011</time></div>
+	<div class="tags">
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/13/pro_html5_programming_cavans_api/">HTML5高级编程之Canvas API</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-13T00:00:00+08:00" pubdate data-updated="true">May 13<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>Canvas是什么</h1>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/05/13/pro_html5_programming_cavans_api/">
+		
+			HTML5高级编程之Canvas API</a>
+	</h2>
+	<div class="entry-content">
+		<h1>Canvas是什么</h1>
 
 <ol>
 <li><p>基本元素
@@ -170,42 +505,43 @@
  <code>&lt;canvas width='200' height='200' style=''&gt;&lt;/canvas&gt;</code></p></li>
 </ol>
 
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-13T00:00:00+08:00" pubdate data-updated="true">May 13<span>th</span>, 2011</time></div>
+	<div class="tags">
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/12/pro_html5_programming_intro/">HTML5高级编程之概述</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>新的认识</h1>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/05/12/pro_html5_programming_intro/">
+		
+			HTML5高级编程之概述</a>
+	</h2>
+	<div class="entry-content">
+		<h1>新的认识</h1>
 
 <p>HTML5基于各种各样的理念进行设计，这些设计理念体现了对可能性和可行性的新认识。<br/>
 - 兼容性
@@ -318,80 +654,82 @@ querySelectorAll()  根据规则，返回所有匹配的元素      <code>queryS
 提供非常先进的HTML5和CSS3检测功能</p></li>
 </ul>
 
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2011</time></div>
+	<div class="tags">
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/01/demo_of_image_circle_scroll/">一个Js Demo</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-01T00:00:00+08:00" pubdate data-updated="true">May 1<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Image circle scroll demo</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/05/01/demo_of_image_circle_scroll/">
+		
+			一个Js Demo</a>
+	</h2>
+	<div class="entry-content">
+		<p>Image circle scroll demo</p>
 
 <p><a href="/demo/js/img_circle_roll/">Demo</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-01T00:00:00+08:00" pubdate data-updated="true">May 1<span>st</span>, 2011</time></div>
+	<div class="tags">
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/25/Hacker_means/">理解什么是&#8217;黑客&#8217;</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-25T00:00:00+08:00" pubdate data-updated="true">Apr 25<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>以下内容摘自《<a href="http://book.douban.com/subject/6021440/">黑客与画家</a>》之译者序</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/04/25/Hacker_means/">
+		
+			理解什么是&#8217;黑客&#8217;</a>
+	</h2>
+	<div class="entry-content">
+		<p>以下内容摘自《<a href="http://book.douban.com/subject/6021440/">黑客与画家</a>》之译者序</p>
 
 <hr />
 
@@ -474,42 +812,43 @@ Information deserves to be free.<br/>
 
 <p>Trust your technolust!<br/>
 相信你的“技术贪欲”</p></blockquote>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-25T00:00:00+08:00" pubdate data-updated="true">Apr 25<span>th</span>, 2011</time></div>
+	<div class="tags">
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/18/contenteditable_buglist/">Contenteditable开发的一些问题</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-18T00:00:00+08:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近用contenteditable实现页面实时编辑的一个交互组件，发现一些问题不是很好处理。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/04/18/contenteditable_buglist/">
+		
+			Contenteditable开发的一些问题</a>
+	</h2>
+	<div class="entry-content">
+		<p>最近用contenteditable实现页面实时编辑的一个交互组件，发现一些问题不是很好处理。</p>
 
 <h2>在不同浏览器下回车生成的标签是不同的，如:</h2>
 
@@ -549,42 +888,43 @@ Information deserves to be free.<br/>
 <li>设置contenteditable=&#8217;true&#8217;的元素，在粘贴从外部拷贝的内容时，会连带原有的格式（如样式）等。</li>
 </ul>
 
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-18T00:00:00+08:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time></div>
+	<div class="tags">
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/16/Git_basic_knowledge/">Git初学者基础知识</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-16T00:00:00+08:00" pubdate data-updated="true">Apr 16<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>《<a href="http://roclinux.cn/?p=343">看日记学GIT</a>》是Git入门不错的系列文章，最近开始在<a href="http://github.com">GitHub</a>上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获。<br/>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/04/16/Git_basic_knowledge/">
+		
+			Git初学者基础知识</a>
+	</h2>
+	<div class="entry-content">
+		<p>《<a href="http://roclinux.cn/?p=343">看日记学GIT</a>》是Git入门不错的系列文章，最近开始在<a href="http://github.com">GitHub</a>上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获。<br/>
 其第9章是对前8章的复习总结，基本上涵盖了入门者使用Git的流程和基本命令，在这里摘录一下部分内容，如果你对Git感兴趣，推荐阅读本系列文章。<br/>
 点击<a href="http://dl.dbank.com/c0n8xljq3a">这里</a>是我收藏的一份pdf版本</p>
 
@@ -656,23 +996,14 @@ git branch -D experimental
 </code></pre>
 
 <h1>9 Git协作</h1>
-</div>
-  
-  
+
+		
+		
+	</div>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/12/welcome_to_markdown/">Markdown的一些基础知识</a></h1>
-    
-    
-      <p class="meta">
-        
+<div class="meta">
+	<div class="date">
 
 
 
@@ -684,209 +1015,36 @@ git branch -D experimental
   
 
 
-<time datetime="2011-04-12T00:00:00+08:00" pubdate data-updated="true">Apr 12<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><hr />
-
-<p>Github真是个很好的开源产品，正在不断学习中。<br/>
-上周末尝试Github的pages服务，很不错，下载了一些jekyll驱动的blog源码学习，结识了markdown这种轻量级的标记语言.</p>
-
-<p>其实从接触vimviki以来，我对这种轻量级的标记语言就很有好感，可能是因为这种方式酷似编写代码吧。<br/>
-粗看了一下Markdown的一些语法，记录如下:</p>
-
-<hr />
-
-<h1>常用格式</h1>
-
-<ul>
-<li>空一行（两个回车）分段</li>
-<li>行末加两个或多个空格才是真正的换行</li>
-<li>插入链接 <code>[链接文字](url)</code></li>
-<li>插入图片：同链接，在前面加叹号<code>![alt文字](url)</code></li>
-</ul>
-
-
-<h1>内嵌HTML</h1>
-
-<ul>
-<li>块状标签，像p,div之类，需要在前后各空一行(两个回车)，且开始和结束标签的一行前面不能用空格或Tab缩进</li>
-<li>行内元素， 如a,span,img可以在任何地方使用</li>
-</ul>
-
-
-<h1>标题</h1>
-
-<p>用1－6个#号开始一行表示这一行是标题，如:</p>
-
-<pre>
-    # 一级标题
-    ## 二级标题
-    ### 三级标题
-</pre>
-
-
-<h1>引用</h1>
-
-<p>用右尖括号(>)表示，可以嵌套。可以包含其他Markdown元素， 如：</p>
-
-<pre>
-    >##这是标题  
-    >  
-    > 1. 这是Markdown标记语言  
-    > 2. 现在正在学习**blockquote**  
-</pre>
-
-
-<h1>列表</h1>
-
-<p>HTML里分为有序列表和无序列表 <br/>
-在Markdown中用星号、加号、减号开始一行表示无序列表<br/>
-用数字开始一行表示有序列表，如:</p>
-
-<pre>
-    * Google
-    * Baidu
-    * Yahoo
-    1. HTML
-    2. Javascript
-    3. Css
-</pre>
-
-
-<h1>代码及代码块</h1>
-
-<ul>
-<li>插入一行代码，用`包含</li>
-<li>插入大段代码， 在代码前每一行前加四个空格</li>
-</ul>
-
-
-<h1>横线</h1>
-
-<p>三个或以上星号，减号或下划线单独放在一行即可生成一条横线，如:</p>
-
-<pre>
-    ******
-    * * *
-    ---
-    -------------
-</pre>
-
-
-<h1>强调</h1>
-
-<p>用星号或下划线来实现，两边各放一个会生成em标签，放两个会生成strong标签，如:</p>
-
-<pre>
-    *单星号*
-    _单下划线_  
-    **双星号*  
-    __双下划线__
-</pre>
-
-
-<p>会生成：</p>
-
-<pre> 
-    <em>单星号</em>  
-    <em>单下划线</em>  
-    <strong>双星号</strong>  
-    <strong>双下划线</strong>  
-</pre>
-
-
-<hr />
-
-<p>先到这里，上边写的还没测试过，这是我用Markdown记下的第一篇笔记。<br/>
-有错误的地方我会回来修正。</p>
-
-<h1>Tips:</h1>
-
-<ul>
-<li>每行末需要打空格两个以上才是真正换行，有点累</li>
-</ul>
+<time datetime="2011-04-16T00:00:00+08:00" pubdate data-updated="true">Apr 16<span>th</span>, 2011</time></div>
+	<div class="tags">
 
 </div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-    <a class="next" href="/">Newer &rarr;</a>
-    
-  </div>
+	
 </div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/03/05/Manage_with_vim_addon_manager/">使用vim-addon-manager管理vim插件</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/25/Apps_using_on_Mac_for_system/">Mac下我使用的一些软件列表(系统增强篇)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/30/Install_NodeJS_on_Mac_Lion/">在Mac Lion下安装Node.js</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/08/09/TextMate_knowlage_2/">TextMate随记(二)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/07/29/TextMate_knowlage_1/">TextMate随记一</a>
-      </li>
-    
-  </ul>
-</section>
+</article>
 
+<nav id="pagenavi">
+    
+        <a href="/" class="prev">Prev</a>
+    
+    
+        <a href="/blog/page/3/" class="next">Next</a>
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Jenux -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    Jenux
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
 
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

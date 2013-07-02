@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[JenUX Pages]]></title>
+  <title><![CDATA[JenUX]]></title>
   <link href="http://jenux.github.io/atom.xml" rel="self"/>
   <link href="http://jenux.github.io/"/>
-  <updated>2013-04-28T15:45:59+08:00</updated>
+  <updated>2013-07-02T15:07:49+08:00</updated>
   <id>http://jenux.github.io/</id>
   <author>
     <name><![CDATA[Jenux]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Yeoman: modern workflows for modern webapps]]></title>
+    <link href="http://jenux.github.io/blog/2013/07/02/yeoman-modern-workflows-for-modern-webapps/"/>
+    <updated>2013-07-02T14:44:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2013/07/02/yeoman-modern-workflows-for-modern-webapps</id>
+    <content type="html"><![CDATA[<h1>What is Yeoman</h1>
+
+<h1>Why Yeoman</h1>
+
+<h1>Resource</h1>
+
+<ul>
+<li><a href="http://yeoman.io">Site</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Guard-Best-Friend-For-Web-Developer]]></title>
+    <link href="http://jenux.github.io/blog/2013/07/02/guard-best-friend-for-web-developer/"/>
+    <updated>2013-07-02T14:43:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2013/07/02/guard-best-friend-for-web-developer</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Iconmoon App]]></title>
+    <link href="http://jenux.github.io/blog/2013/05/08/iconmoon-app/"/>
+    <updated>2013-05-08T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2013/05/08/iconmoon-app</id>
+    <content type="html"><![CDATA[<p>今天学习<a href="http://tympanus.net/codrops/">Codrops</a>上的一篇教程<a href="http://tympanus.net/codrops/2013/04/25/simple-youtube-menu-effect/">Simple Youtube Menu Effect</a>, 提到IconMoon来解决图标问题。</p>
+
+<p>IconMoon是什么? IconMoon是一个矢量图标素材分享网, IconMoon是一个强悍的Web字体图标制作工具。
+打开<a href="http://icomoon.io/">IconMoon</a>主页, 可见提供IcoMoon App, Premium Icons, Font CDN三个产品模块，使用IconMoon App, 可以浏览3800+免费的矢量图标, 通过个性化设置创建自定义的图标(字体), 并且支持上传自己的矢量文件来订制字体。</p>
+
+<p>下载保存到本地的图片版是经过CSS Sprites技术处理的png/svg格式; 字体版包含了多种格式如(eot, svg, ttf, woff)。</p>
+
+<p>你还可以下载IconMoon的<a href="https://chrome.google.com/webstore/detail/icomoon/kppingdhhalimbaehfmhldppemnmlcjd?utm_source=chrome-ntp-icon">Chrome app</a>离线使用IconMoon的服务。下面让我们来简单看一下怎么来使用IconMoon App.</p>
+
+<p>todo: //</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[使用vim-addon-manager管理vim插件]]></title>
@@ -1022,134 +1067,6 @@ git branch -D experimental
 </code></pre>
 
 <h1>9 Git协作</h1>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Markdown的一些基础知识]]></title>
-    <link href="http://jenux.github.io/blog/2011/04/12/welcome_to_markdown/"/>
-    <updated>2011-04-12T00:00:00+08:00</updated>
-    <id>http://jenux.github.io/blog/2011/04/12/welcome_to_markdown</id>
-    <content type="html"><![CDATA[<hr />
-
-<p>Github真是个很好的开源产品，正在不断学习中。<br/>
-上周末尝试Github的pages服务，很不错，下载了一些jekyll驱动的blog源码学习，结识了markdown这种轻量级的标记语言.</p>
-
-<p>其实从接触vimviki以来，我对这种轻量级的标记语言就很有好感，可能是因为这种方式酷似编写代码吧。<br/>
-粗看了一下Markdown的一些语法，记录如下:</p>
-
-<hr />
-
-<h1>常用格式</h1>
-
-<ul>
-<li>空一行（两个回车）分段</li>
-<li>行末加两个或多个空格才是真正的换行</li>
-<li>插入链接 <code>[链接文字](url)</code></li>
-<li>插入图片：同链接，在前面加叹号<code>![alt文字](url)</code></li>
-</ul>
-
-
-<h1>内嵌HTML</h1>
-
-<ul>
-<li>块状标签，像p,div之类，需要在前后各空一行(两个回车)，且开始和结束标签的一行前面不能用空格或Tab缩进</li>
-<li>行内元素， 如a,span,img可以在任何地方使用</li>
-</ul>
-
-
-<h1>标题</h1>
-
-<p>用1－6个#号开始一行表示这一行是标题，如:</p>
-
-<pre>
-    # 一级标题
-    ## 二级标题
-    ### 三级标题
-</pre>
-
-
-<h1>引用</h1>
-
-<p>用右尖括号(>)表示，可以嵌套。可以包含其他Markdown元素， 如：</p>
-
-<pre>
-    >##这是标题  
-    >  
-    > 1. 这是Markdown标记语言  
-    > 2. 现在正在学习**blockquote**  
-</pre>
-
-
-<h1>列表</h1>
-
-<p>HTML里分为有序列表和无序列表 <br/>
-在Markdown中用星号、加号、减号开始一行表示无序列表<br/>
-用数字开始一行表示有序列表，如:</p>
-
-<pre>
-    * Google
-    * Baidu
-    * Yahoo
-    1. HTML
-    2. Javascript
-    3. Css
-</pre>
-
-
-<h1>代码及代码块</h1>
-
-<ul>
-<li>插入一行代码，用`包含</li>
-<li>插入大段代码， 在代码前每一行前加四个空格</li>
-</ul>
-
-
-<h1>横线</h1>
-
-<p>三个或以上星号，减号或下划线单独放在一行即可生成一条横线，如:</p>
-
-<pre>
-    ******
-    * * *
-    ---
-    -------------
-</pre>
-
-
-<h1>强调</h1>
-
-<p>用星号或下划线来实现，两边各放一个会生成em标签，放两个会生成strong标签，如:</p>
-
-<pre>
-    *单星号*
-    _单下划线_  
-    **双星号*  
-    __双下划线__
-</pre>
-
-
-<p>会生成：</p>
-
-<pre> 
-    <em>单星号</em>  
-    <em>单下划线</em>  
-    <strong>双星号</strong>  
-    <strong>双下划线</strong>  
-</pre>
-
-
-<hr />
-
-<p>先到这里，上边写的还没测试过，这是我用Markdown记下的第一篇笔记。<br/>
-有错误的地方我会回来修正。</p>
-
-<h1>Tips:</h1>
-
-<ul>
-<li>每行末需要打空格两个以上才是真正换行，有点累</li>
-</ul>
-
 ]]></content>
   </entry>
   
