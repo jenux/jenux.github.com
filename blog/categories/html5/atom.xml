@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Html5 | Jenux]]></title>
+  <link href="http://jenux.github.io/blog/categories/html5/atom.xml" rel="self"/>
+  <link href="http://jenux.github.io/"/>
+  <updated>2013-07-03T05:16:35+08:00</updated>
+  <id>http://jenux.github.io/</id>
+  <author>
+    <name><![CDATA[Jenux]]></name>
+    <email><![CDATA[ijenux@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HTML5高级编程之Canvas API]]></title>
+    <link href="http://jenux.github.io/blog/2011/05/13/pro_html5_programming_cavans_api/"/>
+    <updated>2011-05-13T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/05/13/pro_html5_programming_cavans_api</id>
+    <content type="html"><![CDATA[<h1>Canvas是什么</h1>
+
+<ol>
+<li><p>基本元素
+<code>&lt;canvas&gt;&lt;/canvas&gt;</code></p></li>
+<li><p>canvas坐标
+从左上角开始，x轴沿水平方向向右延伸， y轴沿垂直方向向下延伸， 左上角坐标为x=0,y=0，称为原点</p></li>
+<li><p>替代内容
+<code>&lt;canvas&gt;Update your browser to enjoy canvas!&lt;/canvas&gt;</code></p></li>
+</ol>
+
+
+<h1>HTML5 Canvas API</h1>
+
+<ol>
+<li><p>检测浏览器支持情况
+ try{
+     document.createElement(&lsquo;canvas&rsquo;).getContext(&lsquo;2d&rsquo;);
+ }catch(e){
+     //
+ }</p></li>
+<li><p>页历中加入canvas
+ <code>&lt;canvas width='200' height='200' style=''&gt;&lt;/canvas&gt;</code></p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HTML5高级编程之概述]]></title>
+    <link href="http://jenux.github.io/blog/2011/05/12/pro_html5_programming_intro/"/>
+    <updated>2011-05-12T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/05/12/pro_html5_programming_intro</id>
+    <content type="html"><![CDATA[<h1>新的认识</h1>
+
+<p>HTML5基于各种各样的理念进行设计，这些设计理念体现了对可能性和可行性的新认识。<br/>
+&ndash; 兼容性
+&ndash; 实用性
+&ndash; 互通性
+&ndash; 通用访问性</p>
+
+<!-- more -->
+
+
+<ol>
+<li><p>兼容性
+HTML5不是颠覆性的革新，其核心理念是保持一切新特性平滑过渡。</p></li>
+<li><p>效率和用户优先
+在遇到无法解决的冲突时，规范会把用户放在第一位， 其次是页面作者，再次是实现者(或浏览器),接着是规范制定者，最后才考虑理论的纯粹性。<br/>
+下面几种代码写法在HTML5中都能被识别:<br/>
+ id=&lsquo;prohtml5'<br/>
+ id=prohtml5<br/>
+ id=&ldquo;prohtml5&rdquo;</p></li>
+<li><p>化繁为简
+HTML5要的就是简单，避免不必要的复杂性，口号是“简单至上，尽可能简化”，有以下改进：</p></li>
+<li>以浏览器原生能力替代复杂的javascript代码</li>
+<li>新的简化的DOCTYPE</li>
+<li>新的简化的字符集声明</li>
+<li><p>简单而强大的HTML5 API</p></li>
+<li><p>通用访问</p></li>
+<li>可访问性<br/>
+出于对残障用户的考虑，HTML5与WAI(Web Accessibility Initiative,Web可访问性倡议)和ARIA(Accessible Rich Internet Applications,可访问的富Internet应用)做到了紧密结合，WAI-ARIA中以屏幕阅读器为基础元素已经被添加到HTML中。</li>
+<li>媒体中立
+如果可能的话，HTML5的功能在所有不同的设备和平台上应该都能正常运行。</li>
+<li>支持所有语种
+如，新的<code>&lt;ruby&gt;</code>元素支持在东亚页面排版中会用到的Ruby注释</li>
+</ol>
+
+
+<h1>无插件范式</h1>
+
+<h1>HTML5新功能</h1>
+
+<ol>
+<li><p>新的DOCTYPE和字符集
+<code>&lt;!DOCTYPE html&gt;</code><br/>
+<code>&lt;meta charset='utf-8'&gt;</code></p></li>
+<li><p>新元素和旧元素</p></li>
+</ol>
+
+
+<hr />
+
+<p>内容类型        描述</p>
+
+<hr />
+
+<p>内嵌          向文档中添加其他类型的内容，如audio, video, canvas和iframe等<br/>
+流           在文档和应用的body中使用的元素，如form, h1和small等<br/>
+标题          段落标题，如h1, h2和hgroup等<br/>
+交互          与用户交互的内容，如音频和视频的控件，button和textarea等<br/>
+元数据         通常出现在页面head中，设置页面其他部分的表现和行为，如script, style和title等<br/>
+短语          文本和文本票房，如mark, kbd, sub和sup等<br/>
+片断          用于定义页面片断的元素，如article, aside和title等</p>
+
+<hr />
+
+<ol>
+<li>语义化标记
+HTML5中新的片断类元素</li>
+</ol>
+
+
+<hr />
+
+<p>元素名         描述</p>
+
+<hr />
+
+<p>header      标记头部区域内容<br/>
+footer      标记脚部区域内容<br/>
+section     web页面中的一块区域<br/>
+article     独立的文章内容<br/>
+aside       相关内容或引文<br/>
+nav         导航类辅助内容</p>
+
+<hr />
+
+<ol>
+<li>使用Selectors API简化选取操作</li>
+</ol>
+
+
+<p>新QuerySelector方法</p>
+
+<hr />
+
+<p>函数                  描述                  示例                                          <br/>
+querySelector()     根据规则，返回找到的第一个匹配元素   <code>querySelector("input.error")</code>
+querySelectorAll()  根据规则，返回所有匹配的元素      <code>querySelectorAll('#results td')</code></p>
+
+<hr />
+
+<p>可为Selector API同时批定多个选择规则，如:<br/>
+<code>var x = document.querySelector('.highlight', '.lowClass');</code><br/>
+对querySelector来说，选择的是满足规则中任意条件的第一个元素，<br/>
+对于querySelectorAll来说，选择的是只要满足规则中任何一个条件的元素</p>
+
+<h1>资源</h1>
+
+<ul>
+<li><p><a href="http://www.caniuse.com">www.caniuse.com</a>
+按浏览器的版本提供了详尽的html5的功能支持情况</p></li>
+<li><p><a href="http://www.html5tst.com">html5test.com</a>
+用浏览器访问该网站，会直接显示用户浏览器对HTML5规范支持情况</p></li>
+<li><p><strong><a href="http://www.modernizr.com">Modernizr</a></strong>
+提供非常先进的HTML5和CSS3检测功能</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

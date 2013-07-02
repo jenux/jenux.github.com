@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: jQuery | Jenux]]></title>
+  <link href="http://jenux.github.io/blog/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://jenux.github.io/"/>
+  <updated>2013-07-03T05:16:35+08:00</updated>
+  <id>http://jenux.github.io/</id>
+  <author>
+    <name><![CDATA[Jenux]]></name>
+    <email><![CDATA[ijenux@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Supersized,漂亮的全背景jQuery相册展示插件]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/05/jquery_plugin_supersized/"/>
+    <updated>2011-07-05T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/05/jquery_plugin_supersized</id>
+    <content type="html"><![CDATA[<p><a href="http://www.buildinternet.com/project/supersized/index.html">Supersized</a>非常漂亮的全背景相册展示插件，推荐使用。</p>
+
+<p><img src="/static/images/posts/supersized-screen.jpg" alt="效果截图" /></p>
+]]></content>
+  </entry>
+  
+</feed>

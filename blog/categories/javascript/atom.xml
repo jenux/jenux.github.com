@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Javascript | Jenux]]></title>
+  <link href="http://jenux.github.io/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://jenux.github.io/"/>
+  <updated>2013-07-03T05:16:35+08:00</updated>
+  <id>http://jenux.github.io/</id>
+  <author>
+    <name><![CDATA[Jenux]]></name>
+    <email><![CDATA[ijenux@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[为任意项目甚至html静态页面增加代码高亮的插件]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/28/Google_code_prettify/"/>
+    <updated>2011-07-28T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/28/Google_code_prettify</id>
+    <content type="html"><![CDATA[<p>这个教程运用 <a href="http://code.google.com/p/google-code-prettify/">Google code prettify</a> 简单快捷地为任意项目，甚至是单纯的HTML静态页面添加代码高亮。</p>
+
+<p><embed src="http://www.youtube.com/v/_ggWarwhv9M?version=3&amp;hl=en_US&amp;hd=1" width="550" height="338" allowscriptaccess="never" allowfullscreen="true" wmode="transparent" type="application/x-shockwave-flash"></p>
+
+<!-- more -->
+
+
+<h1>第1步: 下载源码</h1>
+
+<p>下载源码: <a href="http://code.google.com/p/google-code-prettify/">Google code</a></p>
+
+<h1>第2步: 把src目录拷进你的项目</h1>
+
+<p>我习惯把src目录重命名为: highlighter</p>
+
+<h1>第3步: 在项目页面中引用文件</h1>
+
+<p>在你的页面中引用prettify.css和prettify.js</p>
+
+<pre><code>&lt;!Doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset='utf-8'&gt;
+        &lt;title&gt;Google code prettify demo&lt;/title&gt;
+        &lt;link rel="stylesheet" href="highlighter/prettify.css"&gt;
+        &lt;script src='highlighter/prettify.js'&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>代码高亮插件将对带有'prettyprint'样式的 pre|code标签起作用。</p>
+
+<pre><code>&lt;body&gt;
+    &lt;pre class='prettyprint'&gt;
+        (function(){
+           var jenux = 'Jenux'; 
+        });
+    &lt;/pre&gt;
+&lt;/body&gt;
+</code></pre>
+
+<h1>第4步: 调用 prettyPrint()方法</h1>
+
+<pre><code>&lt;body&gt;
+    &lt;pre class='prettyprint'&gt;
+        (function(){
+           var jenux = 'Jenux'; 
+        });
+    &lt;/pre&gt;    
+    &lt;script&gt;
+        prettyPrint();
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+<h1>第5步: 其他</h1>
+
+<p><em>可以增加或修改pre样式lang-js等以指定高亮语言。
+</em>在<a href="http://google-code-prettify.googlecode.com/svn/trunk/styles/index.html">这里</a>可以选择其他配色方案</p>
+
+<hr />
+
+<p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-how-to-add-syntax-highlighting-to-any-project/">原文链接</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[使用Yepnope.js轻松加载脚本]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/05/easy_script_loading_with_yepnope_js/"/>
+    <updated>2011-07-05T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/05/easy_script_loading_with_yepnope_js</id>
+    <content type="html"><![CDATA[<p>使用Yepnope.js轻松加载脚本</p>
+
+<hr />
+
+<p>2011.2月底由<a href="http://alexsexton.com/">Alex Sexton</a>和<a href="http://twitter.com/ralphholzmann">Ralph Holzmann</a>官方发布。
+Yepnope.js资源加载器具有异步加载，按条件加载和同时支持javascript脚本及Css样式表等特性， 以此更好的解决依赖， 及根据条件判断加载不同资源。</p>
+
+<p>这个小巧的资源加载管理器，压缩后仅有1.6k, 现在已经内置了Modernizer，。。。</p>
+
+<p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/easy-script-loading-with-yepnope-js/">原文链接</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Contenteditable开发的一些问题]]></title>
+    <link href="http://jenux.github.io/blog/2011/04/18/contenteditable_buglist/"/>
+    <updated>2011-04-18T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/04/18/contenteditable_buglist</id>
+    <content type="html"><![CDATA[<p>最近用contenteditable实现页面实时编辑的一个交互组件，发现一些问题不是很好处理。</p>
+
+<!-- more -->
+
+
+<h2>在不同浏览器下回车生成的标签是不同的，如:</h2>
+
+<pre><code>- 在Chrome下生成div,  
+- 在IE下生成p,  
+- 在Firefox下生成br  
+    IE下网上有很多方法可以截获回车事件，修改为br，  
+    Chrome下暂时我是在提交时手动替换生成的div标签来不完美处理的;  
+</code></pre>
+
+<br>  
+
+
+<h2>在Firefox和Opera下如果contenteditable元素是嵌套在li元素下的，会引发bug,表现如下:</h2>
+
+<pre><code>- 在Firefox下无法换行  
+- 在Opera下会生成li元素  
+    暂时还没有好的解决办法, 我只能修改原来ul&gt;li的结构，改成section&gt;.li  
+</code></pre>
+
+<br>
+
+
+<h2>在Firefox和Opera下contenteditable的元素无法绑定键盘事件，如</h2>
+
+<pre><code>- 我想绑定按下Esc键时触发取消编辑的方法  
+- 我想绑定按下ctrl+Enter时触发提交编辑的方法  
+- 等等  
+</code></pre>
+
+<br>  
+
+
+<h2>其他应该注意的一些问题是：</h2>
+
+<ul>
+<li>设置contenteditable=&lsquo;true'的元素，在粘贴从外部拷贝的内容时，会连带原有的格式（如样式）等。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

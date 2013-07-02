@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CSS3 | Jenux]]></title>
+  <link href="http://jenux.github.io/blog/categories/css3/atom.xml" rel="self"/>
+  <link href="http://jenux.github.io/"/>
+  <updated>2013-07-03T05:16:35+08:00</updated>
+  <id>http://jenux.github.io/</id>
+  <author>
+    <name><![CDATA[Jenux]]></name>
+    <email><![CDATA[ijenux@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Css3之Media Queries相关样式]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/24/css3_media_queries/"/>
+    <updated>2011-07-24T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/24/css3_media_queries</id>
+    <content type="html"><![CDATA[<p>本篇是《HTML5与CSS3权威指南》(HTML5 and CSS3: The Definitive Guide)一书第21章的笔记。</p>
+
+<!-- more -->
+
+
+<hr />
+
+<h1>1. 根据浏览器的窗口大小来选择使用不同的样式</h1>
+
+<ul>
+<li>CSS中，与媒体相关的样式定义从CSS2.1开始。 CSS2.1中定义了各种媒体类型，如显示器，便携设备，电视机等。</li>
+<li>CSS3中，加入Media Queries模块，允许添加媒体查询(media query)表达式,用以指定媒体类型，然后根据媒体类型来选择应该使用的样式。<br/>
+即，不改变内容的情况下，在样式中选择一种页面的布局以精确适应不同设备。</li>
+</ul>
+
+
+<h1>2. 在iPhone中的显示</h1>
+
+<p>iPhone 3GS分辨率是320 x 480, 在文中示例中打开demo页，却不是以设置的小布局渲染页面。因为iPhone中使用的safari显示页面时将窗口宽度作为980px来显示。 这种情况下，可以利用<code>&lt;meta&gt;</code>标签在页面中指定safari在处理本页面时按照多少像素的窗口宽度来进行:</p>
+
+<pre><code>&lt;meta name="viewport" content="width=600px"&gt;
+待测试: &lt;meta name="viewport" content="width=device-width"&gt;
+</code></pre>
+
+<h1>3. Media Queries的使用方法</h1>
+
+<pre><code>@media 设备类型 and (设备特性) { 样式代码 }
+</code></pre>
+
+<ul>
+<li>在Media Queries中可以指定的值与该值所代表的设备类型</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"> 可以指定的值        </th>
+<th align="left"> 设备类型                    </th>
+<th>  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left"> all           </td>
+<td align="left"> 所有设备                    </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> screen        </td>
+<td align="left"> 电脑显示器                   </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> print         </td>
+<td align="left"> 打印用纸或打印预览视图             </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> handheld      </td>
+<td align="left"> 便携设备                    </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> tv            </td>
+<td align="left"> 电视机类型的设备                </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> speech        </td>
+<td align="left"> 语音和音频合成器                </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> braille       </td>
+<td align="left"> 盲人用点字法触觉回馈设备            </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> embossed      </td>
+<td align="left"> 盲文打印机                   </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> projection    </td>
+<td align="left"> 各种投影设备                  </td>
+<td>  </td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> tty           </td>
+<td align="left"> 使用固定密度字母栅格的媒介， 如电传打字机和终端</td>
+<td>  </td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>Css中的设备特性共13种</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"> 特性                  </th>
+<th align="left"> 可指定的值                 </th>
+<th align="center"> 是否允许min/max前缀  </th>
+<th align="left"> 特性说明                                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">width                </td>
+<td align="left"> 带单位长度值:如400px         </td>
+<td align="center"> 是              </td>
+<td align="left"> 浏览器窗口的宽度                             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">height               </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 浏览器窗口的高度                             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">device-width         </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 设备屏幕分辨率的宽度值                          |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">device-height        </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 设备屏幕分辨率的高度值                          |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">orientation          </td>
+<td align="left"> portrait或landscape    </td>
+<td align="center"> 否              </td>
+<td align="left"> 浏览器窗口方向，高度大于宽度时为portrait             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">aspect-radio         </td>
+<td align="left"> 比例值:如16/9             </td>
+<td align="center">                </td>
+<td align="left"> 浏览器窗口纵横比，宽度/高度                       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">device-aspect-radio  </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 屏幕分辨率纵横比，宽度/高度                       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">color                </td>
+<td align="left"> 整数值                   </td>
+<td align="center">                </td>
+<td align="left"> 设备使用多少位的颜色值，如果不是彩色设备，该值为0            |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">color-index          </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 色彩表中的色彩数                             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">monochrome           </td>
+<td align="left"> 同上                    </td>
+<td align="center">                </td>
+<td align="left"> 单色帧缓冲器中每像素的字节数                       |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">resolution           </td>
+<td align="left"> 分辨率值，如300dpi          </td>
+<td align="center">                </td>
+<td align="left"> 设备分辨率                                |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">scan                 </td>
+<td align="left"> progressive或interlace </td>
+<td align="center"> 否              </td>
+<td align="left"> 电视类型扫描方式，progressive逐行扫描             |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">grid                 </td>
+<td align="left"> 0或1                   </td>
+<td align="center"> 否              </td>
+<td align="left"> 设备是基于樱格还是基于位图，基于栅格时为1                |</td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
+  
+</feed>

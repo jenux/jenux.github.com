@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Mac | Jenux]]></title>
+  <link href="http://jenux.github.io/blog/categories/mac/atom.xml" rel="self"/>
+  <link href="http://jenux.github.io/"/>
+  <updated>2013-07-03T05:16:35+08:00</updated>
+  <id>http://jenux.github.io/</id>
+  <author>
+    <name><![CDATA[Jenux]]></name>
+    <email><![CDATA[ijenux@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mac下我使用的一些软件列表(系统增强篇)]]></title>
+    <link href="http://jenux.github.io/blog/2013/02/25/Apps_using_on_Mac_for_system/"/>
+    <updated>2013-02-25T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2013/02/25/Apps_using_on_Mac_for_system</id>
+    <content type="html"><![CDATA[<ul>
+<li>ForkLift</li>
+<li>PathFinder</li>
+<li>Unclutter</li>
+<li>Bartender</li>
+<li>TextExpander</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[在Mac Lion下安装Node.js]]></title>
+    <link href="http://jenux.github.io/blog/2012/01/30/Install_NodeJS_on_Mac_Lion/"/>
+    <updated>2012-01-30T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2012/01/30/Install_NodeJS_on_Mac_Lion</id>
+    <content type="html"><![CDATA[<h1>用homebrew 进行安装</h1>
+
+<p><code>brew update</code>
+<code>brew install node</code></p>
+
+<!-- more -->
+
+
+<p><small>
+当前环境:
+Mac Lion 10.7.2
+node.js: 0.6.9
+</small></p>
+
+<h1>手动安装</h1>
+
+<ul>
+<li>install Xcode</li>
+<li>install git</li>
+<li>执行以下命令:</li>
+</ul>
+
+
+<pre>
+    git clone git://github.com/joyent/node.git
+    cd node
+    ./configure
+    make
+    sudo make install
+</pre>
+
+
+<hr />
+
+<h1>Update 1:</h1>
+
+<p>用homebrew在Lion下安装，运行hello world应用，控制台报错:Segmentation fault: 11,
+同时发现用homebrew安装时编译参数带有 &mdash;without npm</p>
+
+<p>在node.js主页下载Mac下的<a href="http://nodejs.org/dist/v0.6.9/node-v0.6.9.pkg">安装包</a>重新安装:</p>
+
+<pre>
+Node was installed at: */usr/local/bin/node*
+npm was installed at: */usr/local/bin/npm*
+</pre>
+
+
+<h1>用nvm(node version managerment)安装</h1>
+
+<p>nvm是一个像ruby rvm的东西，可以让你切换node的版本以便在开发中切换.
+目前初学还无此需求，记录备查</p>
+
+<pre>
+    $ git clone git://github.com/creationix/nvm.git ~/.nvm
+    $ echo ". ~/.nvm/nvm.sh" >> ~/.bashrc
+    $ nvm install v0.6.9
+    $ nvm alias default v0.6.9
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[免费的Mac工具推荐——Structruer]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/28/Free_Mac_Utility_App_Structrurer/"/>
+    <updated>2011-07-28T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/28/Free_Mac_Utility_App_Structrurer</id>
+    <content type="html"><![CDATA[<p>2010年底，<a href="http://net.tutsplus.com/">Nettuts+</a>推出了一个免费的用于创建项目目录结构及文件的工具。</p>
+
+<p>可以为最常用的项目结构以及文档创立模板以方便调用，一个很有用的功能是从网上抓取项目，比如要抓取 WordPress 的安装包，只需添加一个来源为 URL 的模板，然后把 WordPress 的下载链接粘贴过来就行了，Strucurer 会自动下载最新版本并解压好。</p>
+
+<p><img src="/static/images/posts/structurerLarge.jpg" alt="software" /></p>
+
+<p><a href="http://net.tutsplus.com/freebies/others/free-mac-utility-app-structurer/">官方介绍</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GitHub for Mac推出了]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/04/share_your_code_width_github_for_mac/"/>
+    <updated>2011-07-04T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/04/share_your_code_width_github_for_mac</id>
+    <content type="html"><![CDATA[<p><a href="http://mac.github.com">GitHub for Mac</a>最近刚刚推出。现在你可以更加方便地在github.com上克隆版本库，查看历史日志， 提交修改， 建立分支及分享代码。 同步按钮(sync button)把你的修改推送到GitHub，并且同时把其他人的修改更新到本地。</p>
+
+<p>你可以拖动目录到软件来建立一个版本库。 当你在GitHub for Mac里创建了一个版本库，它将自动match them up with any organizations you belong to.</p>
+
+<p><img src="/static/images/posts/github-mac.jpg" alt="软件截图" /></p>
+
+<p><a href="http://mac.github.com">官方主页</a> &ndash;
+<a href="http://www.webappers.com/2011/06/29/share-your-code-with-github-for-mac/">原文链接</a></p>
+]]></content>
+  </entry>
+  
+</feed>

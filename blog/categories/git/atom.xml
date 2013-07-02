@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Git | Jenux]]></title>
+  <link href="http://jenux.github.io/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://jenux.github.io/"/>
+  <updated>2013-07-03T05:16:35+08:00</updated>
+  <id>http://jenux.github.io/</id>
+  <author>
+    <name><![CDATA[Jenux]]></name>
+    <email><![CDATA[ijenux@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[GitHub for Mac推出了]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/04/share_your_code_width_github_for_mac/"/>
+    <updated>2011-07-04T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/04/share_your_code_width_github_for_mac</id>
+    <content type="html"><![CDATA[<p><a href="http://mac.github.com">GitHub for Mac</a>最近刚刚推出。现在你可以更加方便地在github.com上克隆版本库，查看历史日志， 提交修改， 建立分支及分享代码。 同步按钮(sync button)把你的修改推送到GitHub，并且同时把其他人的修改更新到本地。</p>
+
+<p>你可以拖动目录到软件来建立一个版本库。 当你在GitHub for Mac里创建了一个版本库，它将自动match them up with any organizations you belong to.</p>
+
+<p><img src="/static/images/posts/github-mac.jpg" alt="软件截图" /></p>
+
+<p><a href="http://mac.github.com">官方主页</a> &ndash;
+<a href="http://www.webappers.com/2011/06/29/share-your-code-with-github-for-mac/">原文链接</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git初学者基础知识]]></title>
+    <link href="http://jenux.github.io/blog/2011/04/16/Git_basic_knowledge/"/>
+    <updated>2011-04-16T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/04/16/Git_basic_knowledge</id>
+    <content type="html"><![CDATA[<p>《<a href="http://roclinux.cn/?p=343">看日记学GIT</a>》是Git入门不错的系列文章，最近开始在<a href="http://github.com">GitHub</a>上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获。<br/>
+其第9章是对前8章的复习总结，基本上涵盖了入门者使用Git的流程和基本命令，在这里摘录一下部分内容，如果你对Git感兴趣，推荐阅读本系列文章。<br/>
+点击<a href="http://dl.dbank.com/c0n8xljq3a">这里</a>是我收藏的一份pdf版本</p>
+
+<!-- more -->
+
+
+<h1>1 获得帮助可以使用类似 <code>man git-****</code>的命令格式, 如:</h1>
+
+<pre><code>man git-commit 
+man git-pull
+man git-merge
+</code></pre>
+
+<h1>2 使用Git之前，应该提交简单的个人信息，以便区分不同的提交者的身份</h1>
+
+<pre><code>git config -global user.name "your name"
+git config -global user.email "your email address"
+</code></pre>
+
+<h1>3 新开启一个项目，先建立一个目录(eg:myproject)，然后:</h1>
+
+<pre><code>cd myproject
+git init
+git add .
+git commit -m 'Start my git project.'
+</code></pre>
+
+<p>这样一个新项目就诞生了。</p>
+
+<h1>4 修改了项目源代码，需要提交时:</h1>
+
+<pre><code>git add '新建或修改的文件'  #git add .
+git commit
+或git commit -a //直接提交修改过的文件
+</code></pre>
+
+<h1>5 源码修改对比:</h1>
+
+<pre><code>git diff    //git add使用之前有效，如果已经add,此命令输出为空 
+git diff -cached //这个命令在git add之后，git commit之前有效
+git status //这个命令在git commit之前有效，会输出文件修改状态
+</code></pre>
+
+<h1>6 查看日志</h1>
+
+<pre><code>git log
+git log -p  // 输入更详细的日志内容，包括修改了哪些源码
+</code></pre>
+
+<h1>7 创建分支，分支开发成功则合并到主分支，否则放弃该分支</h1>
+
+<pre><code>git branch experimental //创建一个名为experimental的分支
+git branch //显示当前分支，标注*号的为当前所在分支
+git checkout experimental  //切换到experimental分支
+...开发过程
+git commit -a //在experimental分支上修改源代码并提交
+git checkout master //切回主分支
+git merge experimental  //合并到主分支
+git commit -a //彻底完成分支合并，提交主分支
+git branch -d experimental // 删除已合并的experimental分支
+
+如果分支开发失败:
+git checkout master
+git branch -D experimental 
+</code></pre>
+
+<h1>8 查看图形化分支信息</h1>
+
+<pre><code>gitk
+</code></pre>
+
+<h1>9 Git协作</h1>
+]]></content>
+  </entry>
+  
+</feed>

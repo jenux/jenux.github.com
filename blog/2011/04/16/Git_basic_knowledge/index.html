@@ -3,56 +3,56 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Git初学者基础知识 - JenUX</title>
+	<title>Git初学者基础知识 - Jenux</title>
 	<meta name="author" content="Jenux">
 
 	
-	<meta name="description" content="《看日记学GIT》是Git入门不错的系列文章，最近开始在GitHub上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获。
-其第9章是对前8章的复习总结，基本上涵盖了入门者使用Git的流程和基本命令，在这里摘录一下部分内容， &hellip;">
+	<meta name="description" content="Git初学者基础知识 《看日记学GIT》是Git入门不错的系列文章，最近开始在GitHub上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获。
+其第9章是对前8章的复习总结，基本上涵盖了入门者使用Git的流程和基本命令， &hellip;">
 	
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="JenUX" type="application/atom+xml">
-	<link rel="canonical" href="">
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Jenux" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://jenux.github.io/blog/2011/04/16/Git_basic_knowledge/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
 	
 </head>
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">JenUX</a></h1>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("ijenux@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+</div>
+
+<p class="subtitle">JenUX Wang's Octopress Pages</p>
 <nav id="main-nav"><ul class="main">
 	<li><a href="/">Blog</a></li>
 	<li><a href="/blog/archives">Archives</a></li>
 </ul>
+
 </nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul class="main">
-	<li><a href="/">Blog</a></li>
-	<li><a href="/blog/archives">Archives</a></li>
-</ul>
-</div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="http://google.com/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:jenux.github.io">
-			</form>
-		</div>
-	</div>
-</nav>
-<nav id="sub-nav" class="alignright">
+<nav id="sub-nav">
 	<div class="social">
 		
 		
-		<a class="google" href="https://plus.google.com/iJenux@gmail.com?rel=author" title="Google+">Google+</a>
+		<a class="google" href="https://plus.google.com/iJenux@gmail.com" rel="author" title="Google+">Google+</a>
 		
 		
 		<a class="twitter" href="http://twitter.com/iJenux" title="Twitter">Twitter</a>
@@ -60,7 +60,8 @@
 		
 		<a class="github" href="https://github.com/jenux" title="GitHub">GitHub</a>
 		
-    
+		
+		
 		
 		
 		
@@ -68,25 +69,24 @@
 		
 		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
 		
-    
 	</div>
-	<form class="search" action="http://google.com/search" method="get">
-		<input class="alignright" type="text" name="q" results="0">
-		<input type="hidden" name="q" value="site:jenux.github.io">
-	</form>
 </nav>
-
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Git初学者基础知识</h2>
-	<div class="entry-content"><p>《<a href="http://roclinux.cn/?p=343">看日记学GIT</a>》是Git入门不错的系列文章，最近开始在<a href="http://github.com">GitHub</a>上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获。<br/>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Git初学者基础知识</h1>
+	<div class="entry-content" itemprop="articleBody"><p>《<a href="http://roclinux.cn/?p=343">看日记学GIT</a>》是Git入门不错的系列文章，最近开始在<a href="http://github.com">GitHub</a>上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获。<br/>
 其第9章是对前8章的复习总结，基本上涵盖了入门者使用Git的流程和基本命令，在这里摘录一下部分内容，如果你对Git感兴趣，推荐阅读本系列文章。<br/>
 点击<a href="http://dl.dbank.com/c0n8xljq3a">这里</a>是我收藏的一份pdf版本</p>
 
-<hr />
+<!-- more -->
+
 
 <h1>1 获得帮助可以使用类似 <code>man git-****</code>的命令格式, 如:</h1>
 
@@ -156,50 +156,32 @@ git branch -D experimental
 <h1>9 Git协作</h1>
 </div>
 
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-16T00:00:00+08:00" pubdate data-updated="true">Apr 16<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-</div>
-	
-</div>
 </article>
 
 	<div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
-		
-		
-		<a class="addthis_button_tweet"></a>
-		
-		
-		<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-		
-		
-	</div>
 	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
 
 
 </div>
-	<footer id="footer" class="inner">Copyright &copy; 2013
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013
 
     Jenux
 
-</footer>
-	<script src="/javascripts/slash.js"></script>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -212,5 +194,7 @@ git branch -D experimental
 
 
 
+		</div>
+	</div>
 </body>
 </html>

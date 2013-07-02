@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Plugin | Jenux]]></title>
+  <link href="http://jenux.github.io/blog/categories/plugin/atom.xml" rel="self"/>
+  <link href="http://jenux.github.io/"/>
+  <updated>2013-07-03T05:16:35+08:00</updated>
+  <id>http://jenux.github.io/</id>
+  <author>
+    <name><![CDATA[Jenux]]></name>
+    <email><![CDATA[ijenux@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[为任意项目甚至html静态页面增加代码高亮的插件]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/28/Google_code_prettify/"/>
+    <updated>2011-07-28T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/28/Google_code_prettify</id>
+    <content type="html"><![CDATA[<p>这个教程运用 <a href="http://code.google.com/p/google-code-prettify/">Google code prettify</a> 简单快捷地为任意项目，甚至是单纯的HTML静态页面添加代码高亮。</p>
+
+<p><embed src="http://www.youtube.com/v/_ggWarwhv9M?version=3&amp;hl=en_US&amp;hd=1" width="550" height="338" allowscriptaccess="never" allowfullscreen="true" wmode="transparent" type="application/x-shockwave-flash"></p>
+
+<!-- more -->
+
+
+<h1>第1步: 下载源码</h1>
+
+<p>下载源码: <a href="http://code.google.com/p/google-code-prettify/">Google code</a></p>
+
+<h1>第2步: 把src目录拷进你的项目</h1>
+
+<p>我习惯把src目录重命名为: highlighter</p>
+
+<h1>第3步: 在项目页面中引用文件</h1>
+
+<p>在你的页面中引用prettify.css和prettify.js</p>
+
+<pre><code>&lt;!Doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset='utf-8'&gt;
+        &lt;title&gt;Google code prettify demo&lt;/title&gt;
+        &lt;link rel="stylesheet" href="highlighter/prettify.css"&gt;
+        &lt;script src='highlighter/prettify.js'&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>代码高亮插件将对带有'prettyprint'样式的 pre|code标签起作用。</p>
+
+<pre><code>&lt;body&gt;
+    &lt;pre class='prettyprint'&gt;
+        (function(){
+           var jenux = 'Jenux'; 
+        });
+    &lt;/pre&gt;
+&lt;/body&gt;
+</code></pre>
+
+<h1>第4步: 调用 prettyPrint()方法</h1>
+
+<pre><code>&lt;body&gt;
+    &lt;pre class='prettyprint'&gt;
+        (function(){
+           var jenux = 'Jenux'; 
+        });
+    &lt;/pre&gt;    
+    &lt;script&gt;
+        prettyPrint();
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+<h1>第5步: 其他</h1>
+
+<p><em>可以增加或修改pre样式lang-js等以指定高亮语言。
+</em>在<a href="http://google-code-prettify.googlecode.com/svn/trunk/styles/index.html">这里</a>可以选择其他配色方案</p>
+
+<hr />
+
+<p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-how-to-add-syntax-highlighting-to-any-project/">原文链接</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Supersized,漂亮的全背景jQuery相册展示插件]]></title>
+    <link href="http://jenux.github.io/blog/2011/07/05/jquery_plugin_supersized/"/>
+    <updated>2011-07-05T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/07/05/jquery_plugin_supersized</id>
+    <content type="html"><![CDATA[<p><a href="http://www.buildinternet.com/project/supersized/index.html">Supersized</a>非常漂亮的全背景相册展示插件，推荐使用。</p>
+
+<p><img src="/static/images/posts/supersized-screen.jpg" alt="效果截图" /></p>
+]]></content>
+  </entry>
+  
+</feed>

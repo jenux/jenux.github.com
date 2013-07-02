@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: NodeJS | Jenux]]></title>
+  <link href="http://jenux.github.io/blog/categories/nodejs/atom.xml" rel="self"/>
+  <link href="http://jenux.github.io/"/>
+  <updated>2013-07-03T05:16:35+08:00</updated>
+  <id>http://jenux.github.io/</id>
+  <author>
+    <name><![CDATA[Jenux]]></name>
+    <email><![CDATA[ijenux@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[在Mac Lion下安装Node.js]]></title>
+    <link href="http://jenux.github.io/blog/2012/01/30/Install_NodeJS_on_Mac_Lion/"/>
+    <updated>2012-01-30T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2012/01/30/Install_NodeJS_on_Mac_Lion</id>
+    <content type="html"><![CDATA[<h1>用homebrew 进行安装</h1>
+
+<p><code>brew update</code>
+<code>brew install node</code></p>
+
+<!-- more -->
+
+
+<p><small>
+当前环境:
+Mac Lion 10.7.2
+node.js: 0.6.9
+</small></p>
+
+<h1>手动安装</h1>
+
+<ul>
+<li>install Xcode</li>
+<li>install git</li>
+<li>执行以下命令:</li>
+</ul>
+
+
+<pre>
+    git clone git://github.com/joyent/node.git
+    cd node
+    ./configure
+    make
+    sudo make install
+</pre>
+
+
+<hr />
+
+<h1>Update 1:</h1>
+
+<p>用homebrew在Lion下安装，运行hello world应用，控制台报错:Segmentation fault: 11,
+同时发现用homebrew安装时编译参数带有 &mdash;without npm</p>
+
+<p>在node.js主页下载Mac下的<a href="http://nodejs.org/dist/v0.6.9/node-v0.6.9.pkg">安装包</a>重新安装:</p>
+
+<pre>
+Node was installed at: */usr/local/bin/node*
+npm was installed at: */usr/local/bin/npm*
+</pre>
+
+
+<h1>用nvm(node version managerment)安装</h1>
+
+<p>nvm是一个像ruby rvm的东西，可以让你切换node的版本以便在开发中切换.
+目前初学还无此需求，记录备查</p>
+
+<pre>
+    $ git clone git://github.com/creationix/nvm.git ~/.nvm
+    $ echo ". ~/.nvm/nvm.sh" >> ~/.bashrc
+    $ nvm install v0.6.9
+    $ nvm alias default v0.6.9
+</pre>
+
+]]></content>
+  </entry>
+  
+</feed>
