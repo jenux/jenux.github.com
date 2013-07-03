@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Dev | Jenux]]></title>
   <link href="http://jenux.github.io/blog/categories/dev/atom.xml" rel="self"/>
   <link href="http://jenux.github.io/"/>
-  <updated>2013-07-03T07:14:28+08:00</updated>
+  <updated>2013-07-03T11:02:19+08:00</updated>
   <id>http://jenux.github.io/</id>
   <author>
     <name><![CDATA[Jenux]]></name>
@@ -12,6 +12,101 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Grunt:基于任务的Javascript项目命令行构建工具]]></title>
+    <link href="http://jenux.github.io/blog/2013/07/03/Grunt-The-Javascript-Task-Runner/"/>
+    <updated>2013-07-03T10:54:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2013/07/03/Grunt-The-Javascript-Task-Runner</id>
+    <content type="html"><![CDATA[<p><img src="http://gruntjs.com/img/grunt-logo.png" width="120"></p>
+
+<p><a href="http://gruntjs.com/">Grunt</a>是一个基于任务的Javascript项目命令行构建工具(The Javascript Task Runner)</p>
+
+<h1>为什么需要任务构建</h1>
+
+<p>一句话: 自动化. 可以使重复执行一些任务时更加轻松, 如: 压缩, 合并, unit testing等等</p>
+
+<!-- more -->
+
+
+<h1>为什么选择Grunt</h1>
+
+<ul>
+<li>Plugins</li>
+<li>Who using</li>
+</ul>
+
+
+<h1>依赖</h1>
+
+<p>Grunt和grunt plugins的安装与管理需要npm,  所以依赖于Node.js
+Grunt 0.4.x 要求Node.js版本 >= 0.8.0\</p>
+
+<h1>安装</h1>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo npm install -g grunt-cli</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Note: 安装grunt-cli并不代表安装了grunt task runner.</p>
+
+<h1>创建一个新的grunt项目</h1>
+
+<p>典型的创建会在项目里添加2个文件: package.json 和 Gruntfile.
+&ndash; package.json: 这个文件用来存储npm需要的元数据,以发布项目为一个npm的模块. 你需要在<em>devDependencies</em> 里列出需要的Grunt和Grunt plugins
+&ndash; Gruntfile: 文件可以命名为Gruntfile.js或Gruntfile.coffee, 用来配置或定义任务, 并加载Grunt plugins</p>
+
+<h2>package.json</h2>
+
+<p><strong>package.json</strong>需要和<strong>Gruntfile</strong>一同放在项目根目录, 并且提交到源代码库里. 运行<em>npm install</em>, <em>package.json</em>里列出来的依赖将被安装.</p>
+
+<ul>
+<li>通过<a href="http://gruntjs.com/project-scaffolding">grunt-init</a> 模板创建(需要npm-install -g grunt-init)</li>
+<li><a href="https://npmjs.org/doc/init.html">npm init</a>, 将创建一个基本的package.json文件</li>
+<li>以下面的例子为基础, 根据需求进行扩展, 需要遵循这个<a href="https://npmjs.org/doc/json.html">规范</a>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{
+</span><span class='line'>&ldquo;name&rdquo;: &ldquo;my-project-name&rdquo;,
+</span><span class='line'>&ldquo;version&rdquo;: &ldquo;0.1.0&rdquo;,
+</span><span class='line'>&ldquo;devDependencies&rdquo;: {
+</span><span class='line'>      &ldquo;grunt&rdquo;: &ldquo;~0.4.1&rdquo;,
+</span><span class='line'>      &ldquo;grunt-contrib-jshint&rdquo;: &ldquo;~0.6.0&rdquo;,
+</span><span class='line'>      &ldquo;grunt-contrib-nodeunit&rdquo;: &ldquo;~0.2.0&rdquo;,
+</span><span class='line'>      &ldquo;grunt-contrib-uglify&rdquo;: &ldquo;~0.2.2&rdquo;
+</span><span class='line'>}
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div></li>
+</ul>
+
+
+<h2>安装Grunt 和 gruntplugins</h2>
+
+<p>一个简便的方式安装Grunt和gruntplugins到已有的package.json, 是执行命令<code>npm install &lt;module&gt; --save-dev</code>.
+不仅可以安装<module>, 而且自动添加到<em>devDependencies</em>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>npm install grunt &mdash;save-dev</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Gruntfile</h2>
+
+<p><em>Gruntfile.js</em>或<em>Gruntfile.coffee</em>是一个有效的Javascript或CoffeeScript文件,与<em>package.json</em>文件同放在项目根目录.
+并且需要提交到项目源码库, 由下面几部分组成:</p>
+
+<ul>
+<li>Wrapper function</li>
+<li>Project和Task定义</li>
+<li>加载Grunt plugins 和 任务</li>
+<li>其他自定义任务</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Bower:来自Twitter团队的前端包管理器]]></title>
