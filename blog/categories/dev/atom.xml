@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Dev | Jenux]]></title>
   <link href="http://jenux.github.io/blog/categories/dev/atom.xml" rel="self"/>
   <link href="http://jenux.github.io/"/>
-  <updated>2013-07-16T14:01:05+08:00</updated>
+  <updated>2013-07-16T18:40:11+08:00</updated>
   <id>http://jenux.github.io/</id>
   <author>
     <name><![CDATA[Jenux]]></name>
@@ -12,291 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Copy Angular-TodoAPP for practising bower+angular+firebase]]></title>
-    <link href="http://jenux.github.io/blog/2013/07/05/angular-todoMVC-by-angularFirebase/"/>
-    <updated>2013-07-05T10:00:00+08:00</updated>
-    <id>http://jenux.github.io/blog/2013/07/05/angular-todoMVC-by-angularFirebase</id>
-    <content type="html"><![CDATA[<p>When I checking <a href="http://angularjs.org/">Angular</a>, notice a new live demo named <em>Javascript Projects</em> which using <strong>angularFire.js</strong>.</p>
-
-<p><a href="https://www.firebase.com/">Firebase</a> is a scalable real-time backend, give you the ability to build apps fast without managing servers. A real-time chat app in 14 lines of code. Like:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>var messagesRef = new Firebase(&lsquo;&lt;a href="https://chat.firebaseIO.com/">https://chat.firebaseIO.com/&lt;/a>&rsquo;);&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>// write messages
-</span><span class='line'>messagesRef.push({name:&lsquo;Jenux&rsquo;, text:&lsquo;Firebase is awesome!&rsquo;})&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>// Read messages
-</span><span class='line'>messageRef.on(&lsquo;child_added&rsquo;, function(message) {&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>renderMessage(message.val());
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p>});</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>on March 29, 2013, <strong>Angular</strong> realeased <a href="http://github.com/firebase/angularFire">AngularFire</a> to support Firebase binding. I&rsquo;m trying to implement the <a href="http://firebase.github.com/angularFire/examples/todomvc/">live demo</a> mentioned in the news to get better understanding about <strong>AngularFire</strong>.</p>
-
-<p>For practise, I want:</p>
-
-<ul>
-<li>Using <a href="/blog/2013/07/02/bower-package-manager-for-web-by-twitter/">bower</a> to manager source libs</li>
-<li>Using <a href="https://www.firebase.com/">fireBase</a> as the data source</li>
-</ul>
-
-
-<p>Fowlloing is the log how I work on this for you to reference, and welcome to leave your suggestion help me to improve it.</p>
-
-<!-- more -->
-
-
-<h2>Steps:</h2>
-
-<h3>Prepare project</h3>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ mkcd Angular-TodoAPP
-</span><span class='line'>$ vim bower.json
-</span><span class='line'>$ bower install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Content of bower.json:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>"name"    : "Angular-TodoApp",
-</span><span class='line'>"version" : "0.1.0",
-</span><span class='line'>"ignore"  : [
-</span><span class='line'>    ".jshintrc",
-</span><span class='line'>    "**/*.txt",
-</span><span class='line'>    "**/*.markdown"
-</span><span class='line'>],
-</span><span class='line'>"dependencies": {
-</span><span class='line'>    "angular"     : "latest", 
-</span><span class='line'>    "angular-fire": "latest",
-</span><span class='line'>    "underscore"  : "latest"
-</span><span class='line'>},
-</span><span class='line'>"devDependencies": {
-</span><span class='line'>}
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p>}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h3>Develop your app</h3>
-
-<p>You can find my source code here: <a href="https://github.com/jenux/Angular-TodoAPP">https://github.com/jenux/Angular-TodoAPP</a></p>
-
-<p>Note: The Next time you want to add a new dependency to your project, just run:
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bower install &lt;project> &mdash;save</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Grunt:基于任务的Javascript项目命令行构建工具]]></title>
-    <link href="http://jenux.github.io/blog/2013/07/03/Grunt-The-Javascript-Task-Runner/"/>
-    <updated>2013-07-03T10:54:00+08:00</updated>
-    <id>http://jenux.github.io/blog/2013/07/03/Grunt-The-Javascript-Task-Runner</id>
-    <content type="html"><![CDATA[<p><img src="http://gruntjs.com/img/grunt-logo.png" width="120"></p>
-
-<p><a href="http://gruntjs.com/">Grunt</a>是一个基于任务的Javascript项目命令行构建工具(The Javascript Task Runner)</p>
-
-<h1>为什么需要任务构建</h1>
-
-<p>一句话: 自动化. 可以使重复执行一些任务时更加轻松, 如: 压缩, 合并, unit testing等等.</p>
-
-<p>In one word: automation. The less work you have to do when performing repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes. After you&rsquo;ve configured it, a task runner can do most of that mundane work for you—and your team—with basically zero effort.</p>
-
-<p>当前版本: v0.4.1</p>
-
-<!-- more -->
-
-
-<h1>为什么选择Grunt</h1>
-
-<ul>
-<li><p><a href="http://gruntjs.com/plugins">Plugins</a></p>
-
-<p>很多你需要的任务已经作为Grunt的plugin实现了，并且每天有更多的plugin被提交, 如:<br/>
-coffeeScript, jade, JSHint, less, require.js, Sass&hellip;</p>
-
-<p>The Grunt ecosystem is huge and it&rsquo;s growing every day. With literally hundreds of plugins to choose from, you can use Grunt to automate just about anything with a minimum of effort. If someone hasn&rsquo;t already built what you need, authoring and publishing your own Grunt plugin to npm is a breeze.</p></li>
-<li><p>Who uses Grunt</p>
-
-<p>如: Twitter, jQuery, Adobe, Modernizr&hellip;</p></li>
-</ul>
-
-
-<h1>依赖</h1>
-
-<p>Grunt和grunt plugins的安装与管理需要npm,  所以依赖于Node.js
-Grunt 0.4.x 要求Node.js版本 >= 0.8.0</p>
-
-<h1>运行</h1>
-
-<ul>
-<li>cd to project directory.</li>
-<li>安装依赖 <code>npm install</code></li>
-<li>运行 <code>grunt</code></li>
-</ul>
-
-
-<h1>安装</h1>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo npm install -g grunt-cli</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Note: 安装grunt-cli并不代表安装了grunt task runner.</p>
-
-<h1>创建一个新的grunt项目</h1>
-
-<p>典型的创建会在项目里添加2个文件: package.json 和 Gruntfile.</p>
-
-<ul>
-<li>package.json: 这个文件用来存储npm需要的元数据,以发布项目为一个npm的模块. 你需要在<em>devDependencies</em> 里列出需要的Grunt和Grunt plugins</li>
-<li>Gruntfile: 文件可以命名为Gruntfile.js或Gruntfile.coffee, 用来配置或定义任务, 并加载Grunt plugins</li>
-</ul>
-
-
-<h2>package.json</h2>
-
-<p><strong>package.json</strong>需要和<strong>Gruntfile</strong>一同放在项目根目录, 并且提交到源代码库里. 运行<em>npm install</em>, <em>package.json</em>里列出来的依赖将被安装.</p>
-
-<ul>
-<li>通过<a href="http://gruntjs.com/project-scaffolding">grunt-init</a> 模板创建(需要npm-install -g grunt-init)</li>
-<li><a href="https://npmjs.org/doc/init.html">npm init</a>, 将创建一个基本的package.json文件</li>
-<li>以下面的例子为基础, 根据需求进行扩展, 需要遵循这个<a href="https://npmjs.org/doc/json.html">规范</a>
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{
-</span><span class='line'>&ldquo;name&rdquo;: &ldquo;my-project-name&rdquo;,
-</span><span class='line'>&ldquo;version&rdquo;: &ldquo;0.1.0&rdquo;,
-</span><span class='line'>&ldquo;devDependencies&rdquo;: {
-</span><span class='line'>      &ldquo;grunt&rdquo;: &ldquo;~0.4.1&rdquo;,
-</span><span class='line'>      &ldquo;grunt-contrib-jshint&rdquo;: &ldquo;~0.6.0&rdquo;,
-</span><span class='line'>      &ldquo;grunt-contrib-nodeunit&rdquo;: &ldquo;~0.2.0&rdquo;,
-</span><span class='line'>      &ldquo;grunt-contrib-uglify&rdquo;: &ldquo;~0.2.2&rdquo;
-</span><span class='line'>}
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div></li>
-</ul>
-
-
-<h2>安装Grunt 和 gruntplugins</h2>
-
-<p>一个简便的方式安装Grunt和gruntplugins到已有的package.json, 是执行命令<code>npm install &lt;module&gt; --save-dev</code>.
-不仅可以安装<module>, 而且自动添加到<em>devDependencies</em>
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>npm install grunt &mdash;save-dev</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h2>Gruntfile</h2>
-
-<p><em>Gruntfile.js</em>或<em>Gruntfile.coffee</em>是一个有效的Javascript或CoffeeScript文件,与<em>package.json</em>文件同放在项目根目录.
-并且需要提交到项目源码库, 由下面几部分组成:</p>
-
-<ul>
-<li>Wrapper function</li>
-<li>Project和Task定义</li>
-<li>加载Grunt plugins 和 任务</li>
-<li>其他自定义任务</li>
-</ul>
-
-
-<h3>示例:</h3>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>module.exports = function(grunt) {&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>  // Project configuration.
-</span><span class='line'>  grunt.initConfig({&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>pkg: grunt.file.readJSON('package.json'),
-</span><span class='line'>uglify: {
-</span><span class='line'>  options: {
-</span><span class='line'>    banner: '/*! &lt;%= pkg.name %&gt; &lt;%= grunt.template.today("yyyy-mm-dd") %&gt; */\n'
-</span><span class='line'>  },
-</span><span class='line'>  build: {
-</span><span class='line'>    src: 'src/&lt;%= pkg.name %&gt;.js',
-</span><span class='line'>    dest: 'build/&lt;%= pkg.name %&gt;.min.js'
-</span><span class='line'>  }
-</span><span class='line'>}
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p>  });&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>  // Load the plugin that provides the &ldquo;uglify&rdquo; task.
-</span><span class='line'>  grunt.loadNpmTasks(&lsquo;grunt-contrib-uglify&rsquo;);&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>  // Default task(s).
-</span><span class='line'>  grunt.registerTask(&lsquo;default&rsquo;, [&lsquo;uglify&rsquo;]);&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>};</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Bower:来自Twitter团队的前端包管理器]]></title>
@@ -486,6 +201,57 @@ Yepnope.js资源加载器具有异步加载，按条件加载和同时支持java
 <p>这个小巧的资源加载管理器，压缩后仅有1.6k, 现在已经内置了Modernizer，。。。</p>
 
 <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/easy-script-loading-with-yepnope-js/">原文链接</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Contenteditable开发的一些问题]]></title>
+    <link href="http://jenux.github.io/blog/2011/04/18/contenteditable_buglist/"/>
+    <updated>2011-04-18T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/04/18/contenteditable_buglist</id>
+    <content type="html"><![CDATA[<p>最近用contenteditable实现页面实时编辑的一个交互组件，发现一些问题不是很好处理。</p>
+
+<!-- more -->
+
+
+<h2>在不同浏览器下回车生成的标签是不同的，如:</h2>
+
+<pre><code>- 在Chrome下生成div,  
+- 在IE下生成p,  
+- 在Firefox下生成br  
+    IE下网上有很多方法可以截获回车事件，修改为br，  
+    Chrome下暂时我是在提交时手动替换生成的div标签来不完美处理的;  
+</code></pre>
+
+<br>  
+
+
+<h2>在Firefox和Opera下如果contenteditable元素是嵌套在li元素下的，会引发bug,表现如下:</h2>
+
+<pre><code>- 在Firefox下无法换行  
+- 在Opera下会生成li元素  
+    暂时还没有好的解决办法, 我只能修改原来ul&gt;li的结构，改成section&gt;.li  
+</code></pre>
+
+<br>
+
+
+<h2>在Firefox和Opera下contenteditable的元素无法绑定键盘事件，如</h2>
+
+<pre><code>- 我想绑定按下Esc键时触发取消编辑的方法  
+- 我想绑定按下ctrl+Enter时触发提交编辑的方法  
+- 等等  
+</code></pre>
+
+<br>  
+
+
+<h2>其他应该注意的一些问题是：</h2>
+
+<ul>
+<li>设置contenteditable=&lsquo;true'的元素，在粘贴从外部拷贝的内容时，会连带原有的格式（如样式）等。</li>
+</ul>
+
 ]]></content>
   </entry>
   
