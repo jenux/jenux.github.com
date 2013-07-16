@@ -4,7 +4,7 @@
   <title><![CDATA[Jenux]]></title>
   <link href="http://jenux.github.io/atom.xml" rel="self"/>
   <link href="http://jenux.github.io/"/>
-  <updated>2013-07-03T22:30:52+08:00</updated>
+  <updated>2013-07-16T14:01:05+08:00</updated>
   <id>http://jenux.github.io/</id>
   <author>
     <name><![CDATA[Jenux]]></name>
@@ -12,6 +12,179 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[HTMLElement-dataset]]></title>
+    <link href="http://jenux.github.io/blog/2013/07/16/htmlelement-dataset/"/>
+    <updated>2013-07-16T13:49:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2013/07/16/htmlelement-dataset</id>
+    <content type="html"><![CDATA[<p>在Html5里，可以使用前缀data-*创建自定义的标签属性。</p>
+
+<p>获取自定义的标签属性值:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var string = element.dataset.camelCasedName;
+</span><span class='line'>element.dataset.camelCaseName = string;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>o</p>
+
+<h2>以前</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="user" data-name="Jenux" data-age="31" data-date-of-birth>&lt;/div>
+</span><span class='line'>
+</span><span class='line'>//获取数据
+</span><span class='line'>document.getElementById("user").getAttribute("data-name");</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>现在</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var d = document.getElementById("user").dataset;
+</span><span class='line'>//var elem = document.querySelector("#user"); 
+</span><span class='line'>var name= d.name;
+</span><span class='line'>var age = d.age;
+</span><span class='line'>
+</span><span class='line'>elem.dataset.dateOfBirth = "1982-05-05"; // set the attribute value</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>浏览器兼容性</h2>
+
+<ul>
+<li>Chrome 8</li>
+<li>Firefox 6.0</li>
+<li>IE 11</li>
+<li>Opera 11.10</li>
+<li>Safari 6</li>
+</ul>
+
+
+<h2>参考</h2>
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement.dataset?redirectlocale=en-US&amp;redirectslug=Web%2FAPI%2Felement.dataset">Mozilla</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Copy Angular-TodoAPP for practising bower+angular+firebase]]></title>
+    <link href="http://jenux.github.io/blog/2013/07/05/angular-todoMVC-by-angularFirebase/"/>
+    <updated>2013-07-05T10:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2013/07/05/angular-todoMVC-by-angularFirebase</id>
+    <content type="html"><![CDATA[<p>When I checking <a href="http://angularjs.org/">Angular</a>, notice a new live demo named <em>Javascript Projects</em> which using <strong>angularFire.js</strong>.</p>
+
+<p><a href="https://www.firebase.com/">Firebase</a> is a scalable real-time backend, give you the ability to build apps fast without managing servers. A real-time chat app in 14 lines of code. Like:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var messagesRef = new Firebase('https://chat.firebaseIO.com/');
+</span><span class='line'>
+</span><span class='line'>// write messages
+</span><span class='line'>messagesRef.push({name:'Jenux', text:'Firebase is awesome!'})
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>// Read messages
+</span><span class='line'>messageRef.on('child_added', function(message) {
+</span><span class='line'>  renderMessage(message.val());
+</span><span class='line'>});</span></code></pre></td></tr></table></div></figure>
+
+
+<p>on March 29, 2013, <strong>Angular</strong> realeased <a href="http://github.com/firebase/angularFire">AngularFire</a> to support Firebase binding. I&rsquo;m trying to implement the <a href="http://firebase.github.com/angularFire/examples/todomvc/">live demo</a> mentioned in the news to get better understanding about <strong>AngularFire</strong>.</p>
+
+<p>For practise, I want:</p>
+
+<ul>
+<li>Using <a href="http://jenux.github.io/blog/2013/07/02/bower-package-manager-for-web-by-twitter/">bower</a> to manager source libs</li>
+<li>Using <a href="https://www.firebase.com/">fireBase</a> as the data source</li>
+</ul>
+
+
+<p>Fowlloing is the log how I work on this for you to reference, and welcome to leave your suggestion help me to improve it.</p>
+
+<!-- more -->
+
+
+<h2>Steps:</h2>
+
+<h3>Prepare project</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mkcd Angular-TodoAPP
+</span><span class='line'>$ vim bower.json
+</span><span class='line'>$ bower install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Content of bower.json:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{
+</span><span class='line'>    "name"    : "Angular-TodoApp",
+</span><span class='line'>    "version" : "0.1.0",
+</span><span class='line'>    "ignore"  : [
+</span><span class='line'>        ".jshintrc",
+</span><span class='line'>        "**/*.txt",
+</span><span class='line'>        "**/*.markdown"
+</span><span class='line'>    ],
+</span><span class='line'>    "dependencies": {
+</span><span class='line'>        "angular"     : "latest", 
+</span><span class='line'>        "angular-fire": "latest",
+</span><span class='line'>        "underscore"  : "latest"
+</span><span class='line'>    },
+</span><span class='line'>    "devDependencies": {
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Develop your app</h3>
+
+<p>You can find my source code here: <a href="https://github.com/jenux/Angular-TodoAPP">https://github.com/jenux/Angular-TodoAPP</a></p>
+
+<p>Note: The Next time you want to add a new dependency to your project, just run:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bower install &lt;project> --save</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Grunt:基于任务的Javascript项目命令行构建工具]]></title>
@@ -52,6 +225,15 @@ coffeeScript, jade, JSHint, less, require.js, Sass&hellip;</p>
 
 <p>Grunt和grunt plugins的安装与管理需要npm,  所以依赖于Node.js
 Grunt 0.4.x 要求Node.js版本 >= 0.8.0</p>
+
+<h1>运行</h1>
+
+<ul>
+<li>cd to project directory.</li>
+<li>安装依赖 <code>npm install</code></li>
+<li>运行 <code>grunt</code></li>
+</ul>
+
 
 <h1>安装</h1>
 
@@ -1303,214 +1485,6 @@ Information deserves to be free.<br/>
 
 <ul>
 <li>设置contenteditable=&lsquo;true&#8217;的元素，在粘贴从外部拷贝的内容时，会连带原有的格式（如样式）等。</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Git初学者基础知识]]></title>
-    <link href="http://jenux.github.io/blog/2011/04/16/Git_basic_knowledge/"/>
-    <updated>2011-04-16T00:00:00+08:00</updated>
-    <id>http://jenux.github.io/blog/2011/04/16/Git_basic_knowledge</id>
-    <content type="html"><![CDATA[<p>《<a href="http://roclinux.cn/?p=343">看日记学GIT</a>》是Git入门不错的系列文章，最近开始在<a href="http://github.com">GitHub</a>上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获。<br/>
-其第9章是对前8章的复习总结，基本上涵盖了入门者使用Git的流程和基本命令，在这里摘录一下部分内容，如果你对Git感兴趣，推荐阅读本系列文章。<br/>
-点击<a href="http://dl.dbank.com/c0n8xljq3a">这里</a>是我收藏的一份pdf版本</p>
-
-<!-- more -->
-
-
-<h1>1 获得帮助可以使用类似 <code>man git-****</code>的命令格式, 如:</h1>
-
-<pre><code>man git-commit 
-man git-pull
-man git-merge
-</code></pre>
-
-<h1>2 使用Git之前，应该提交简单的个人信息，以便区分不同的提交者的身份</h1>
-
-<pre><code>git config -global user.name "your name"
-git config -global user.email "your email address"
-</code></pre>
-
-<h1>3 新开启一个项目，先建立一个目录(eg:myproject)，然后:</h1>
-
-<pre><code>cd myproject
-git init
-git add .
-git commit -m 'Start my git project.'
-</code></pre>
-
-<p>这样一个新项目就诞生了。</p>
-
-<h1>4 修改了项目源代码，需要提交时:</h1>
-
-<pre><code>git add '新建或修改的文件'  #git add .
-git commit
-或git commit -a //直接提交修改过的文件
-</code></pre>
-
-<h1>5 源码修改对比:</h1>
-
-<pre><code>git diff    //git add使用之前有效，如果已经add,此命令输出为空 
-git diff -cached //这个命令在git add之后，git commit之前有效
-git status //这个命令在git commit之前有效，会输出文件修改状态
-</code></pre>
-
-<h1>6 查看日志</h1>
-
-<pre><code>git log
-git log -p  // 输入更详细的日志内容，包括修改了哪些源码
-</code></pre>
-
-<h1>7 创建分支，分支开发成功则合并到主分支，否则放弃该分支</h1>
-
-<pre><code>git branch experimental //创建一个名为experimental的分支
-git branch //显示当前分支，标注*号的为当前所在分支
-git checkout experimental  //切换到experimental分支
-...开发过程
-git commit -a //在experimental分支上修改源代码并提交
-git checkout master //切回主分支
-git merge experimental  //合并到主分支
-git commit -a //彻底完成分支合并，提交主分支
-git branch -d experimental // 删除已合并的experimental分支
-
-如果分支开发失败:
-git checkout master
-git branch -D experimental 
-</code></pre>
-
-<h1>8 查看图形化分支信息</h1>
-
-<pre><code>gitk
-</code></pre>
-
-<h1>9 Git协作</h1>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Markdown的一些基础知识]]></title>
-    <link href="http://jenux.github.io/blog/2011/04/12/welcome_to_markdown/"/>
-    <updated>2011-04-12T00:00:00+08:00</updated>
-    <id>http://jenux.github.io/blog/2011/04/12/welcome_to_markdown</id>
-    <content type="html"><![CDATA[<p>Github真是个很好的开源产品，正在不断学习中。<br/>
-上周末尝试Github的pages服务，很不错，下载了一些jekyll驱动的blog源码学习，结识了markdown这种轻量级的标记语言.</p>
-
-<p>其实从接触vimviki以来，我对这种轻量级的标记语言就很有好感，可能是因为这种方式酷似编写代码吧。<br/>
-粗看了一下Markdown的一些语法，记录如下:</p>
-
-<!-- more -->
-
-
-<h1>常用格式</h1>
-
-<ul>
-<li>空一行（两个回车）分段</li>
-<li>行末加两个或多个空格才是真正的换行</li>
-<li>插入链接 <code>[链接文字](url)</code></li>
-<li>插入图片：同链接，在前面加叹号<code>![alt文字](url)</code></li>
-</ul>
-
-
-<h1>内嵌HTML</h1>
-
-<ul>
-<li>块状标签，像p,div之类，需要在前后各空一行(两个回车)，且开始和结束标签的一行前面不能用空格或Tab缩进</li>
-<li>行内元素， 如a,span,img可以在任何地方使用</li>
-</ul>
-
-
-<h1>标题</h1>
-
-<p>用1－6个#号开始一行表示这一行是标题，如:</p>
-
-<pre>
-    # 一级标题
-    ## 二级标题
-    ### 三级标题
-</pre>
-
-
-<h1>引用</h1>
-
-<p>用右尖括号(>)表示，可以嵌套。可以包含其他Markdown元素， 如：</p>
-
-<pre>
-    >##这是标题  
-    >  
-    > 1. 这是Markdown标记语言  
-    > 2. 现在正在学习**blockquote**  
-</pre>
-
-
-<h1>列表</h1>
-
-<p>HTML里分为有序列表和无序列表 <br/>
-在Markdown中用星号、加号、减号开始一行表示无序列表<br/>
-用数字开始一行表示有序列表，如:</p>
-
-<pre>
-    * Google
-    * Baidu
-    * Yahoo
-    1. HTML
-    2. Javascript
-    3. Css
-</pre>
-
-
-<h1>代码及代码块</h1>
-
-<ul>
-<li>插入一行代码，用`包含</li>
-<li>插入大段代码， 在代码前每一行前加四个空格</li>
-</ul>
-
-
-<h1>横线</h1>
-
-<p>三个或以上星号，减号或下划线单独放在一行即可生成一条横线，如:</p>
-
-<pre>
-    ******
-    * * *
-    ---
-    -------------
-</pre>
-
-
-<h1>强调</h1>
-
-<p>用星号或下划线来实现，两边各放一个会生成em标签，放两个会生成strong标签，如:</p>
-
-<pre>
-    *单星号*
-    _单下划线_  
-    **双星号*  
-    __双下划线__
-</pre>
-
-
-<p>会生成：</p>
-
-<pre> 
-    <em>单星号</em>  
-    <em>单下划线</em>  
-    <strong>双星号</strong>  
-    <strong>双下划线</strong>  
-</pre>
-
-
-<hr />
-
-<p>先到这里，上边写的还没测试过，这是我用Markdown记下的第一篇笔记。<br/>
-有错误的地方我会回来修正。</p>
-
-<h1>Tips:</h1>
-
-<ul>
-<li>每行末需要打空格两个以上才是真正换行，有点累</li>
 </ul>
 
 ]]></content>

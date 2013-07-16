@@ -1,0 +1,208 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HTMLElement-dataset - Jenux</title>
+	<meta name="author" content="Jenux">
+
+	
+	<meta name="description" content="HTMLElement-dataset 在Html5里，可以使用前缀data-*创建自定义的标签属性。 获取自定义的标签属性值: 1
+2
+var string = element.dataset.camelCasedName;
+element.dataset.camelCaseName = &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Jenux" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://jenux.github.io/blog/2013/07/16/htmlelement-dataset/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("ijenux@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+</div>
+
+<p class="subtitle">JenUX Wang's Octopress Pages</p>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		<a class="google" href="https://plus.google.com/iJenux@gmail.com" rel="author" title="Google+">Google+</a>
+		
+		
+		<a class="twitter" href="http://twitter.com/iJenux" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/jenux" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">HTMLElement-dataset</h1>
+	<div class="entry-content" itemprop="articleBody"><p>在Html5里，可以使用前缀data-*创建自定义的标签属性。</p>
+
+<p>获取自定义的标签属性值:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var string = element.dataset.camelCasedName;
+</span><span class='line'>element.dataset.camelCaseName = string;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>o</p>
+
+<h2>以前</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="user" data-name="Jenux" data-age="31" data-date-of-birth>&lt;/div>
+</span><span class='line'>
+</span><span class='line'>//获取数据
+</span><span class='line'>document.getElementById("user").getAttribute("data-name");</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>现在</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var d = document.getElementById("user").dataset;
+</span><span class='line'>//var elem = document.querySelector("#user"); 
+</span><span class='line'>var name= d.name;
+</span><span class='line'>var age = d.age;
+</span><span class='line'>
+</span><span class='line'>elem.dataset.dateOfBirth = "1982-05-05"; // set the attribute value</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>浏览器兼容性</h2>
+
+<ul>
+<li>Chrome 8</li>
+<li>Firefox 6.0</li>
+<li>IE 11</li>
+<li>Opera 11.10</li>
+<li>Safari 6</li>
+</ul>
+
+
+<h2>参考</h2>
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement.dataset?redirectlocale=en-US&amp;redirectslug=Web%2FAPI%2Felement.dataset">Mozilla</a></li>
+</ul>
+
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013
+
+    Jenux
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'jenux-pages';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://jenux.github.io/blog/2013/07/16/htmlelement-dataset/';
+        var disqus_url = 'http://jenux.github.io/blog/2013/07/16/htmlelement-dataset/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

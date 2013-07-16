@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Angular | Jenux]]></title>
+  <link href="http://jenux.github.io/blog/categories/angular/atom.xml" rel="self"/>
+  <link href="http://jenux.github.io/"/>
+  <updated>2013-07-16T14:01:05+08:00</updated>
+  <id>http://jenux.github.io/</id>
+  <author>
+    <name><![CDATA[Jenux]]></name>
+    <email><![CDATA[ijenux@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Copy Angular-TodoAPP for practising bower+angular+firebase]]></title>
+    <link href="http://jenux.github.io/blog/2013/07/05/angular-todoMVC-by-angularFirebase/"/>
+    <updated>2013-07-05T10:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2013/07/05/angular-todoMVC-by-angularFirebase</id>
+    <content type="html"><![CDATA[<p>When I checking <a href="http://angularjs.org/">Angular</a>, notice a new live demo named <em>Javascript Projects</em> which using <strong>angularFire.js</strong>.</p>
+
+<p><a href="https://www.firebase.com/">Firebase</a> is a scalable real-time backend, give you the ability to build apps fast without managing servers. A real-time chat app in 14 lines of code. Like:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var messagesRef = new Firebase(&lsquo;&lt;a href="https://chat.firebaseIO.com/">https://chat.firebaseIO.com/&lt;/a>&rsquo;);&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>// write messages
+</span><span class='line'>messagesRef.push({name:&lsquo;Jenux&rsquo;, text:&lsquo;Firebase is awesome!&rsquo;})&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>// Read messages
+</span><span class='line'>messageRef.on(&lsquo;child_added&rsquo;, function(message) {&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>renderMessage(message.val());
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>});</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>on March 29, 2013, <strong>Angular</strong> realeased <a href="http://github.com/firebase/angularFire">AngularFire</a> to support Firebase binding. I&rsquo;m trying to implement the <a href="http://firebase.github.com/angularFire/examples/todomvc/">live demo</a> mentioned in the news to get better understanding about <strong>AngularFire</strong>.</p>
+
+<p>For practise, I want:</p>
+
+<ul>
+<li>Using <a href="/blog/2013/07/02/bower-package-manager-for-web-by-twitter/">bower</a> to manager source libs</li>
+<li>Using <a href="https://www.firebase.com/">fireBase</a> as the data source</li>
+</ul>
+
+
+<p>Fowlloing is the log how I work on this for you to reference, and welcome to leave your suggestion help me to improve it.</p>
+
+<!-- more -->
+
+
+<h2>Steps:</h2>
+
+<h3>Prepare project</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mkcd Angular-TodoAPP
+</span><span class='line'>$ vim bower.json
+</span><span class='line'>$ bower install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Content of bower.json:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>"name"    : "Angular-TodoApp",
+</span><span class='line'>"version" : "0.1.0",
+</span><span class='line'>"ignore"  : [
+</span><span class='line'>    ".jshintrc",
+</span><span class='line'>    "**/*.txt",
+</span><span class='line'>    "**/*.markdown"
+</span><span class='line'>],
+</span><span class='line'>"dependencies": {
+</span><span class='line'>    "angular"     : "latest", 
+</span><span class='line'>    "angular-fire": "latest",
+</span><span class='line'>    "underscore"  : "latest"
+</span><span class='line'>},
+</span><span class='line'>"devDependencies": {
+</span><span class='line'>}
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Develop your app</h3>
+
+<p>You can find my source code here: <a href="https://github.com/jenux/Angular-TodoAPP">https://github.com/jenux/Angular-TodoAPP</a></p>
+
+<p>Note: The Next time you want to add a new dependency to your project, just run:
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bower install &lt;project> &mdash;save</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

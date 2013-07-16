@@ -7,7 +7,9 @@
 	<meta name="author" content="Jenux">
 
 	
-	<meta name="description" content="Jul 3rd, 2013 Dev, Tool Comments Grunt:基于任务的Javascript项目命令行构建工具 Grunt是一个基于任务的Javascript项目命令行构建工具(The Javascript Task Runner) 为什么需要任务构建 一句话: 自动化. &hellip;">
+	<meta name="description" content="Jul 16th, 2013 Developemnt, Html5 Comments HTMLElement-dataset 在Html5里，可以使用前缀data-*创建自定义的标签属性。 获取自定义的标签属性值: 1
+2
+var string = element.dataset. &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -96,11 +98,178 @@
   
 
 
+<time datetime="2013-07-16T13:49:00+08:00" data-updated="true" itemprop="datePublished">Jul 16<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/developemnt/'>Developemnt</a>, <a class='category' href='/blog/categories/html5/'>Html5</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2013/07/16/htmlelement-dataset/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/07/16/htmlelement-dataset/" itemprop="url">HTMLElement-dataset</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>在Html5里，可以使用前缀data-*创建自定义的标签属性。</p>
+
+<p>获取自定义的标签属性值:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var string = element.dataset.camelCasedName;
+</span><span class='line'>element.dataset.camelCaseName = string;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>o</p>
+
+<h2>以前</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id="user" data-name="Jenux" data-age="31" data-date-of-birth>&lt;/div>
+</span><span class='line'>
+</span><span class='line'>//获取数据
+</span><span class='line'>document.getElementById("user").getAttribute("data-name");</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>现在</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var d = document.getElementById("user").dataset;
+</span><span class='line'>//var elem = document.querySelector("#user"); 
+</span><span class='line'>var name= d.name;
+</span><span class='line'>var age = d.age;
+</span><span class='line'>
+</span><span class='line'>elem.dataset.dateOfBirth = "1982-05-05"; // set the attribute value</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>浏览器兼容性</h2>
+
+<ul>
+<li>Chrome 8</li>
+<li>Firefox 6.0</li>
+<li>IE 11</li>
+<li>Opera 11.10</li>
+<li>Safari 6</li>
+</ul>
+
+
+<h2>参考</h2>
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement.dataset?redirectlocale=en-US&amp;redirectslug=Web%2FAPI%2Felement.dataset">Mozilla</a></li>
+</ul>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-05T10:00:00+08:00" data-updated="true" itemprop="datePublished">Jul 5<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/angular/'>Angular</a>, <a class='category' href='/blog/categories/dev/'>Dev</a>, <a class='category' href='/blog/categories/bower/'>bower</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2013/07/05/angular-todoMVC-by-angularFirebase/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/07/05/angular-todoMVC-by-angularFirebase/" itemprop="url">Copy Angular-TodoAPP for Practising Bower+angular+firebase</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>When I checking <a href="http://angularjs.org/">Angular</a>, notice a new live demo named <em>Javascript Projects</em> which using <strong>angularFire.js</strong>.</p>
+
+<p><a href="https://www.firebase.com/">Firebase</a> is a scalable real-time backend, give you the ability to build apps fast without managing servers. A real-time chat app in 14 lines of code. Like:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var messagesRef = new Firebase('https://chat.firebaseIO.com/');
+</span><span class='line'>
+</span><span class='line'>// write messages
+</span><span class='line'>messagesRef.push({name:'Jenux', text:'Firebase is awesome!'})
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>// Read messages
+</span><span class='line'>messageRef.on('child_added', function(message) {
+</span><span class='line'>  renderMessage(message.val());
+</span><span class='line'>});</span></code></pre></td></tr></table></div></figure>
+
+
+<p>on March 29, 2013, <strong>Angular</strong> realeased <a href="http://github.com/firebase/angularFire">AngularFire</a> to support Firebase binding. I&rsquo;m trying to implement the <a href="http://firebase.github.com/angularFire/examples/todomvc/">live demo</a> mentioned in the news to get better understanding about <strong>AngularFire</strong>.</p>
+
+<p>For practise, I want:</p>
+
+<ul>
+<li>Using <a href="/blog/2013/07/02/bower-package-manager-for-web-by-twitter/">bower</a> to manager source libs</li>
+<li>Using <a href="https://www.firebase.com/">fireBase</a> as the data source</li>
+</ul>
+
+
+<p>Fowlloing is the log how I work on this for you to reference, and welcome to leave your suggestion help me to improve it.</p>
+
+
+		
+		<a href="/blog/2013/07/05/angular-todoMVC-by-angularFirebase/" class="more-link">继续阅读</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
 <time datetime="2013-07-03T10:54:00+08:00" data-updated="true" itemprop="datePublished">Jul 3<span>rd</span>, 2013</time></div>
 		<div class="tags">
 
 
-	<a class='category' href='/blog/categories/dev/'>Dev</a>, <a class='category' href='/blog/categories/tool/'>Tool</a>
+	<a class='category' href='/blog/categories/dev/'>Dev</a>, <a class='category' href='/blog/categories/tools-and-tips/'>Tools & Tips</a>
 
 
 </div>
@@ -148,7 +317,7 @@
 		<div class="tags">
 
 
-	<a class='category' href='/blog/categories/dev/'>Dev</a>, <a class='category' href='/blog/categories/tool/'>Tool</a>
+	<a class='category' href='/blog/categories/dev/'>Dev</a>, <a class='category' href='/blog/categories/tools-and-tips/'>Tools & Tips</a>
 
 
 </div>
@@ -188,7 +357,7 @@
 		<div class="tags">
 
 
-	<a class='category' href='/blog/categories/tool/'>Tool</a>
+	<a class='category' href='/blog/categories/dev/'>Dev</a>, <a class='category' href='/blog/categories/tools-and-tips/'>Tools & Tips</a>
 
 
 </div>
@@ -232,7 +401,7 @@
 		<div class="tags">
 
 
-	<a class='category' href='/blog/categories/tool/'>Tool</a>
+	<a class='category' href='/blog/categories/tools-and-tips/'>Tools & Tips</a>
 
 
 </div>
@@ -269,7 +438,7 @@
 		<div class="tags">
 
 
-	<a class='category' href='/blog/categories/mac/'>Mac</a>, <a class='category' href='/blog/categories/tool/'>Tool</a>
+	<a class='category' href='/blog/categories/mac/'>Mac</a>, <a class='category' href='/blog/categories/tools-and-tips/'>Tools & Tips</a>
 
 
 </div>
@@ -354,7 +523,7 @@
 		<div class="tags">
 
 
-	<a class='category' href='/blog/categories/note/'>Note</a>, <a class='category' href='/blog/categories/tool/'>Tool</a>
+	<a class='category' href='/blog/categories/note/'>Note</a>, <a class='category' href='/blog/categories/tools-and-tips/'>Tools & Tips</a>
 
 
 </div>
@@ -394,7 +563,7 @@
 		<div class="tags">
 
 
-	<a class='category' href='/blog/categories/note/'>Note</a>, <a class='category' href='/blog/categories/tool/'>Tool</a>
+	<a class='category' href='/blog/categories/note/'>Note</a>, <a class='category' href='/blog/categories/tools-and-tips/'>Tools & Tips</a>
 
 
 </div>
@@ -409,89 +578,6 @@
 
 		
 		<a href="/blog/2011/07/29/TextMate_knowlage_1/" class="more-link">继续阅读</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-28T00:00:00+08:00" data-updated="true" itemprop="datePublished">Jul 28<span>th</span>, 2011</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/plugin/'>Plugin</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2011/07/28/Google_code_prettify/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2011/07/28/Google_code_prettify/" itemprop="url">为任意项目甚至html静态页面增加代码高亮的插件</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>这个教程运用 <a href="http://code.google.com/p/google-code-prettify/">Google code prettify</a> 简单快捷地为任意项目，甚至是单纯的HTML静态页面添加代码高亮。</p>
-
-<p><embed src="http://www.youtube.com/v/_ggWarwhv9M?version=3&amp;hl=en_US&amp;hd=1" width="550" height="338" allowscriptaccess="never" allowfullscreen="true" wmode="transparent" type="application/x-shockwave-flash"></p>
-
-
-		
-		<a href="/blog/2011/07/28/Google_code_prettify/" class="more-link">继续阅读</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-28T00:00:00+08:00" data-updated="true" itemprop="datePublished">Jul 28<span>th</span>, 2011</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/mac/'>Mac</a>, <a class='category' href='/blog/categories/tool/'>Tool</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2011/07/28/Free_Mac_Utility_App_Structrurer/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2011/07/28/Free_Mac_Utility_App_Structrurer/" itemprop="url">免费的Mac工具推荐——Structruer</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>2010年底，<a href="http://net.tutsplus.com/">Nettuts+</a>推出了一个免费的用于创建项目目录结构及文件的工具。</p>
-
-<p>可以为最常用的项目结构以及文档创立模板以方便调用，一个很有用的功能是从网上抓取项目，比如要抓取 WordPress 的安装包，只需添加一个来源为 URL 的模板，然后把 WordPress 的下载链接粘贴过来就行了，Strucurer 会自动下载最新版本并解压好。</p>
-
-<p><img src="/static/images/posts/structurerLarge.jpg" alt="software" /></p>
-
-<p><a href="http://net.tutsplus.com/freebies/others/free-mac-utility-app-structurer/">官方介绍</a></p>
-
-		
-		
 	</div>
 
 </article>

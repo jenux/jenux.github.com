@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Developemnt | Jenux]]></title>
+  <link href="http://jenux.github.io/blog/categories/developemnt/atom.xml" rel="self"/>
+  <link href="http://jenux.github.io/"/>
+  <updated>2013-07-16T14:01:05+08:00</updated>
+  <id>http://jenux.github.io/</id>
+  <author>
+    <name><![CDATA[Jenux]]></name>
+    <email><![CDATA[ijenux@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HTMLElement-dataset]]></title>
+    <link href="http://jenux.github.io/blog/2013/07/16/htmlelement-dataset/"/>
+    <updated>2013-07-16T13:49:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2013/07/16/htmlelement-dataset</id>
+    <content type="html"><![CDATA[<p>在Html5里，可以使用前缀data-*创建自定义的标签属性。</p>
+
+<p>获取自定义的标签属性值:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var string = element.dataset.camelCasedName;
+</span><span class='line'>element.dataset.camelCaseName = string;</span></code></pre></td></tr></table></div></figure></notextile></div>o</p>
+
+<h2>以前</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;div id="user" data-name="Jenux" data-age="31" data-date-of-birth>&lt;/div>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p>//获取数据
+</span><span class='line'>document.getElementById(&ldquo;user&rdquo;).getAttribute(&ldquo;data-name&rdquo;);</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>现在</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var d = document.getElementById(&ldquo;user&rdquo;).dataset;
+</span><span class='line'>//var elem = document.querySelector(&ldquo;#user&rdquo;);
+</span><span class='line'>var name= d.name;
+</span><span class='line'>var age = d.age;&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>elem.dataset.dateOfBirth = &ldquo;1982-05-05&rdquo;; // set the attribute value</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>浏览器兼容性</h2>
+
+<ul>
+<li>Chrome 8</li>
+<li>Firefox 6.0</li>
+<li>IE 11</li>
+<li>Opera 11.10</li>
+<li>Safari 6</li>
+</ul>
+
+
+<h2>参考</h2>
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement.dataset?redirectlocale=en-US&amp;redirectslug=Web%2FAPI%2Felement.dataset">Mozilla</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

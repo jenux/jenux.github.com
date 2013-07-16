@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tool | Jenux]]></title>
   <link href="http://jenux.github.io/blog/categories/tool/atom.xml" rel="self"/>
   <link href="http://jenux.github.io/"/>
-  <updated>2013-07-03T22:30:52+08:00</updated>
+  <updated>2013-07-16T14:01:05+08:00</updated>
   <id>http://jenux.github.io/</id>
   <author>
     <name><![CDATA[Jenux]]></name>
@@ -14,363 +14,127 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Grunt:基于任务的Javascript项目命令行构建工具]]></title>
-    <link href="http://jenux.github.io/blog/2013/07/03/Grunt-The-Javascript-Task-Runner/"/>
-    <updated>2013-07-03T10:54:00+08:00</updated>
-    <id>http://jenux.github.io/blog/2013/07/03/Grunt-The-Javascript-Task-Runner</id>
-    <content type="html"><![CDATA[<p><img src="http://gruntjs.com/img/grunt-logo.png" width="120"></p>
+    <title type="html"><![CDATA[Markdown的一些基础知识]]></title>
+    <link href="http://jenux.github.io/blog/2011/04/12/welcome_to_markdown/"/>
+    <updated>2011-04-12T00:00:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2011/04/12/welcome_to_markdown</id>
+    <content type="html"><![CDATA[<p>Github真是个很好的开源产品，正在不断学习中。<br/>
+上周末尝试Github的pages服务，很不错，下载了一些jekyll驱动的blog源码学习，结识了markdown这种轻量级的标记语言.</p>
 
-<p><a href="http://gruntjs.com/">Grunt</a>是一个基于任务的Javascript项目命令行构建工具(The Javascript Task Runner)</p>
-
-<h1>为什么需要任务构建</h1>
-
-<p>一句话: 自动化. 可以使重复执行一些任务时更加轻松, 如: 压缩, 合并, unit testing等等.</p>
-
-<p>In one word: automation. The less work you have to do when performing repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes. After you&rsquo;ve configured it, a task runner can do most of that mundane work for you—and your team—with basically zero effort.</p>
-
-<p>当前版本: v0.4.1</p>
+<p>其实从接触vimviki以来，我对这种轻量级的标记语言就很有好感，可能是因为这种方式酷似编写代码吧。<br/>
+粗看了一下Markdown的一些语法，记录如下:</p>
 
 <!-- more -->
 
 
-<h1>为什么选择Grunt</h1>
+<h1>常用格式</h1>
 
 <ul>
-<li><p><a href="http://gruntjs.com/plugins">Plugins</a></p>
-
-<p>很多你需要的任务已经作为Grunt的plugin实现了，并且每天有更多的plugin被提交, 如:<br/>
-coffeeScript, jade, JSHint, less, require.js, Sass&hellip;</p>
-
-<p>The Grunt ecosystem is huge and it&rsquo;s growing every day. With literally hundreds of plugins to choose from, you can use Grunt to automate just about anything with a minimum of effort. If someone hasn&rsquo;t already built what you need, authoring and publishing your own Grunt plugin to npm is a breeze.</p></li>
-<li><p>Who uses Grunt</p>
-
-<p>如: Twitter, jQuery, Adobe, Modernizr&hellip;</p></li>
+<li>空一行（两个回车）分段</li>
+<li>行末加两个或多个空格才是真正的换行</li>
+<li>插入链接 <code>[链接文字](url)</code></li>
+<li>插入图片：同链接，在前面加叹号<code>![alt文字](url)</code></li>
 </ul>
 
 
-<h1>依赖</h1>
-
-<p>Grunt和grunt plugins的安装与管理需要npm,  所以依赖于Node.js
-Grunt 0.4.x 要求Node.js版本 >= 0.8.0</p>
-
-<h1>安装</h1>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo npm install -g grunt-cli</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Note: 安装grunt-cli并不代表安装了grunt task runner.</p>
-
-<h1>创建一个新的grunt项目</h1>
-
-<p>典型的创建会在项目里添加2个文件: package.json 和 Gruntfile.</p>
+<h1>内嵌HTML</h1>
 
 <ul>
-<li>package.json: 这个文件用来存储npm需要的元数据,以发布项目为一个npm的模块. 你需要在<em>devDependencies</em> 里列出需要的Grunt和Grunt plugins</li>
-<li>Gruntfile: 文件可以命名为Gruntfile.js或Gruntfile.coffee, 用来配置或定义任务, 并加载Grunt plugins</li>
+<li>块状标签，像p,div之类，需要在前后各空一行(两个回车)，且开始和结束标签的一行前面不能用空格或Tab缩进</li>
+<li>行内元素， 如a,span,img可以在任何地方使用</li>
 </ul>
 
 
-<h2>package.json</h2>
+<h1>标题</h1>
 
-<p><strong>package.json</strong>需要和<strong>Gruntfile</strong>一同放在项目根目录, 并且提交到源代码库里. 运行<em>npm install</em>, <em>package.json</em>里列出来的依赖将被安装.</p>
+<p>用1－6个#号开始一行表示这一行是标题，如:</p>
+
+<pre>
+    # 一级标题
+    ## 二级标题
+    ### 三级标题
+</pre>
+
+
+<h1>引用</h1>
+
+<p>用右尖括号(>)表示，可以嵌套。可以包含其他Markdown元素， 如：</p>
+
+<pre>
+    >##这是标题  
+    >  
+    > 1. 这是Markdown标记语言  
+    > 2. 现在正在学习**blockquote**  
+</pre>
+
+
+<h1>列表</h1>
+
+<p>HTML里分为有序列表和无序列表 <br/>
+在Markdown中用星号、加号、减号开始一行表示无序列表<br/>
+用数字开始一行表示有序列表，如:</p>
+
+<pre>
+    * Google
+    * Baidu
+    * Yahoo
+    1. HTML
+    2. Javascript
+    3. Css
+</pre>
+
+
+<h1>代码及代码块</h1>
 
 <ul>
-<li>通过<a href="http://gruntjs.com/project-scaffolding">grunt-init</a> 模板创建(需要npm-install -g grunt-init)</li>
-<li><a href="https://npmjs.org/doc/init.html">npm init</a>, 将创建一个基本的package.json文件</li>
-<li>以下面的例子为基础, 根据需求进行扩展, 需要遵循这个<a href="https://npmjs.org/doc/json.html">规范</a>
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{
-</span><span class='line'>&ldquo;name&rdquo;: &ldquo;my-project-name&rdquo;,
-</span><span class='line'>&ldquo;version&rdquo;: &ldquo;0.1.0&rdquo;,
-</span><span class='line'>&ldquo;devDependencies&rdquo;: {
-</span><span class='line'>      &ldquo;grunt&rdquo;: &ldquo;~0.4.1&rdquo;,
-</span><span class='line'>      &ldquo;grunt-contrib-jshint&rdquo;: &ldquo;~0.6.0&rdquo;,
-</span><span class='line'>      &ldquo;grunt-contrib-nodeunit&rdquo;: &ldquo;~0.2.0&rdquo;,
-</span><span class='line'>      &ldquo;grunt-contrib-uglify&rdquo;: &ldquo;~0.2.2&rdquo;
-</span><span class='line'>}
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div></li>
+<li>插入一行代码，用`包含</li>
+<li>插入大段代码， 在代码前每一行前加四个空格</li>
 </ul>
 
 
-<h2>安装Grunt 和 gruntplugins</h2>
+<h1>横线</h1>
 
-<p>一个简便的方式安装Grunt和gruntplugins到已有的package.json, 是执行命令<code>npm install &lt;module&gt; --save-dev</code>.
-不仅可以安装<module>, 而且自动添加到<em>devDependencies</em>
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>npm install grunt &mdash;save-dev</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>三个或以上星号，减号或下划线单独放在一行即可生成一条横线，如:</p>
 
-<h2>Gruntfile</h2>
-
-<p><em>Gruntfile.js</em>或<em>Gruntfile.coffee</em>是一个有效的Javascript或CoffeeScript文件,与<em>package.json</em>文件同放在项目根目录.
-并且需要提交到项目源码库, 由下面几部分组成:</p>
-
-<ul>
-<li>Wrapper function</li>
-<li>Project和Task定义</li>
-<li>加载Grunt plugins 和 任务</li>
-<li>其他自定义任务</li>
-</ul>
+<pre>
+    ******
+    * * *
+    ---
+    -------------
+</pre>
 
 
-<h3>示例:</h3>
+<h1>强调</h1>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>module.exports = function(grunt) {&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>  // Project configuration.
-</span><span class='line'>  grunt.initConfig({&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>pkg: grunt.file.readJSON('package.json'),
-</span><span class='line'>uglify: {
-</span><span class='line'>  options: {
-</span><span class='line'>    banner: '/*! &lt;%= pkg.name %&gt; &lt;%= grunt.template.today("yyyy-mm-dd") %&gt; */\n'
-</span><span class='line'>  },
-</span><span class='line'>  build: {
-</span><span class='line'>    src: 'src/&lt;%= pkg.name %&gt;.js',
-</span><span class='line'>    dest: 'build/&lt;%= pkg.name %&gt;.min.js'
-</span><span class='line'>  }
-</span><span class='line'>}
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p>  });&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>  // Load the plugin that provides the &ldquo;uglify&rdquo; task.
-</span><span class='line'>  grunt.loadNpmTasks(&lsquo;grunt-contrib-uglify&rsquo;);&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>  // Default task(s).
-</span><span class='line'>  grunt.registerTask(&lsquo;default&rsquo;, [&lsquo;uglify&rsquo;]);&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>};</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Bower:来自Twitter团队的前端包管理器]]></title>
-    <link href="http://jenux.github.io/blog/2013/07/02/bower-package-manager-for-web-by-twitter/"/>
-    <updated>2013-07-02T17:00:00+08:00</updated>
-    <id>http://jenux.github.io/blog/2013/07/02/bower-package-manager-for-web-by-twitter</id>
-    <content type="html"><![CDATA[<p><img src="http://bower.io/img/bower-logo.png" width="120"></p>
+<p>用星号或下划线来实现，两边各放一个会生成em标签，放两个会生成strong标签，如:</p>
 
-<p><a href="http://bower.io">Bower</a>, 是来自Twitter团队的一个前端包管理器</p>
-
-<!-- more -->
+<pre>
+    *单星号*
+    _单下划线_  
+    **双星号*  
+    __双下划线__
+</pre>
 
 
-<h1>安装bower</h1>
+<p>会生成：</p>
 
-<p>Bower依赖Node和npm</p>
+<pre> 
+    <em>单星号</em>  
+    <em>单下划线</em>  
+    <strong>双星号</strong>  
+    <strong>双下划线</strong>  
+</pre>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo npm install -g bower</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h1>配置bower</h1>
+<hr />
 
-<p>Configure Bower by creating a .bowerrc file within your home directory
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{
-</span><span class='line'>  directory:   // components 目录名称，默认是components
-</span><span class='line'>  json:        //  components  文件名称, 默认是components.json
-</span><span class='line'>  endpoint :   //  可以创建自己的服务器
-</span><span class='line'>  searchpath:
-</span><span class='line'>　shorthand_resolver
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>先到这里，上边写的还没测试过，这是我用Markdown记下的第一篇笔记。<br/>
+有错误的地方我会回来修正。</p>
 
-<h1>搜索包</h1>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$bower search
-</span><span class='line'>$bower search jquery</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h1>安装包</h1>
+<h1>Tips:</h1>
 
 <ul>
-<li>根据当前目录的bower.json安装</li>
-</ul>
-
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$bower install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<ul>
-<li><p>安装指定软件包
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$bower install jquery</span></code></pre></td></tr></table></div></figure></notextile></div></p></li>
-<li><p>安装指定软件及版本的包
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$bower install jquery#1.7.0</span></code></pre></td></tr></table></div></figure></notextile></div></p></li>
-<li><p>安装Git包
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$bower install git://github.com/pivotal/jasmine.git</span></code></pre></td></tr></table></div></figure></notextile></div></p></li>
-<li><p>安装线上文件
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$bower install &lt;a href="http://backbonejs.org/backbone-min.js">http://backbonejs.org/backbone-min.js&lt;/a></span></code></pre></td></tr></table></div></figure></notextile></div></p></li>
-<li><p>安装本地文件
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$bower install ~/code/secretProject</span></code></pre></td></tr></table></div></figure></notextile></div></p></li>
-</ul>
-
-
-<p>文件会下载到[APP]/components/目录下</p>
-
-<h1>更新包</h1>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$bower update</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h1>删除包</h1>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$bower uninstall jquery</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h1>使用</h1>
-
-<ul>
-<li>bower只是个包管理器, 仍按传统脚本引用方式引入脚本使用即可</li>
-</ul>
-
-
-<h1>注册自己的包,以供他人使用</h1>
-
-<p>bower register project git://github.com/yourname/project
-服务器只保存映射,不保存代码</p>
-
-<h2>定义自己的包</h2>
-
-<p>创建bower.json</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{
-</span><span class='line'>  &ldquo;name&rdquo;: &ldquo;myProject&rdquo;,
-</span><span class='line'>  &ldquo;version&rdquo;: &ldquo;1.0.0&rdquo;,
-</span><span class='line'>  &ldquo;main&rdquo;: &ldquo;./path/to/main.css&rdquo;,
-</span><span class='line'>  &ldquo;dependencies&rdquo;: {&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>"jquery": "~1.7.2"
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p>  }，
-</span><span class='line'>　"ignore"：[],
-</span><span class='line'>  &ldquo;devDependencies&rdquo;: {&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>"&lt;test-framework-name&gt;": "&lt;version&gt;"
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>name 和 version 描述包的名称和版本，dependencies 描述这个包依赖的其他包。main 指定包中的静态文件，可以为一个数组。</p>
-
-<h1>其他命令</h1>
-
-<ul>
-<li>bower list</li>
-<li>bower lookup jquery</li>
-<li>bower info jquery</li>
-<li>bower cache-clean</li>
-</ul>
-
-
-<h1>项目中使用</h1>
-
-<p>给自己的项目也添加一个 component.json 配置文件，执行 bower install，bower 会将依赖的包下载到 components 的目录下。
-如果依赖的包还依赖其他包，bower 也会下载到本地，直到把所有依赖的包都下载完成。bower 的目录结构是扁平化的，所有的包都在同级目录下。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Iconmoon: 强悍的Web字体图标制作工具]]></title>
-    <link href="http://jenux.github.io/blog/2013/05/08/iconmoon-app/"/>
-    <updated>2013-05-08T17:00:00+08:00</updated>
-    <id>http://jenux.github.io/blog/2013/05/08/iconmoon-app</id>
-    <content type="html"><![CDATA[<p>今天学习<a href="http://tympanus.net/codrops/">Codrops</a>上的一篇教程<a href="http://tympanus.net/codrops/2013/04/25/simple-youtube-menu-effect/">Simple Youtube Menu Effect</a>, 提到IconMoon来解决图标问题。</p>
-
-<p>IconMoon是什么? IconMoon是一个矢量图标素材分享网, IconMoon是一个强悍的Web字体图标制作工具。
-打开<a href="http://icomoon.io/">IconMoon</a>主页, 可见提供IcoMoon App, Premium Icons, Font CDN三个产品模块，使用IconMoon App, 可以浏览3800+免费的矢量图标, 通过个性化设置创建自定义的图标(字体), 并且支持上传自己的矢量文件来订制字体。</p>
-
-<p>下载保存到本地的图片版是经过CSS Sprites技术处理的png/svg格式; 字体版包含了多种格式如(eot, svg, ttf, woff)。</p>
-
-<p>你还可以下载IconMoon的<a href="https://chrome.google.com/webstore/detail/icomoon/kppingdhhalimbaehfmhldppemnmlcjd?utm_source=chrome-ntp-icon">Chrome app</a>离线使用IconMoon的服务。<!--下面让我们来简单看一下怎么来使用IconMoon App.--></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[使用vim-addon-manager管理vim插件]]></title>
-    <link href="http://jenux.github.io/blog/2013/03/05/Manage_with_vim_addon_manager/"/>
-    <updated>2013-03-05T00:00:00+08:00</updated>
-    <id>http://jenux.github.io/blog/2013/03/05/Manage_with_vim_addon_manager</id>
-    <content type="html"><![CDATA[<p>使用vim-addon-manager管理vim插件</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mac下我使用的一些软件列表(系统增强篇)]]></title>
-    <link href="http://jenux.github.io/blog/2013/02/25/Apps_using_on_Mac_for_system/"/>
-    <updated>2013-02-25T00:00:00+08:00</updated>
-    <id>http://jenux.github.io/blog/2013/02/25/Apps_using_on_Mac_for_system</id>
-    <content type="html"><![CDATA[<ul>
-<li>ForkLift</li>
-<li>PathFinder</li>
-<li>Unclutter</li>
-<li>Bartender</li>
-<li>TextExpander</li>
+<li>每行末需要打空格两个以上才是真正换行，有点累</li>
 </ul>
 
 ]]></content>
