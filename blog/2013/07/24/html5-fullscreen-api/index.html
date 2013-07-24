@@ -1,0 +1,274 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Introducing HTML5 FullScreen API - Jenux</title>
+	<meta name="author" content="Jenux">
+
+	
+	<meta name="description" content="Introducing HTML5 FullScreen API Fullscreen API Html5提供了Fullscreen API, 帮助开发者控制浏览器的全屏模式。 Note:
+最新版文档描述的属性和方法大小写与之前有所不同，经测试Chrome (27.0.1453.116) &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Jenux" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://jenux.github.io/blog/2013/07/24/html5-fullscreen-api/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("ijenux@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+</div>
+
+<p class="subtitle">JenUX Wang's Octopress Pages</p>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		<a class="google" href="https://plus.google.com/iJenux@gmail.com" rel="author" title="Google+">Google+</a>
+		
+		
+		<a class="twitter" href="http://twitter.com/iJenux" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/jenux" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Introducing HTML5 FullScreen API</h1>
+	<div class="entry-content" itemprop="articleBody"><h1>Fullscreen API</h1>
+
+<p>Html5提供了<a href="http://www.w3.org/TR/fullscreen/">Fullscreen</a> API, 帮助开发者控制浏览器的全屏模式。</p>
+
+<blockquote><p>Note:
+最新版文档描述的属性和方法大小写与之前有所不同，经测试Chrome (27.0.1453.116)均支持不同的大小写方式, Firefox (22)不支持最新文档写法。</p></blockquote>
+
+<h1>element.requestFullscreen()</h1>
+
+<p>以全屏模式显示批定Dom元素。 [注: 前版为 element.requestFullScreen()]</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function launchFullScreen(element) {
+</span><span class='line'>    if (element.requestFullscreen) {
+</span><span class='line'>        element.requestFullscreen();
+</span><span class='line'>    } else if (element.mozRequestFullscreen) {
+</span><span class='line'>        element.mozRequestFullscreen();
+</span><span class='line'>    } else if (element.webkitRequestFullscreen) {
+</span><span class='line'>        element.webkitRequestFullscreen();
+</span><span class='line'>    } else if (element.reqestFullScreen) {
+</span><span class='line'>        element.requestFullScreen()
+</span><span class='line'>    } else if (element.mozRequestFullScreen) {
+</span><span class='line'>        element.mozRequestFullScreen()
+</span><span class='line'>    } else if (element.webkitRequestFullScreen) {
+</span><span class='line'>        element.webkitRequestFullScreen();
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>document.exitFullscreen()</h1>
+
+<p>退出全屏模式。 [注: 前版为 element.cancelFullScreen()]</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function cancelFullScreen() {
+</span><span class='line'>    if (document.exitFullscreen) {
+</span><span class='line'>        document.exitFullscreen();
+</span><span class='line'>    } else if (document.mozExitFullscreen) {
+</span><span class='line'>        document.mozExitFullscreen();
+</span><span class='line'>    } else if (document.webkitExitFullscreen) {
+</span><span class='line'>        document.webkitExitFullscreen();
+</span><span class='line'>    } else if (document.cancelFullScreen) {
+</span><span class='line'>        document.cancelFullScreen()
+</span><span class='line'>    } else if (document.mozCancelFullScreen) {
+</span><span class='line'>        document.mozCancelFullScreen()
+</span><span class='line'>    } else if (document.webkitCancelFullScreen) {
+</span><span class='line'>        document.webkitCancelFullScreen()
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Fullscreen CSS</h1>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/* Fullscreen CSS */
+</span><span class='line'>:-webkit-full-screen {
+</span><span class='line'>    background: pink;
+</span><span class='line'>}
+</span><span class='line'>:-moz-full-screen {
+</span><span class='line'>    background: pink;
+</span><span class='line'>}
+</span><span class='line'>/* deeper elements */
+</span><span class='line'> :-webkit-full-screen #container {
+</span><span class='line'>    width: 100%;
+</span><span class='line'>    height: 100%;
+</span><span class='line'>    padding: 0;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>其他属性</h1>
+
+<ul>
+<li>document . fullscreenEnabled
+true/false, document是否支持显示全屏</li>
+<li>document . fullscreenElement
+返回全屏DOM元素</li>
+</ul>
+
+
+<h1>代码实例</h1>
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/jenux/KK2mm/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013
+
+    Jenux
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'jenux-pages';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://jenux.github.io/blog/2013/07/24/html5-fullscreen-api/';
+        var disqus_url = 'http://jenux.github.io/blog/2013/07/24/html5-fullscreen-api/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

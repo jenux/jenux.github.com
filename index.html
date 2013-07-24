@@ -7,9 +7,7 @@
 	<meta name="author" content="Jenux">
 
 	
-	<meta name="description" content="Jul 16th, 2013 HTML5, tutorials Comments HTMLElement Dataset 在Html5里，可以使用前缀data-*创建自定义的标签属性。 获取自定义的标签属性值: 1
-2
-var string = element.dataset. &hellip;">
+	<meta name="description" content="Jul 24th, 2013 HTML5, tutorials Comments Introducing HTML5 FullScreen API Fullscreen API Html5提供了Fullscreen API, 帮助开发者控制浏览器的全屏模式。 Note: &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +80,167 @@ var string = element.dataset. &hellip;">
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-24T16:08:00+08:00" data-updated="true" itemprop="datePublished">Jul 24<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/html5/'>HTML5</a>, <a class='category' href='/blog/categories/tutorials/'>tutorials</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2013/07/24/html5-fullscreen-api/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/07/24/html5-fullscreen-api/" itemprop="url">Introducing HTML5 FullScreen API</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h1>Fullscreen API</h1>
+
+<p>Html5提供了<a href="http://www.w3.org/TR/fullscreen/">Fullscreen</a> API, 帮助开发者控制浏览器的全屏模式。</p>
+
+<blockquote><p>Note:
+最新版文档描述的属性和方法大小写与之前有所不同，经测试Chrome (27.0.1453.116)均支持不同的大小写方式, Firefox (22)不支持最新文档写法。</p></blockquote>
+
+<h1>element.requestFullscreen()</h1>
+
+<p>以全屏模式显示批定Dom元素。 [注: 前版为 element.requestFullScreen()]</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function launchFullScreen(element) {
+</span><span class='line'>    if (element.requestFullscreen) {
+</span><span class='line'>        element.requestFullscreen();
+</span><span class='line'>    } else if (element.mozRequestFullscreen) {
+</span><span class='line'>        element.mozRequestFullscreen();
+</span><span class='line'>    } else if (element.webkitRequestFullscreen) {
+</span><span class='line'>        element.webkitRequestFullscreen();
+</span><span class='line'>    } else if (element.reqestFullScreen) {
+</span><span class='line'>        element.requestFullScreen()
+</span><span class='line'>    } else if (element.mozRequestFullScreen) {
+</span><span class='line'>        element.mozRequestFullScreen()
+</span><span class='line'>    } else if (element.webkitRequestFullScreen) {
+</span><span class='line'>        element.webkitRequestFullScreen();
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>document.exitFullscreen()</h1>
+
+<p>退出全屏模式。 [注: 前版为 element.cancelFullScreen()]</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function cancelFullScreen() {
+</span><span class='line'>    if (document.exitFullscreen) {
+</span><span class='line'>        document.exitFullscreen();
+</span><span class='line'>    } else if (document.mozExitFullscreen) {
+</span><span class='line'>        document.mozExitFullscreen();
+</span><span class='line'>    } else if (document.webkitExitFullscreen) {
+</span><span class='line'>        document.webkitExitFullscreen();
+</span><span class='line'>    } else if (document.cancelFullScreen) {
+</span><span class='line'>        document.cancelFullScreen()
+</span><span class='line'>    } else if (document.mozCancelFullScreen) {
+</span><span class='line'>        document.mozCancelFullScreen()
+</span><span class='line'>    } else if (document.webkitCancelFullScreen) {
+</span><span class='line'>        document.webkitCancelFullScreen()
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Fullscreen CSS</h1>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/* Fullscreen CSS */
+</span><span class='line'>:-webkit-full-screen {
+</span><span class='line'>    background: pink;
+</span><span class='line'>}
+</span><span class='line'>:-moz-full-screen {
+</span><span class='line'>    background: pink;
+</span><span class='line'>}
+</span><span class='line'>/* deeper elements */
+</span><span class='line'> :-webkit-full-screen #container {
+</span><span class='line'>    width: 100%;
+</span><span class='line'>    height: 100%;
+</span><span class='line'>    padding: 0;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>其他属性</h1>
+
+<ul>
+<li>document . fullscreenEnabled
+true/false, document是否支持显示全屏</li>
+<li>document . fullscreenElement
+返回全屏DOM元素</li>
+</ul>
+
+
+<h1>代码实例</h1>
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/jenux/KK2mm/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -504,46 +663,6 @@ var string = element.dataset. &hellip;">
 
 		
 		<a href="/blog/2011/07/29/TextMate_knowlage_1/" class="more-link">继续阅读</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-28T00:00:00+08:00" data-updated="true" itemprop="datePublished">Jul 28<span>th</span>, 2011</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/plugin/'>Plugin</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2011/07/28/Google_code_prettify/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2011/07/28/Google_code_prettify/" itemprop="url">为任意项目甚至html静态页面增加代码高亮的插件</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>这个教程运用 <a href="http://code.google.com/p/google-code-prettify/">Google code prettify</a> 简单快捷地为任意项目，甚至是单纯的HTML静态页面添加代码高亮。</p>
-
-<p><embed src="http://www.youtube.com/v/_ggWarwhv9M?version=3&amp;hl=en_US&amp;hd=1" width="550" height="338" allowscriptaccess="never" allowfullscreen="true" wmode="transparent" type="application/x-shockwave-flash"></p>
-
-
-		
-		<a href="/blog/2011/07/28/Google_code_prettify/" class="more-link">继续阅读</a>
 	</div>
 
 </article>

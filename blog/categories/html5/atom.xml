@@ -4,7 +4,7 @@
   <title><![CDATA[Category: HTML5 | Jenux]]></title>
   <link href="http://jenux.github.io/blog/categories/html5/atom.xml" rel="self"/>
   <link href="http://jenux.github.io/"/>
-  <updated>2013-07-16T18:40:11+08:00</updated>
+  <updated>2013-07-24T16:48:47+08:00</updated>
   <id>http://jenux.github.io/</id>
   <author>
     <name><![CDATA[Jenux]]></name>
@@ -12,6 +12,166 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Introducing HTML5 FullScreen API]]></title>
+    <link href="http://jenux.github.io/blog/2013/07/24/html5-fullscreen-api/"/>
+    <updated>2013-07-24T16:08:00+08:00</updated>
+    <id>http://jenux.github.io/blog/2013/07/24/html5-fullscreen-api</id>
+    <content type="html"><![CDATA[<h1>Fullscreen API</h1>
+
+<p>Html5提供了<a href="http://www.w3.org/TR/fullscreen/">Fullscreen</a> API, 帮助开发者控制浏览器的全屏模式。</p>
+
+<blockquote><p>Note:
+最新版文档描述的属性和方法大小写与之前有所不同，经测试Chrome (27.0.1453.116)均支持不同的大小写方式, Firefox (22)不支持最新文档写法。</p></blockquote>
+
+<h1>element.requestFullscreen()</h1>
+
+<p>以全屏模式显示批定Dom元素。 [注: 前版为 element.requestFullScreen()]</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function launchFullScreen(element) {&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>if (element.requestFullscreen) {
+</span><span class='line'>    element.requestFullscreen();
+</span><span class='line'>} else if (element.mozRequestFullscreen) {
+</span><span class='line'>    element.mozRequestFullscreen();
+</span><span class='line'>} else if (element.webkitRequestFullscreen) {
+</span><span class='line'>    element.webkitRequestFullscreen();
+</span><span class='line'>} else if (element.reqestFullScreen) {
+</span><span class='line'>    element.requestFullScreen()
+</span><span class='line'>} else if (element.mozRequestFullScreen) {
+</span><span class='line'>    element.mozRequestFullScreen()
+</span><span class='line'>} else if (element.webkitRequestFullScreen) {
+</span><span class='line'>    element.webkitRequestFullScreen();
+</span><span class='line'>}
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h1>document.exitFullscreen()</h1>
+
+<p>退出全屏模式。 [注: 前版为 element.cancelFullScreen()]</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function cancelFullScreen() {&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>if (document.exitFullscreen) {
+</span><span class='line'>    document.exitFullscreen();
+</span><span class='line'>} else if (document.mozExitFullscreen) {
+</span><span class='line'>    document.mozExitFullscreen();
+</span><span class='line'>} else if (document.webkitExitFullscreen) {
+</span><span class='line'>    document.webkitExitFullscreen();
+</span><span class='line'>} else if (document.cancelFullScreen) {
+</span><span class='line'>    document.cancelFullScreen()
+</span><span class='line'>} else if (document.mozCancelFullScreen) {
+</span><span class='line'>    document.mozCancelFullScreen()
+</span><span class='line'>} else if (document.webkitCancelFullScreen) {
+</span><span class='line'>    document.webkitCancelFullScreen()
+</span><span class='line'>}
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h1>Fullscreen CSS</h1>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/&lt;em> Fullscreen CSS &lt;/em>/
+</span><span class='line'>:-webkit-full-screen {&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>background: pink;
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>}
+</span><span class='line'>:-moz-full-screen {&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>background: pink;
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>}
+</span><span class='line'>/&lt;em> deeper elements &lt;/em>/
+</span><span class='line'> :-webkit-full-screen #container {&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>width: 100%;
+</span><span class='line'>height: 100%;
+</span><span class='line'>padding: 0;
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h1>其他属性</h1>
+
+<ul>
+<li>document . fullscreenEnabled
+true/false, document是否支持显示全屏</li>
+<li>document . fullscreenElement
+返回全屏DOM元素</li>
+</ul>
+
+
+<h1>代码实例</h1>
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/jenux/KK2mm/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[HTMLElement dataset]]></title>
